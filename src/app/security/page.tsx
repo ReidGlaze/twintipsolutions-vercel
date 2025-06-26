@@ -134,66 +134,83 @@ export default function Security() {
             
             <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg">
               <FaUserShield className="text-3xl text-green-600 mb-4" />
-              <h3 className="text-xl font-bold mb-2">Zero-Knowledge Architecture</h3>
+              <h3 className="text-xl font-bold mb-2">Device-Based Storage</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                We cannot access your patient data. Only authorized clinic personnel can decrypt patient information.
+                Patient data stays on the device. We cannot access your photos or analysis results.
               </p>
             </div>
             
             <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg">
               <FaKey className="text-3xl text-purple-600 mb-4" />
-              <h3 className="text-xl font-bold mb-2">Multi-Factor Authentication</h3>
+              <h3 className="text-xl font-bold mb-2">Biometric Authentication</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Mandatory 2FA for all accounts. Support for biometric authentication on mobile devices.
+                Face ID required for app access, adding an extra layer of security.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Compliance Certifications */}
+      {/* Data Handling Practices */}
       <section className="py-20 px-4 bg-white dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Compliance & Certifications</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">How We Handle Your Data</h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="w-24 h-24 bg-blue-100 dark:bg-blue-900/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-blue-600">HIPAA</span>
-              </div>
-              <h3 className="font-bold mb-2">HIPAA-Aligned</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Security practices aligned with HIPAA standards
+          <div className="max-w-4xl mx-auto space-y-8">
+            <div className="bg-blue-50 dark:bg-blue-900/20 p-8 rounded-xl">
+              <h3 className="text-xl font-bold mb-4 flex items-center gap-3">
+                <FaDatabase className="text-blue-600" />
+                Normal App Usage
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
+                All patient data during normal app functionality is stored encrypted securely on the device. 
+                We do not have access to this data - it remains entirely on your phone.
               </p>
+              <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                <li className="flex items-start gap-2">
+                  <span className="text-green-500">✓</span>
+                  <span>Photos stay on your device</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-500">✓</span>
+                  <span>Analysis results stored locally</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-500">✓</span>
+                  <span>No cloud backup of patient data</span>
+                </li>
+              </ul>
             </div>
             
-            <div className="text-center">
-              <div className="w-24 h-24 bg-green-100 dark:bg-green-900/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-green-600">SOC 2</span>
-              </div>
-              <h3 className="font-bold mb-2">SOC 2 Type II</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Working towards SOC 2 Type II compliance
+            <div className="bg-purple-50 dark:bg-purple-900/20 p-8 rounded-xl">
+              <h3 className="text-xl font-bold mb-4 flex items-center gap-3">
+                <FaShieldAlt className="text-purple-600" />
+                Hallucination Reporting
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
+                Only when users report AI hallucinations is data stored in our database with double encryption. 
+                This is required for:
               </p>
+              <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                <li className="flex items-start gap-2">
+                  <span className="text-purple-500">•</span>
+                  <span>Google Play Store compliance</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-purple-500">•</span>
+                  <span>Legal safeguards and liability protection</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-purple-500">•</span>
+                  <span>Improving AI model accuracy</span>
+                </li>
+              </ul>
             </div>
             
-            <div className="text-center">
-              <div className="w-24 h-24 bg-purple-100 dark:bg-purple-900/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-purple-600">GDPR</span>
-              </div>
-              <h3 className="font-bold mb-2">GDPR Ready</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Designed with EU data protection principles in mind
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-24 h-24 bg-orange-100 dark:bg-orange-900/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-orange-600">ISO</span>
-              </div>
-              <h3 className="font-bold mb-2">ISO 27001</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Following ISO 27001 security best practices
+            <div className="text-center p-6 bg-gray-50 dark:bg-gray-800 rounded-xl">
+              <p className="text-lg font-semibold text-gray-700 dark:text-gray-300">
+                We are HIPAA-aligned in our security practices, focusing on protecting patient privacy 
+                through device-based storage and minimal data collection.
               </p>
             </div>
           </div>
@@ -265,13 +282,10 @@ export default function Security() {
             practices and always available to answer your questions.
           </p>
           <div className="bg-blue-50 dark:bg-blue-900/20 p-8 rounded-xl">
-            <h3 className="text-xl font-bold mb-4">Security Resources</h3>
-            <ul className="space-y-2 text-left max-w-md mx-auto">
-              <li>• Security whitepaper available upon request</li>
-              <li>• Security assessment reports</li>
-              <li>• Security documentation available upon request</li>
-              <li>• Custom security assessments for enterprise clients</li>
-            </ul>
+            <h3 className="text-xl font-bold mb-4">Have Questions?</h3>
+            <p className="text-gray-600 dark:text-gray-400">
+              Email us at reid@twintipsolutions.com for any security-related questions or concerns.
+            </p>
           </div>
         </div>
       </section>
