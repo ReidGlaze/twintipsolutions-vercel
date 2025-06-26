@@ -17,8 +17,41 @@ export default function Security() {
         </div>
       </section>
 
-      {/* HIPAA Compliance */}
+      {/* Why HIPAA? */}
       <section className="py-20 px-4 bg-white dark:bg-gray-900">
+        <div className="max-w-6xl mx-auto">
+          <div className="max-w-4xl mx-auto bg-blue-50 dark:bg-blue-900/20 p-8 rounded-2xl mb-16">
+            <h2 className="text-3xl font-bold mb-6 text-center">Why HIPAA Alignment Matters</h2>
+            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+              While our apps don't collect traditional patient identifiers like names or specific locations, 
+              HIPAA alignment is still critical for protecting patient privacy:
+            </p>
+            <ul className="space-y-3 text-gray-700 dark:text-gray-300">
+              <li className="flex items-start gap-3">
+                <span className="text-blue-600 mt-1">•</span>
+                <span><strong>Biometric Data:</strong> Facial photos are considered biometric identifiers under HIPAA, 
+                requiring special protection even without names attached.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-blue-600 mt-1">•</span>
+                <span><strong>Clinic Association:</strong> Your custom-branded app inherently links patients to your 
+                specific clinic, creating an indirect identifier.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-blue-600 mt-1">•</span>
+                <span><strong>Anonymous Design:</strong> Every user account is created with anonymous identifiers, 
+                but the combination of photo data and clinic association still requires HIPAA-level protection.</span>
+              </li>
+            </ul>
+            <p className="text-center mt-6 font-semibold text-gray-700 dark:text-gray-300">
+              This is why we've built our entire platform with HIPAA alignment from day one.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* HIPAA Compliance */}
+      <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
