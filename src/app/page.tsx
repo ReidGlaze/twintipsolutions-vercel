@@ -18,8 +18,8 @@ export default function Home() {
               HIPAA-Aligned AI for Dermatology Clinics
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-              Transform your dermatology practice with AI-powered skin analysis. 
-              Increase efficiency, improve patient outcomes, and grow your revenue.
+              Empower your patients with AI-powered skin monitoring between visits. 
+              Improve treatment adherence and patient outcomes.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold text-lg hover:bg-blue-700 transition shadow-lg">
@@ -35,16 +35,16 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8 mt-16">
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
               <FaRocket className="text-4xl text-blue-600 mb-4" />
-              <h3 className="text-xl font-bold mb-2">Faster Consultations</h3>
+              <h3 className="text-xl font-bold mb-2">Better Patient Monitoring</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                AI-powered pre-screening helps reduce consultation time while maintaining quality care.
+                Patients can track skin conditions between visits with AI-powered analysis.
               </p>
             </div>
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
               <FaChartLine className="text-4xl text-green-600 mb-4" />
-              <h3 className="text-xl font-bold mb-2">Increase Revenue</h3>
+              <h3 className="text-xl font-bold mb-2">Improved Patient Engagement</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                See more patients daily and offer premium AI-enhanced consultations.
+                Keep patients engaged with their treatment through the mobile app.
               </p>
             </div>
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
@@ -89,15 +89,15 @@ export default function Home() {
               <ul className="space-y-4 text-gray-700 dark:text-gray-300">
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
-                  <span>Instant AI pre-screening before appointments</span>
+                  <span>Patient-driven skin monitoring between appointments</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
-                  <span>Comprehensive skin analysis with detailed reports</span>
+                  <span>AI-powered skin analysis for patient education</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
-                  <span>Automated progress tracking with visual comparisons</span>
+                  <span>Photo history tracking to monitor changes over time</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
