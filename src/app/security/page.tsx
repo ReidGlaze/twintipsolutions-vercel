@@ -11,7 +11,7 @@ export default function Security() {
             Professional Security & Compliance
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            Your patients&apos; data security is our top priority. We maintain the highest standards 
+            Patient data security is the top priority. Twin Tip Solutions maintains the highest standards 
             of security and compliance for healthcare organizations.
           </p>
         </div>
@@ -27,7 +27,7 @@ export default function Security() {
                 <h2 className="text-3xl font-bold">HIPAA-Aligned</h2>
               </div>
               <p className="text-gray-700 dark:text-gray-300 mb-6">
-                We take HIPAA alignment seriously. Our platform is designed with healthcare privacy 
+                HIPAA alignment is taken seriously. The platform is designed with healthcare privacy 
                 regulations in mind, implementing security measures that align with HIPAA standards.
               </p>
               <ul className="space-y-3">
@@ -71,21 +71,27 @@ export default function Security() {
             </div>
             
             <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl">
-              <h3 className="text-2xl font-bold mb-6 text-center">Our HIPAA-Aligned Approach</h3>
+              <h3 className="text-2xl font-bold mb-6 text-center">HIPAA-Aligned Approach</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
-                We take a practical approach to security that aligns with HIPAA principles:
+                A practical approach to security that aligns with HIPAA principles:
               </p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-2">
                   <span className="text-blue-600">•</span>
                   <span className="text-gray-600 dark:text-gray-400">
-                    <strong>Minimal Data Collection:</strong> We only process data when explicitly requested by users
+                    <strong>Minimal Data Collection:</strong> Data is only processed when explicitly requested by users
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-600">•</span>
                   <span className="text-gray-600 dark:text-gray-400">
                     <strong>Device-Based Storage:</strong> Patient data stays on their devices, not in the cloud
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-orange-600">•</span>
+                  <span className="text-gray-600 dark:text-gray-400">
+                    <strong>Immediate Deletion:</strong> Data is deleted immediately after AI processing - never stored in our database (except hallucination reports with double encryption)
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
@@ -127,9 +133,9 @@ export default function Security() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg">
               <FaLock className="text-3xl text-blue-600 mb-4" />
-              <h3 className="text-xl font-bold mb-2">End-to-End Encryption</h3>
+              <h3 className="text-xl font-bold mb-2">Multi-Layer Encryption</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                AES-256-GCM encryption for data at rest and in transit. Each user has unique encryption keys.
+                AES-256-GCM encryption at rest and in transit, plus TLS. Double encryption until Cloud Function decryption for AI processing.
               </p>
             </div>
             
@@ -137,7 +143,7 @@ export default function Security() {
               <FaUserShield className="text-3xl text-green-600 mb-4" />
               <h3 className="text-xl font-bold mb-2">Device-Based Storage</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Patient data stays on the device. We cannot access your photos or analysis results.
+                Patient data stays on the device. Photos and analysis results cannot be accessed by Twin Tip Solutions.
               </p>
             </div>
             
@@ -155,7 +161,7 @@ export default function Security() {
       {/* Data Handling Practices */}
       <section className="py-20 px-4 bg-white dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">How We Handle Your Data</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">How Data Is Handled</h2>
           
           <div className="max-w-4xl mx-auto space-y-8">
             <div className="bg-blue-50 dark:bg-blue-900/20 p-8 rounded-xl">
@@ -165,7 +171,7 @@ export default function Security() {
               </h3>
               <p className="text-gray-700 dark:text-gray-300 mb-4">
                 All data is stored encrypted on your device. When you request an analysis, photos are 
-                temporarily sent to our secure cloud with double encryption for AI processing, then immediately deleted.
+                temporarily sent to secure cloud infrastructure with double encryption for AI processing, then immediately deleted.
               </p>
               <ul className="space-y-2 text-gray-600 dark:text-gray-400">
                 <li className="flex items-start gap-2">
@@ -189,7 +195,7 @@ export default function Security() {
                 Hallucination Reporting
               </h3>
               <p className="text-gray-700 dark:text-gray-300 mb-4">
-                Only when users report AI hallucinations is data stored in our database with double encryption. 
+                Only when users report AI hallucinations is data stored in the database with double encryption. 
                 This is required for:
               </p>
               <ul className="space-y-2 text-gray-600 dark:text-gray-400">
@@ -210,7 +216,7 @@ export default function Security() {
             
             <div className="text-center p-6 bg-gray-50 dark:bg-gray-800 rounded-xl">
               <p className="text-lg font-semibold text-gray-700 dark:text-gray-300">
-                We are HIPAA-aligned in our security practices, focusing on protecting patient privacy 
+                Twin Tip Solutions is HIPAA-aligned in security practices, focusing on protecting patient privacy 
                 through device-based storage and minimal data collection.
               </p>
             </div>
@@ -218,10 +224,10 @@ export default function Security() {
         </div>
       </section>
 
-      {/* How Our Mobile Apps Protect You */}
+      {/* How Mobile Apps Protect You */}
       <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">How Our Mobile Apps Protect You</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">How Mobile Apps Protect You</h2>
           
           <div className="grid md:grid-cols-2 gap-8">
             <div>
@@ -262,7 +268,7 @@ export default function Security() {
                   <div>
                     <strong>You Control Your Data</strong>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                      Delete your data anytime - we can&apos;t access it
+                      Delete your data anytime - it can&apos;t be accessed externally
                     </p>
                   </div>
                 </li>
@@ -315,7 +321,7 @@ export default function Security() {
           <div className="mt-12 bg-blue-50 dark:bg-blue-900/20 p-8 rounded-xl text-center">
             <h3 className="text-xl font-bold mb-4">Simple Privacy Promise</h3>
             <p className="text-gray-700 dark:text-gray-300">
-              Your health data is yours. We can&apos;t see it, we don&apos;t store it, and we don&apos;t share it. 
+              Your health data is yours. It can&apos;t be seen, stored, or shared by Twin Tip Solutions. 
               Everything stays encrypted on your phone where only you can access it.
             </p>
           </div>
@@ -325,10 +331,10 @@ export default function Security() {
       {/* Trust Center */}
       <section className="py-20 px-4 bg-white dark:bg-gray-900">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">Your Trust is Our Foundation</h2>
+          <h2 className="text-3xl font-bold mb-6">Trust Through Transparency</h2>
           <p className="text-lg text-gray-700 dark:text-gray-300 mb-8">
-            We understand that trust is earned. That&apos;s why we&apos;re transparent about our security 
-            practices and always available to answer your questions.
+            Trust is earned through transparency. All security practices are open for review, 
+            and questions are always welcome.
           </p>
           <div className="bg-blue-50 dark:bg-blue-900/20 p-8 rounded-xl">
             <h3 className="text-xl font-bold mb-4">Have Questions?</h3>

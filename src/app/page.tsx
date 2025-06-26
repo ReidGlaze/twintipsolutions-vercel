@@ -51,7 +51,7 @@ export default function Home() {
               <FaShieldAlt className="text-4xl text-purple-600 mb-4" />
               <h3 className="text-xl font-bold mb-2">HIPAA-Aligned Design</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Professional security with end-to-end encryption designed for healthcare.
+                Professional security with multi-layer encryption designed for healthcare.
               </p>
             </div>
           </div>

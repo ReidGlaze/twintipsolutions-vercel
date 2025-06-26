@@ -151,28 +151,30 @@ export default function About() {
           
           <div className="prose prose-lg dark:prose-invert mx-auto">
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-              Twin Tip Solutions was born from a simple observation: while AI technology was 
-              revolutionizing many industries, dermatology clinics were still relying on 
-              traditional methods that limited their efficiency and reach.
+              Twin Tip Solutions started with a critical insight: dermatology clinics were losing 
+              patients between visits. Patients would skip follow-ups, forget to monitor their 
+              conditions, or worse—turn to unverified online AI tools that weren&apos;t designed 
+              for medical use.
             </p>
             
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-              After witnessing the challenges faced by dermatologists—long wait times, 
-              limited appointment availability, and the difficulty of tracking skin conditions 
-              over time—there had to be a better way.
+              While consumer AI apps flooded the market, none were HIPAA-aligned or designed 
+              for clinics to offer their patients. Clinics needed a way to keep patients engaged 
+              with their treatment plans while maintaining the trust and security that healthcare 
+              demands.
             </p>
             
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-              Starting with DermaWhiz, the consumer app proved that AI could accurately 
-              analyze skin conditions while maintaining complete privacy. The response was 
-              overwhelming, with thousands of users benefiting from instant skin analysis.
+              DermaWhiz was created as proof of concept—showing that AI could provide accurate 
+              skin analysis while keeping all data securely on the patient&apos;s device. With thousands 
+              of users and a 4.8-star rating, it validated that patients want this technology.
             </p>
             
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              Now, this same technology is being brought to dermatology clinics worldwide, 
-              with professional features, HIPAA alignment, and the flexibility to integrate 
-              with existing workflows. The goal is simple: help dermatologists provide better 
-              care to more patients.
+              Now, clinics can offer their own branded version of this proven technology. Unlike 
+              generic AI tools, this solution keeps patients connected to YOUR practice—not some 
+              random internet diagnosis. It&apos;s about patient retention, better outcomes, and 
+              giving clinics a competitive edge in an increasingly digital world.
             </p>
           </div>
         </div>
