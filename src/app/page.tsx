@@ -35,7 +35,7 @@ export default function Home() {
             <div className="relative">
               <div className="relative mx-auto max-w-sm">
                 <Image 
-                  src="/Screen.png" 
+                  src="/Analysis.png" 
                   alt="DermaWhiz Mobile App Analysis Screen" 
                   width={375}
                   height={812}
