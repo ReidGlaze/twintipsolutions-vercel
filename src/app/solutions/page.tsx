@@ -104,15 +104,23 @@ export default function Solutions() {
               </ul>
             </div>
             
-            <div className="relative flex items-center justify-center">
-              <Image 
-                src="/Untitled.png" 
-                alt="AI Analysis Demo" 
-                width={375} 
-                height={812} 
-                className="drop-shadow-2xl"
-                style={{ maxHeight: '500px', width: 'auto' }}
-              />
+            <div className="relative flex items-center justify-center overflow-hidden">
+              <div style={{ maxHeight: '600px', overflow: 'hidden' }}>
+                <Image 
+                  src="/Untitled.png" 
+                  alt="AI Analysis Demo" 
+                  width={450} 
+                  height={974} 
+                  className="drop-shadow-2xl"
+                  style={{ 
+                    width: 'auto',
+                    height: '650px',
+                    objectFit: 'cover',
+                    objectPosition: 'top',
+                    marginBottom: '-50px'
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>
