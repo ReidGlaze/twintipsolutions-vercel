@@ -295,24 +295,24 @@ export default function Contact() {
             <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow">
               <h3 className="text-xl font-bold mb-2">How long does implementation take?</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Most clinics are up and running within 2-4 weeks. This includes initial setup, 
-                staff training, and integration with your existing systems.
+                It typically takes 2-3 weeks to customize the app with your branding and get it 
+                approved on both the App Store and Google Play.
               </p>
             </div>
             
             <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow">
-              <h3 className="text-xl font-bold mb-2">Do you offer training for our staff?</h3>
+              <h3 className="text-xl font-bold mb-2">What&apos;s included in the customization?</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Yes! We provide comprehensive training for all staff members, including 
-                live sessions, video tutorials, and ongoing support.
+                We&apos;ll add your clinic&apos;s logo, colors, and branding throughout the app. 
+                The core AI functionality remains the same as our DermaWhiz app.
               </p>
             </div>
             
             <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow">
-              <h3 className="text-xl font-bold mb-2">Can we try before we buy?</h3>
+              <h3 className="text-xl font-bold mb-2">Can I see how it works first?</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Absolutely. We offer a 30-day pilot program where you can test our solution 
-                in your clinic with full support from our team.
+                Yes! Download DermaWhiz from the App Store or Google Play to experience 
+                the technology. Your custom app will have the same features with your branding.
               </p>
             </div>
           </div>
