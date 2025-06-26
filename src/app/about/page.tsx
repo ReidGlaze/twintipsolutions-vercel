@@ -56,8 +56,20 @@ export default function About() {
           <div className="max-w-4xl mx-auto bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-8 md:p-12">
             <div className="grid md:grid-cols-3 gap-8 items-center">
               <div className="text-center">
-                <div className="w-48 h-48 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white text-6xl font-bold">
-                  RG
+                <div className="relative w-48 h-48 mx-auto mb-4">
+                  {/* LinkedIn profile image placeholder - replace reid-glaze.jpg with your actual LinkedIn profile photo */}
+                  <div className="w-48 h-48 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full mx-auto flex items-center justify-center text-white text-6xl font-bold">
+                    RG
+                  </div>
+                  {/* Uncomment and use this when you add your LinkedIn profile photo:
+                  <Image 
+                    src="/reid-glaze.jpg" 
+                    alt="Reid Glaze" 
+                    width={192} 
+                    height={192} 
+                    className="rounded-full object-cover"
+                  />
+                  */}
                 </div>
                 <a 
                   href="https://www.linkedin.com/in/reidhglaze/" 
@@ -82,13 +94,6 @@ export default function About() {
                     solving complex problems at the intersection of technology and healthcare.
                   </p>
                   
-                  <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
-                    <p className="italic">
-                      &ldquo;I believe AI has the power to democratize access to quality healthcare. 
-                      Our goal is to give every dermatology clinic the tools they need to provide 
-                      world-class care, regardless of their size or location.&rdquo;
-                    </p>
-                  </div>
                   
                   <div className="flex items-start gap-3">
                     <FaGraduationCap className="text-blue-600 mt-1 flex-shrink-0" />

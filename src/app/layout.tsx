@@ -39,12 +39,12 @@ export default function RootLayout({
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-3 gap-6 mb-6 text-sm">
               <div>
-                <h4 className="font-semibold mb-2 text-gray-700 dark:text-gray-300">Legal & Compliance</h4>
+                <h4 className="font-semibold mb-2 text-gray-700 dark:text-gray-300">Security & Privacy</h4>
                 <ul className="space-y-1 text-gray-500 dark:text-gray-400 text-xs">
-                  <li>• HIPAA Compliant Infrastructure</li>
-                  <li>• GDPR Ready</li>
-                  <li>• SOC 2 Type II (In Progress)</li>
+                  <li>• HIPAA-Aligned Design</li>
                   <li>• End-to-End Encryption</li>
+                  <li>• Zero-Knowledge Architecture</li>
+                  <li>• Privacy by Design</li>
                 </ul>
               </div>
               <div>
