@@ -185,22 +185,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ROI Section */}
+      {/* Benefits Section */}
       <section className="py-20 px-4 bg-white dark:bg-gray-900">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-12">Expected ROI for Your Clinic</h2>
+          <h2 className="text-3xl font-bold mb-12">Benefits for Your Practice</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-8 rounded-xl">
-              <div className="text-4xl font-bold text-blue-600 mb-2">More</div>
-              <p className="text-gray-700 dark:text-gray-300">More patients per day</p>
+              <div className="text-4xl font-bold text-blue-600 mb-2">Better</div>
+              <p className="text-gray-700 dark:text-gray-300">Treatment adherence through continuous monitoring</p>
             </div>
             <div className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 p-8 rounded-xl">
-              <div className="text-4xl font-bold text-green-600 mb-2">Fewer</div>
-              <p className="text-gray-700 dark:text-gray-300">No-shows through better engagement</p>
+              <div className="text-4xl font-bold text-green-600 mb-2">Improved</div>
+              <p className="text-gray-700 dark:text-gray-300">Patient engagement between visits</p>
             </div>
             <div className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 p-8 rounded-xl">
-              <div className="text-4xl font-bold text-purple-600 mb-2">High</div>
-              <p className="text-gray-700 dark:text-gray-300">Patient satisfaction rate</p>
+              <div className="text-4xl font-bold text-purple-600 mb-2">Enhanced</div>
+              <p className="text-gray-700 dark:text-gray-300">Documentation of treatment progress</p>
             </div>
           </div>
         </div>
@@ -209,9 +209,9 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-20 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Dermatology Practice?</h2>
+          <h2 className="text-4xl font-bold mb-6">Ready to Enhance Patient Engagement?</h2>
           <p className="text-xl mb-8 opacity-90">
-            Join dermatology clinics using AI to improve patient care.
+            Give your patients the tools to monitor their skin health between visits.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold text-lg hover:bg-gray-100 transition shadow-lg">
