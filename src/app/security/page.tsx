@@ -8,7 +8,7 @@ export default function Security() {
       <section className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">
-            Enterprise-Grade Security & Compliance
+            Professional Security & Compliance
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
             Your patients&apos; data security is our top priority. We maintain the highest standards 
@@ -52,18 +52,18 @@ export default function Security() {
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-0.5 flex-shrink-0" />
                   <div>
-                    <strong>Employee Training</strong>
+                    <strong>Security Best Practices</strong>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                      Team members receive security and privacy training
+                      Following industry security standards and best practices
                     </p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-0.5 flex-shrink-0" />
                   <div>
-                    <strong>Incident Response Plan</strong>
+                    <strong>Transparent Communication</strong>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                      24/7 monitoring and rapid incident response procedures
+                      Direct communication about any security matters
                     </p>
                   </div>
                 </li>
@@ -71,35 +71,36 @@ export default function Security() {
             </div>
             
             <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl">
-              <h3 className="text-2xl font-bold mb-6 text-center">HIPAA Safeguards</h3>
-              <div className="space-y-6">
-                <div>
-                  <h4 className="font-semibold mb-2 text-blue-600">Administrative</h4>
-                  <ul className="text-sm space-y-1 text-gray-600 dark:text-gray-400">
-                    <li>• Security officer designation</li>
-                    <li>• Workforce training programs</li>
-                    <li>• Access management procedures</li>
-                    <li>• Regular risk assessments</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-2 text-green-600">Physical</h4>
-                  <ul className="text-sm space-y-1 text-gray-600 dark:text-gray-400">
-                    <li>• Facility access controls</li>
-                    <li>• Workstation security</li>
-                    <li>• Device & media controls</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-2 text-purple-600">Technical</h4>
-                  <ul className="text-sm space-y-1 text-gray-600 dark:text-gray-400">
-                    <li>• Access control systems</li>
-                    <li>• Audit logs & monitoring</li>
-                    <li>• Integrity controls</li>
-                    <li>• Transmission security</li>
-                  </ul>
-                </div>
-              </div>
+              <h3 className="text-2xl font-bold mb-6 text-center">Our HIPAA-Aligned Approach</h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-4">
+                We take a practical approach to security that aligns with HIPAA principles:
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600">•</span>
+                  <span className="text-gray-600 dark:text-gray-400">
+                    <strong>Minimal Data Collection:</strong> We only process data when explicitly requested by users
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600">•</span>
+                  <span className="text-gray-600 dark:text-gray-400">
+                    <strong>Device-Based Storage:</strong> Patient data stays on their devices, not in the cloud
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-purple-600">•</span>
+                  <span className="text-gray-600 dark:text-gray-400">
+                    <strong>Encryption First:</strong> All data is encrypted both at rest and in transit
+                  </span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600">•</span>
+                  <span className="text-gray-600 dark:text-gray-400">
+                    <strong>Direct Support:</strong> Personal attention to any security concerns from the founder
+                  </span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -217,58 +218,106 @@ export default function Security() {
         </div>
       </section>
 
-      {/* Infrastructure Security */}
+      {/* How Our Mobile Apps Protect You */}
       <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Infrastructure Security</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">How Our Mobile Apps Protect You</h2>
           
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
                 <FaDatabase className="text-blue-600" />
-                Data Security
+                Your Data Stays With You
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>Encrypted backups with point-in-time recovery</span>
+                  <div>
+                    <strong>On-Device Storage</strong>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      All your photos and analysis results stay on your phone
+                    </p>
+                  </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>Geographically distributed data centers</span>
+                  <div>
+                    <strong>Face ID Protection</strong>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      Only you can access your app with biometric authentication
+                    </p>
+                  </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>Automated security patching</span>
+                  <div>
+                    <strong>Local Encryption</strong>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      Your data is encrypted on your device using military-grade encryption
+                    </p>
+                  </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>Regular vulnerability scanning</span>
+                  <div>
+                    <strong>You Control Your Data</strong>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      Delete your data anytime - we can&apos;t access it
+                    </p>
+                  </div>
                 </li>
               </ul>
             </div>
             
             <div>
-              <h3 className="text-2xl font-bold mb-6">Network Security</h3>
-              <ul className="space-y-3">
+              <h3 className="text-2xl font-bold mb-6">AI Processing Security</h3>
+              <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>WAF (Web Application Firewall)</span>
+                  <div>
+                    <strong>Temporary Processing Only</strong>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      Photos sent for AI analysis are deleted immediately after
+                    </p>
+                  </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>DDoS protection</span>
+                  <div>
+                    <strong>Double Encryption</strong>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      Your data is encrypted twice during transmission
+                    </p>
+                  </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>VPC isolation</span>
+                  <div>
+                    <strong>Anonymous Processing</strong>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      AI analysis happens without any personal identifiers
+                    </p>
+                  </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-0.5 flex-shrink-0" />
-                  <span>TLS 1.3 for all connections</span>
+                  <div>
+                    <strong>Secure Cloud Infrastructure</strong>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      Google Cloud&apos;s enterprise-grade security for AI processing
+                    </p>
+                  </div>
                 </li>
               </ul>
             </div>
+          </div>
+          
+          <div className="mt-12 bg-blue-50 dark:bg-blue-900/20 p-8 rounded-xl text-center">
+            <h3 className="text-xl font-bold mb-4">Simple Privacy Promise</h3>
+            <p className="text-gray-700 dark:text-gray-300">
+              Your health data is yours. We can&apos;t see it, we don&apos;t store it, and we don&apos;t share it. 
+              Everything stays encrypted on your phone where only you can access it.
+            </p>
           </div>
         </div>
       </section>

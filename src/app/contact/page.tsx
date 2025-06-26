@@ -64,7 +64,7 @@ export default function Contact() {
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
             Ready to see how AI can revolutionize your dermatology clinic? 
-            Schedule a personalized demo or get in touch with our team.
+            Schedule a personalized demo or get in touch to learn more.
           </p>
         </div>
       </section>

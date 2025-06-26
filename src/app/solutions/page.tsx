@@ -42,13 +42,14 @@ export default function Solutions() {
               <FaCloud className="text-4xl text-purple-600 mb-4" />
               <h3 className="text-xl font-bold mb-3">Cloud Infrastructure</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Secure cloud infrastructure for your clinic&apos;s data.
+                Secure cloud processing for AI analysis.
               </p>
               <ul className="text-sm space-y-2 text-gray-600 dark:text-gray-400">
-                <li>• HIPAA-compliant hosting</li>
-                <li>• Automatic backups</li>
+                <li>• HIPAA-aligned hosting</li>
+                <li>• Signed BAA with Google Cloud</li>
+                <li>• AI does not train on any data</li>
                 <li>• Reliable infrastructure</li>
-                <li>• Global CDN</li>
+                <li>• Immediate deletion after processing</li>
               </ul>
             </div>
           </div>
@@ -116,10 +117,10 @@ export default function Solutions() {
         </div>
       </section>
 
-      {/* Workflow Integration */}
+      {/* How It Works */}
       <section className="py-20 px-4 bg-white dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Seamless Workflow Integration</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">How Your Branded App Works</h2>
           
           <div className="max-w-4xl mx-auto">
             <div className="space-y-8">
@@ -128,9 +129,9 @@ export default function Solutions() {
                   1
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Patient Captures Images</h3>
+                  <h3 className="text-xl font-bold mb-2">Download & Create Profile</h3>
                   <p className="text-gray-600 dark:text-gray-400">
-                    Patients use your branded app to photograph skin concerns at home or in the waiting room
+                    Patients download your custom-branded app and create a secure profile with their medications and health history
                   </p>
                 </div>
               </div>
@@ -140,9 +141,9 @@ export default function Solutions() {
                   2
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">AI Pre-Analysis</h3>
+                  <h3 className="text-xl font-bold mb-2">Take Photos for AI Analysis</h3>
                   <p className="text-gray-600 dark:text-gray-400">
-                    Our AI instantly analyzes images and prepares a detailed report for the dermatologist
+                    Simply snap photos of skin concerns and get instant AI-powered educational insights
                   </p>
                 </div>
               </div>
@@ -152,9 +153,9 @@ export default function Solutions() {
                   3
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Dermatologist Review</h3>
+                  <h3 className="text-xl font-bold mb-2">Track Progress Over Time</h3>
                   <p className="text-gray-600 dark:text-gray-400">
-                    Doctor reviews AI insights and patient history before the consultation begins
+                    All photos and analyses are stored securely on the device - patients can track changes and improvements
                   </p>
                 </div>
               </div>
@@ -164,9 +165,9 @@ export default function Solutions() {
                   4
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Efficient Consultation</h3>
+                  <h3 className="text-xl font-bold mb-2">Share with Your Doctor</h3>
                   <p className="text-gray-600 dark:text-gray-400">
-                    With AI pre-screening complete, consultations are faster and more thorough
+                    Patients can easily show their photo history and AI insights during appointments for better consultations
                   </p>
                 </div>
               </div>
@@ -175,42 +176,6 @@ export default function Solutions() {
         </div>
       </section>
 
-      {/* Integration Options */}
-      <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Integration Options</h2>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg">
-              <FaCog className="text-4xl text-blue-600 mb-4" />
-              <h3 className="text-2xl font-bold mb-4">EHR Integration</h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Seamlessly integrate with your existing Electronic Health Records system.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                <li>• Epic MyChart</li>
-                <li>• Cerner</li>
-                <li>• Athenahealth</li>
-                <li>• Custom API integration</li>
-              </ul>
-            </div>
-            
-            <div className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg">
-              <FaChartBar className="text-4xl text-green-600 mb-4" />
-              <h3 className="text-2xl font-bold mb-4">Practice Management</h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Connect with your practice management tools for streamlined operations.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                <li>• Appointment scheduling</li>
-                <li>• Billing integration</li>
-                <li>• Patient communications</li>
-                <li>• Reporting & analytics</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-20 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white">

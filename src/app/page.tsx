@@ -51,7 +51,7 @@ export default function Home() {
               <FaShieldAlt className="text-4xl text-purple-600 mb-4" />
               <h3 className="text-xl font-bold mb-2">HIPAA-Aligned Design</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Enterprise-grade security with end-to-end encryption designed for healthcare.
+                Professional security with end-to-end encryption designed for healthcare.
               </p>
             </div>
           </div>
@@ -115,7 +115,7 @@ export default function Home() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">See It In Action: DermaWhiz</h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Our consumer app DermaWhiz demonstrates the core technology that powers our enterprise solution. 
+              Our consumer app DermaWhiz demonstrates the core technology that powers our white-label solution. 
               Your clinic will receive a fully customized, white-labeled version.
             </p>
           </div>
@@ -154,29 +154,36 @@ export default function Home() {
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-blue-600 mt-1 flex-shrink-0" />
                   <div>
-                    <strong>Your Branding</strong>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Complete white-label with your clinic&apos;s logo and colors</p>
+                    <strong>Custom App Store Listing</strong>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Your own App Store & Google Play listings with custom logos, titles, and descriptions. Keyword optimization included.</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-blue-600 mt-1 flex-shrink-0" />
                   <div>
-                    <strong>AI Models Stay Current</strong>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Regular updates to AI models for improved accuracy</p>
+                    <strong>Complete Brand Customization</strong>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Graphics completely customized to match your branding and colors</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-blue-600 mt-1 flex-shrink-0" />
                   <div>
-                    <strong>Basic Reporting</strong>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Track usage and get insights into app performance</p>
+                    <strong>AI Trained on Your Content</strong>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">AI can be trained on your clinic&apos;s website and documentation</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <FaCheckCircle className="text-blue-600 mt-1 flex-shrink-0" />
+                  <div>
+                    <strong>Appointment Integration</strong>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Phone and website links for easy appointment booking</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-blue-600 mt-1 flex-shrink-0" />
                   <div>
                     <strong>Direct Founder Support</strong>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Email support directly from the founder</p>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Personal support directly from the founder</p>
                   </div>
                 </li>
               </ul>

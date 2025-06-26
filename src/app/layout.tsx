@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Twin Tip Solutions | HIPAA-Aligned AI for Dermatology Clinics",
-  description: "Transform your dermatology practice with AI-powered skin analysis. Improve efficiency, enhance patient outcomes. Enterprise-grade security designed for healthcare.",
-  keywords: "dermatology AI, HIPAA aligned software, clinic management, skin analysis AI, medical AI, dermatology clinic software, white label healthcare, enterprise dermatology solutions",
+  description: "Transform your dermatology practice with AI-powered skin analysis. Improve efficiency, enhance patient outcomes. Professional security designed for healthcare.",
+  keywords: "dermatology AI, HIPAA aligned software, clinic management, skin analysis AI, medical AI, dermatology clinic software, white label healthcare, dermatology app solutions",
   openGraph: {
     title: "Twin Tip Solutions - AI Solutions for Dermatology Clinics",
     description: "HIPAA-aligned AI platform that helps dermatology clinics improve efficiency and care quality",

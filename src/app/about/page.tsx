@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { FaLinkedin, FaGraduationCap, FaLightbulb, FaRocket, FaHeart, FaShieldAlt } from "react-icons/fa";
 
 export default function About() {
@@ -11,7 +12,7 @@ export default function About() {
             About Twin Tip Solutions
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            We&apos;re on a mission to revolutionize dermatology care through AI technology, 
+            I&apos;m on a mission to revolutionize dermatology care through AI technology, 
             making advanced skin analysis accessible to clinics and patients worldwide.
           </p>
         </div>
@@ -24,7 +25,7 @@ export default function About() {
             <div>
               <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
                 <FaLightbulb className="text-yellow-500" />
-                Our Mission
+                My Mission
               </h2>
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                 To empower dermatology clinics with AI technology that enhances diagnostic accuracy, 
@@ -36,7 +37,7 @@ export default function About() {
             <div>
               <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
                 <FaRocket className="text-blue-600" />
-                Our Vision
+                My Vision
               </h2>
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                 A future where every dermatology patient has access to AI-enhanced care, 
@@ -51,25 +52,19 @@ export default function About() {
       {/* Founder Section */}
       <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Meet Our Founder</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Meet the Founder</h2>
           
           <div className="max-w-4xl mx-auto bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-8 md:p-12">
             <div className="grid md:grid-cols-3 gap-8 items-center">
               <div className="text-center">
                 <div className="relative w-48 h-48 mx-auto mb-4">
-                  {/* LinkedIn profile image placeholder - replace reid-glaze.jpg with your actual LinkedIn profile photo */}
-                  <div className="w-48 h-48 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full mx-auto flex items-center justify-center text-white text-6xl font-bold">
-                    RG
-                  </div>
-                  {/* Uncomment and use this when you add your LinkedIn profile photo:
                   <Image 
-                    src="/reid-glaze.jpg" 
+                    src="/reid-glaze-headshot.jpg" 
                     alt="Reid Glaze" 
                     width={192} 
                     height={192} 
-                    className="rounded-full object-cover"
+                    className="rounded-full object-cover shadow-lg"
                   />
-                  */}
                 </div>
                 <a 
                   href="https://www.linkedin.com/in/reidhglaze/" 
@@ -113,7 +108,7 @@ export default function About() {
       {/* Company Values */}
       <section className="py-20 px-4 bg-white dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Core Values</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Core Values</h2>
           
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
@@ -122,7 +117,7 @@ export default function About() {
               </div>
               <h3 className="text-xl font-bold mb-3">Patient-First Innovation</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Every feature we build starts with the question: How will this improve patient care?
+                Every feature I build starts with the question: How will this improve patient care?
               </p>
             </div>
             
@@ -142,7 +137,7 @@ export default function About() {
               </div>
               <h3 className="text-xl font-bold mb-3">Continuous Innovation</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                We constantly evolve our AI models to provide the most accurate, helpful insights.
+                I constantly evolve the AI models to provide the most accurate, helpful insights.
               </p>
             </div>
           </div>
@@ -152,7 +147,7 @@ export default function About() {
       {/* Our Story */}
       <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Story</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">The Story</h2>
           
           <div className="prose prose-lg dark:prose-invert mx-auto">
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
@@ -164,19 +159,19 @@ export default function About() {
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
               After witnessing the challenges faced by dermatologists—long wait times, 
               limited appointment availability, and the difficulty of tracking skin conditions 
-              over time—we knew there had to be a better way.
+              over time—I knew there had to be a better way.
             </p>
             
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-              We started with DermaWhiz, our consumer app, to prove that AI could accurately 
+              I started with DermaWhiz, my consumer app, to prove that AI could accurately 
               analyze skin conditions while maintaining complete privacy. The response was 
               overwhelming, with thousands of users benefiting from instant skin analysis.
             </p>
             
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              Now, we&apos;re bringing this same technology to dermatology clinics worldwide, 
-              with enterprise-grade features, HIPAA compliance, and the flexibility to integrate 
-              with existing workflows. Our goal is simple: help dermatologists provide better 
+              Now, I&apos;m bringing this same technology to dermatology clinics worldwide, 
+              with professional features, HIPAA alignment, and the flexibility to integrate 
+              with existing workflows. My goal is simple: help dermatologists provide better 
               care to more patients.
             </p>
           </div>
@@ -186,9 +181,9 @@ export default function About() {
       {/* CTA Section */}
       <section className="py-20 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">Join Us in Transforming Dermatology Care</h2>
+          <h2 className="text-4xl font-bold mb-6">Join Me in Transforming Dermatology Care</h2>
           <p className="text-xl mb-8 opacity-90">
-            Partner with us to bring AI-powered skin analysis to your clinic.
+            Partner with me to bring AI-powered skin analysis to your clinic.
           </p>
           <Link href="/contact" className="px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold text-lg hover:bg-gray-100 transition shadow-lg inline-block">
             Get Started Today
