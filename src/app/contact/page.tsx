@@ -9,8 +9,6 @@ export default function Contact() {
     contactName: "",
     email: "",
     phone: "",
-    clinicSize: "",
-    currentEHR: "",
     message: "",
   });
 
@@ -144,41 +142,6 @@ export default function Contact() {
                   </div>
                 </div>
                 
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="clinicSize" className="block text-sm font-medium mb-2">
-                      Number of Dermatologists
-                    </label>
-                    <select
-                      id="clinicSize"
-                      name="clinicSize"
-                      value={formData.clinicSize}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-800"
-                    >
-                      <option value="">Select...</option>
-                      <option value="1-3">1-3</option>
-                      <option value="4-10">4-10</option>
-                      <option value="11-25">11-25</option>
-                      <option value="25+">25+</option>
-                    </select>
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="currentEHR" className="block text-sm font-medium mb-2">
-                      Current EHR System
-                    </label>
-                    <input
-                      type="text"
-                      id="currentEHR"
-                      name="currentEHR"
-                      value={formData.currentEHR}
-                      onChange={handleChange}
-                      placeholder="e.g., Epic, Cerner, etc."
-                      className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-800"
-                    />
-                  </div>
-                </div>
                 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium mb-2">
@@ -273,14 +236,6 @@ export default function Contact() {
                 {/* TODO: Integrate with Calendly or similar service */}
               </div>
               
-              {/* Office Hours */}
-              <div className="mt-8 p-6 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
-                <h3 className="font-semibold mb-2">Office Hours</h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Monday - Friday: 9:00 AM - 6:00 PM EST<br />
-                  We typically respond within 24 hours
-                </p>
-              </div>
             </div>
           </div>
         </div>
