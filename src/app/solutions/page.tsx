@@ -40,15 +40,15 @@ export default function Solutions() {
             
             <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl">
               <FaDesktop className="text-4xl text-green-600 mb-4" />
-              <h3 className="text-xl font-bold mb-3">Clinic Dashboard</h3>
+              <h3 className="text-xl font-bold mb-3">Clinic Portal</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Powerful web dashboard for dermatologists and clinic staff.
+                Web portal for dermatologists and clinic staff.
               </p>
               <ul className="text-sm space-y-2 text-gray-600 dark:text-gray-400">
                 <li>• Patient management</li>
                 <li>• AI analysis review</li>
                 <li>• Treatment planning</li>
-                <li>• Analytics & reporting</li>
+                <li>• Basic reporting</li>
               </ul>
             </div>
             
@@ -83,7 +83,7 @@ export default function Solutions() {
                   <div>
                     <strong>Skin Condition Analysis</strong>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                      Identifies potential skin conditions with 94% accuracy using computer vision
+                      Identifies potential skin conditions using advanced computer vision
                     </p>
                   </div>
                 </li>
@@ -180,7 +180,7 @@ export default function Solutions() {
                 <div>
                   <h3 className="text-xl font-bold mb-2">Efficient Consultation</h3>
                   <p className="text-gray-600 dark:text-gray-400">
-                    With AI pre-screening complete, consultations are 30% faster and more thorough
+                    With AI pre-screening complete, consultations are faster and more thorough
                   </p>
                 </div>
               </div>

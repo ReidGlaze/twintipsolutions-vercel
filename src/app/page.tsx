@@ -15,7 +15,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-12">
             <h1 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">
-              HIPAA-Compliant AI for Dermatology Clinics
+              HIPAA-Aligned AI for Dermatology Clinics
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8">
               Transform your dermatology practice with AI-powered skin analysis. 
@@ -35,9 +35,9 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8 mt-16">
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
               <FaRocket className="text-4xl text-blue-600 mb-4" />
-              <h3 className="text-xl font-bold mb-2">30% Faster Consultations</h3>
+              <h3 className="text-xl font-bold mb-2">Faster Consultations</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                AI-powered pre-screening reduces consultation time while maintaining diagnostic accuracy.
+                AI-powered pre-screening helps reduce consultation time while maintaining quality care.
               </p>
             </div>
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
@@ -49,9 +49,9 @@ export default function Home() {
             </div>
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
               <FaShieldAlt className="text-4xl text-purple-600 mb-4" />
-              <h3 className="text-xl font-bold mb-2">100% HIPAA Compliant</h3>
+              <h3 className="text-xl font-bold mb-2">HIPAA-Aligned Design</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Enterprise-grade security with end-to-end encryption and BAA included.
+                Enterprise-grade security with end-to-end encryption designed for healthcare.
               </p>
             </div>
           </div>
@@ -191,15 +191,15 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-12">Expected ROI for Your Clinic</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-8 rounded-xl">
-              <div className="text-4xl font-bold text-blue-600 mb-2">+30%</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">More</div>
               <p className="text-gray-700 dark:text-gray-300">More patients per day</p>
             </div>
             <div className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 p-8 rounded-xl">
-              <div className="text-4xl font-bold text-green-600 mb-2">-25%</div>
-              <p className="text-gray-700 dark:text-gray-300">Reduction in no-shows</p>
+              <div className="text-4xl font-bold text-green-600 mb-2">Fewer</div>
+              <p className="text-gray-700 dark:text-gray-300">No-shows through better engagement</p>
             </div>
             <div className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 p-8 rounded-xl">
-              <div className="text-4xl font-bold text-purple-600 mb-2">95%</div>
+              <div className="text-4xl font-bold text-purple-600 mb-2">High</div>
               <p className="text-gray-700 dark:text-gray-300">Patient satisfaction rate</p>
             </div>
           </div>
@@ -211,7 +211,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Dermatology Practice?</h2>
           <p className="text-xl mb-8 opacity-90">
-            Join leading dermatology clinics using AI to improve patient care and grow revenue.
+            Join dermatology clinics using AI to improve patient care.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold text-lg hover:bg-gray-100 transition shadow-lg">

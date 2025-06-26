@@ -24,11 +24,11 @@ export default function Security() {
             <div>
               <div className="flex items-center gap-3 mb-6">
                 <FaShieldAlt className="text-4xl text-blue-600" />
-                <h2 className="text-3xl font-bold">100% HIPAA Compliant</h2>
+                <h2 className="text-3xl font-bold">HIPAA-Aligned</h2>
               </div>
               <p className="text-gray-700 dark:text-gray-300 mb-6">
-                We take HIPAA compliance seriously. Our platform is built from the ground up to meet 
-                and exceed all HIPAA requirements for protecting patient health information.
+                We take HIPAA alignment seriously. Our platform is designed with healthcare privacy 
+                regulations in mind, implementing security measures that align with HIPAA standards.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
@@ -43,9 +43,9 @@ export default function Security() {
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-0.5 flex-shrink-0" />
                   <div>
-                    <strong>Annual Security Audits</strong>
+                    <strong>Security Assessments</strong>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                      Third-party security assessments and penetration testing
+                      Regular security reviews and assessments
                     </p>
                   </div>
                 </li>
@@ -54,7 +54,7 @@ export default function Security() {
                   <div>
                     <strong>Employee Training</strong>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                      All team members complete annual HIPAA training
+                      Team members receive security and privacy training
                     </p>
                   </div>
                 </li>
@@ -118,6 +118,9 @@ export default function Security() {
               height={800} 
               className="rounded-xl shadow-2xl mx-auto"
             />
+            <p className="text-center text-sm text-gray-600 dark:text-gray-400 mt-4">
+              Full SHA-256 Key derivation method intentionally omitted.
+            </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -158,9 +161,9 @@ export default function Security() {
               <div className="w-24 h-24 bg-blue-100 dark:bg-blue-900/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl font-bold text-blue-600">HIPAA</span>
               </div>
-              <h3 className="font-bold mb-2">HIPAA Compliant</h3>
+              <h3 className="font-bold mb-2">HIPAA-Aligned</h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                Full compliance with all HIPAA requirements
+                Security practices aligned with HIPAA standards
               </p>
             </div>
             
@@ -170,7 +173,7 @@ export default function Security() {
               </div>
               <h3 className="font-bold mb-2">SOC 2 Type II</h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                Annual SOC 2 Type II certification
+                Working towards SOC 2 Type II compliance
               </p>
             </div>
             
@@ -180,7 +183,7 @@ export default function Security() {
               </div>
               <h3 className="font-bold mb-2">GDPR Ready</h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                Compliant with EU data protection regulations
+                Designed with EU data protection principles in mind
               </p>
             </div>
             
@@ -190,7 +193,7 @@ export default function Security() {
               </div>
               <h3 className="font-bold mb-2">ISO 27001</h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                Information security management certified
+                Following ISO 27001 security best practices
               </p>
             </div>
           </div>
@@ -265,8 +268,8 @@ export default function Security() {
             <h3 className="text-xl font-bold mb-4">Security Resources</h3>
             <ul className="space-y-2 text-left max-w-md mx-auto">
               <li>• Security whitepaper available upon request</li>
-              <li>• Annual penetration testing reports</li>
-              <li>• SOC 2 Type II report available under NDA</li>
+              <li>• Security assessment reports</li>
+              <li>• Security documentation available upon request</li>
               <li>• Custom security assessments for enterprise clients</li>
             </ul>
           </div>
