@@ -28,8 +28,8 @@ export default function About() {
                 The Mission
               </h2>
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                To empower dermatology clinics with AI technology that enhances diagnostic accuracy, 
-                improves patient outcomes, and increases practice efficiency—all while maintaining 
+                To empower dermatology clinics with AI technology that enhances patient monitoring, 
+                improves treatment adherence, and increases practice efficiency—all while maintaining 
                 the highest standards of data privacy and security.
               </p>
             </div>
@@ -151,30 +151,31 @@ export default function About() {
           
           <div className="prose prose-lg dark:prose-invert mx-auto">
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-              Twin Tip Solutions started with a critical insight: dermatology clinics were losing 
-              patients between visits. Patients would skip follow-ups, forget to monitor their 
-              conditions, or worse—turn to unverified online AI tools that weren&apos;t designed 
-              for medical use.
+              Twin Tip Solutions began with a simple observation: dermatologists were telling me their 
+              patients kept showing up with printouts from sketchy AI apps, asking &ldquo;Is this what I have?&rdquo; 
+              These patients were anxious, misinformed, and losing trust in their treatment plans between visits.
             </p>
             
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-              While consumer AI apps flooded the market, none were HIPAA-aligned or designed 
-              for clinics to offer their patients. Clinics needed a way to keep patients engaged 
-              with their treatment plans while maintaining the trust and security that healthcare 
-              demands.
+              These patients simply needed reassurance and a way to track their progress between appointments. 
+              But every AI tool out there was either trying to diagnose them or wasn&apos;t secure enough for 
+              medical use. Doctors needed a professional tool to keep patients engaged with their treatment 
+              plans and connected to their practice.
             </p>
             
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-              DermaWhiz was created as proof of concept—showing that AI could provide accurate 
-              skin analysis while keeping all data securely on the patient&apos;s device. With thousands 
-              of users and a 4.8-star rating, it validated that patients want this technology.
+              Having previously built <a href="https://hearthealthai.app/" 
+              target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 underline">
+              HeartHealthAI</a> for nutrition tracking, I understood how to create health apps that support 
+              professional care plans. DermaWhiz became the proof of concept—a tool that gives patients 
+              educational insights while always encouraging them to follow up with their dermatologist.
             </p>
             
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              Now, clinics can offer their own branded version of this proven technology. Unlike 
-              generic AI tools, this solution keeps patients connected to YOUR practice—not some 
-              random internet diagnosis. It&apos;s about patient retention, better outcomes, and 
-              giving clinics a competitive edge in an increasingly digital world.
+              Now, clinics can offer their own branded version of this technology. It&apos;s a tool that 
+              extends their practice beyond office hours, keeps patients engaged with their treatment 
+              plans, and provides a trusted alternative to unreliable online medical advice—all while 
+              strengthening the doctor-patient relationship.
             </p>
           </div>
         </div>
