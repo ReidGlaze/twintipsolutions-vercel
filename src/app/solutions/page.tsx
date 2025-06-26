@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaCheckCircle, FaMobileAlt, FaDesktop, FaCloud, FaChartBar, FaCog } from "react-icons/fa";
+import { FaCheckCircle, FaMobileAlt, FaCloud, FaChartBar, FaCog } from "react-icons/fa";
 
 export default function Solutions() {
   return (
@@ -23,7 +23,7 @@ export default function Solutions() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">The Complete Platform</h2>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl">
               <FaMobileAlt className="text-4xl text-blue-600 mb-4" />
               <h3 className="text-xl font-bold mb-3">Patient Mobile App</h3>
@@ -39,29 +39,15 @@ export default function Solutions() {
             </div>
             
             <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl">
-              <FaDesktop className="text-4xl text-green-600 mb-4" />
-              <h3 className="text-xl font-bold mb-3">Clinic Portal</h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Web portal for dermatologists and clinic staff.
-              </p>
-              <ul className="text-sm space-y-2 text-gray-600 dark:text-gray-400">
-                <li>• Patient management</li>
-                <li>• AI analysis review</li>
-                <li>• Treatment planning</li>
-                <li>• Basic reporting</li>
-              </ul>
-            </div>
-            
-            <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl">
               <FaCloud className="text-4xl text-purple-600 mb-4" />
               <h3 className="text-xl font-bold mb-3">Cloud Infrastructure</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Enterprise-grade cloud infrastructure with guaranteed uptime.
+                Secure cloud infrastructure for your clinic's data.
               </p>
               <ul className="text-sm space-y-2 text-gray-600 dark:text-gray-400">
                 <li>• HIPAA-compliant hosting</li>
                 <li>• Automatic backups</li>
-                <li>• 99.9% uptime SLA</li>
+                <li>• Reliable infrastructure</li>
                 <li>• Global CDN</li>
               </ul>
             </div>
