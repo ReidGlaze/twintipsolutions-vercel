@@ -42,8 +42,8 @@ export default function RootLayout({
                 <h4 className="font-semibold mb-2 text-gray-700 dark:text-gray-300">Security & Privacy</h4>
                 <ul className="space-y-1 text-gray-500 dark:text-gray-400 text-xs">
                   <li>• HIPAA-Aligned Design</li>
-                  <li>• End-to-End Encryption</li>
-                  <li>• Zero-Knowledge Architecture</li>
+                  <li>• Multi-Layer Encryption</li>
+                  <li>• On-Device Storage</li>
                   <li>• Privacy by Design</li>
                 </ul>
               </div>
