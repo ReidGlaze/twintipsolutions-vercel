@@ -151,16 +151,17 @@ export default function About() {
           
           <div className="prose prose-lg dark:prose-invert mx-auto">
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-              Twin Tip Solutions began with a simple observation: dermatologists were telling me their 
-              patients kept showing up with printouts from sketchy AI apps, asking &ldquo;Is this what I have?&rdquo; 
-              These patients were anxious, misinformed, and losing trust in their treatment plans between visits.
+              Twin Tip Solutions began when I realized dermatology patients needed better tools to track 
+              their skin conditions between appointments. Many would forget to monitor their progress, 
+              lose track of changes, or simply feel disconnected from their treatment plans during the 
+              weeks between visits.
             </p>
             
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-              These patients simply needed reassurance and a way to track their progress between appointments. 
-              But every AI tool out there was either trying to diagnose them or wasn&apos;t secure enough for 
-              medical use. Doctors needed a professional tool to keep patients engaged with their treatment 
-              plans and connected to their practice.
+              What if clinics could offer their patients a secure, professional app to photograph and 
+              track their skin conditions over time? Not for diagnosis, but as a visual diary that 
+              helps both patients and doctors see progress, remember concerns, and stay engaged with 
+              treatment plans.
             </p>
             
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">

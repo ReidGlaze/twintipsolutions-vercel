@@ -303,8 +303,10 @@ export default function Contact() {
             <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow">
               <h3 className="text-xl font-bold mb-2">What&apos;s included in the customization?</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                We&apos;ll add your clinic&apos;s logo, colors, and branding throughout the app. 
-                The core AI functionality remains the same as our DermaWhiz app.
+                Your custom app includes: complete branding with your clinic&apos;s logo and colors, 
+                AI training on your website and documentation for clinic-specific insights, 
+                direct phone links and appointment booking integration, and custom App Store 
+                listings with keyword optimization.
               </p>
             </div>
             
