@@ -15,11 +15,11 @@ export default function Home() {
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-12">
             <h1 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">
-              HIPAA-Aligned AI for Dermatology Clinics
+              HIPAA-Aligned AI for Patient Engagement
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-              Empower your patients with AI-powered skin monitoring between visits. 
-              Improve treatment adherence and patient outcomes.
+              Custom-branded cross-platform mobile apps with photo-based AI analysis. 
+              Give your dermatology practice a professional edge with your own AI-powered patient engagement tool.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold text-lg hover:bg-blue-700 transition shadow-lg">
