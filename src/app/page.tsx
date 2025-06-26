@@ -85,7 +85,7 @@ export default function Home() {
             </div>
             
             <div>
-              <h2 className="text-3xl font-bold mb-6">Our AI-Powered Solution</h2>
+              <h2 className="text-3xl font-bold mb-6">The AI-Powered Solution</h2>
               <ul className="space-y-4 text-gray-700 dark:text-gray-300">
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
@@ -115,7 +115,7 @@ export default function Home() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">See It In Action: DermaWhiz</h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Our consumer app DermaWhiz demonstrates the core technology that powers our white-label solution. 
+              The consumer app DermaWhiz demonstrates the core technology that powers the white-label solution. 
               Your clinic will receive a fully customized, white-labeled version.
             </p>
           </div>
@@ -130,7 +130,7 @@ export default function Home() {
                 className="mx-auto rounded-2xl shadow-xl"
               />
               <div className="mt-6 text-center">
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Try our consumer version:</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Try the consumer version:</p>
                 <div className="flex gap-4 justify-center">
                   <a href="https://apps.apple.com/us/app/dermawhiz-ai-skin-analyzer/id6746768900" 
                      target="_blank" 

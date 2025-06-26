@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaCheckCircle, FaMobileAlt, FaCloud, FaChartBar, FaCog } from "react-icons/fa";
+import { FaCheckCircle, FaMobileAlt, FaCloud } from "react-icons/fa";
 
 export default function Solutions() {
   return (
@@ -12,7 +12,7 @@ export default function Solutions() {
             Complete AI Solution for Modern Dermatology
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            Our comprehensive platform combines cutting-edge AI technology with practical tools 
+            This comprehensive platform combines cutting-edge AI technology with practical tools 
             designed specifically for dermatology clinics.
           </p>
         </div>
@@ -180,9 +180,9 @@ export default function Solutions() {
       {/* CTA Section */}
       <section className="py-20 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">See Our Solution in Action</h2>
+          <h2 className="text-4xl font-bold mb-6">See the Solution in Action</h2>
           <p className="text-xl mb-8 opacity-90">
-            Schedule a personalized demo to see how our AI platform can transform your dermatology practice.
+            Schedule a personalized demo to see how this AI platform can transform your dermatology practice.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold text-lg hover:bg-gray-100 transition shadow-lg">
