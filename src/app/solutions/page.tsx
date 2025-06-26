@@ -9,11 +9,11 @@ export default function Solutions() {
       <section className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text leading-tight">
-            Complete AI Solution for Modern Dermatology
+            AI-Powered Patient Engagement Tools
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            This comprehensive platform combines cutting-edge AI technology with practical tools 
-            designed specifically for dermatology clinics.
+            Mobile apps that help patients track their skin conditions between visits, 
+            featuring AI analysis and secure photo storage.
           </p>
         </div>
       </section>
@@ -21,7 +21,7 @@ export default function Solutions() {
       {/* Platform Overview */}
       <section className="py-20 px-4 bg-white dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">The Complete Platform</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">What's Included</h2>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl">
@@ -59,18 +59,18 @@ export default function Solutions() {
       {/* AI Features */}
       <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Advanced AI Capabilities</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">AI Features</h2>
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h3 className="text-2xl font-bold mb-6">Powered by State-of-the-Art AI</h3>
+              <h3 className="text-2xl font-bold mb-6">How the AI Analysis Works</h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
                   <div>
                     <strong>Skin Condition Analysis</strong>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                      Identifies potential skin conditions using advanced computer vision
+                      Analyzes photos to identify potential skin conditions
                     </p>
                   </div>
                 </li>
@@ -261,9 +261,9 @@ export default function Solutions() {
       {/* CTA Section */}
       <section className="py-20 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">See the Solution in Action</h2>
+          <h2 className="text-4xl font-bold mb-6">See a Demo</h2>
           <p className="text-xl mb-8 opacity-90">
-            Schedule a personalized demo to see how this AI platform can transform your dermatology practice.
+            Schedule a demo to see how these apps can help your patients track their conditions between visits.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold text-lg hover:bg-gray-100 transition shadow-lg">
