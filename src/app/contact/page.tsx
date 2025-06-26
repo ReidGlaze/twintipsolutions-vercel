@@ -26,13 +26,19 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // TODO: Implement actual form submission
-    // This would typically send to your backend API
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      console.log("Form submitted:", formData);
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
       setSubmitStatus("success");
       
       // Reset form
@@ -43,7 +49,8 @@ export default function Contact() {
         phone: "",
         message: "",
       });
-    } catch {
+    } catch (error) {
+      console.error('Form submission error:', error);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
