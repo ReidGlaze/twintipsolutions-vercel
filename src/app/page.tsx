@@ -14,7 +14,7 @@ export default function Home() {
         
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-12">
-            <h1 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">
+            <h1 className="text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text leading-tight">
               HIPAA-Aligned AI for Patient Engagement
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8">

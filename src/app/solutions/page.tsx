@@ -8,7 +8,7 @@ export default function Solutions() {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text">
+          <h1 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text leading-tight">
             Complete AI Solution for Modern Dermatology
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
