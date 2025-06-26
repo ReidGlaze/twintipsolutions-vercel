@@ -23,7 +23,7 @@ export default function Security() {
           <div className="max-w-4xl mx-auto bg-blue-50 dark:bg-blue-900/20 p-8 rounded-2xl mb-16">
             <h2 className="text-3xl font-bold mb-6 text-center">Why HIPAA Alignment Matters</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-              While our apps don't collect traditional patient identifiers like names or specific locations, 
+              While our apps don&apos;t collect traditional patient identifiers like names or specific locations, 
               HIPAA alignment is still critical for protecting patient privacy:
             </p>
             <ul className="space-y-3 text-gray-700 dark:text-gray-300">
@@ -44,7 +44,7 @@ export default function Security() {
               </li>
             </ul>
             <p className="text-center mt-6 font-semibold text-gray-700 dark:text-gray-300">
-              This is why we've built our entire platform with HIPAA alignment from day one.
+              This is why we&apos;ve built our entire platform with HIPAA alignment from day one.
             </p>
           </div>
         </div>
