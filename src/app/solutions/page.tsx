@@ -21,7 +21,7 @@ export default function Solutions() {
       {/* Platform Overview */}
       <section className="py-20 px-4 bg-white dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">What's Included</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">What&apos;s Included</h2>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl">
