@@ -106,8 +106,8 @@ export default function Solutions() {
             
             <div className="relative">
               <Image 
-                src="/security-architecture.png" 
-                alt="AI Analysis Demo" 
+                src="/history.png" 
+                alt="Patient History Tracking" 
                 width={600} 
                 height={400} 
                 className="rounded-xl shadow-2xl"
