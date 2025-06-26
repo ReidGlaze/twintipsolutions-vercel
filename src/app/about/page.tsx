@@ -83,10 +83,11 @@ export default function About() {
                 
                 <div className="space-y-4 text-gray-700 dark:text-gray-300">
                   <p className="leading-relaxed">
-                    Reid brings a unique combination of engineering expertise and healthcare innovation 
+                    Reid brings a unique combination of engineering expertise and entrepreneurial vision 
                     to Twin Tip Solutions. With a Master&apos;s degree in Mechanical Engineering from 
-                    CU Boulder specializing in AI/ML applications, he has dedicated his career to 
-                    solving complex problems at the intersection of technology and healthcare.
+                    CU Boulder with a focus on AI/ML, he is particularly passionate about the intersection 
+                    of AI, cybersecurity, and data privacy—ensuring that powerful technology can be 
+                    deployed while protecting user information.
                   </p>
                   
                   
@@ -95,7 +96,7 @@ export default function About() {
                     <div>
                       <strong>Education</strong>
                       <p className="text-sm">MS Mechanical Engineering, University of Colorado Boulder</p>
-                      <p className="text-sm italic">Focus: AI/ML Applications in Healthcare</p>
+                      <p className="text-sm italic">Focus: AI/ML Applications</p>
                     </div>
                   </div>
                 </div>
@@ -160,8 +161,8 @@ export default function About() {
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
               What if clinics could offer their patients a secure, professional app to photograph and 
               track their skin conditions over time? Not for diagnosis, but as a visual diary that 
-              helps both patients and doctors see progress, remember concerns, and stay engaged with 
-              treatment plans.
+              helps patients see their progress, remember concerns to discuss, and stay engaged with 
+              their treatment plans between visits.
             </p>
             
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
