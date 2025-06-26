@@ -104,13 +104,14 @@ export default function Solutions() {
               </ul>
             </div>
             
-            <div className="relative">
+            <div className="relative flex items-center justify-center">
               <Image 
                 src="/Untitled.png" 
                 alt="AI Analysis Demo" 
-                width={600} 
-                height={400} 
-                className="rounded-xl shadow-2xl"
+                width={375} 
+                height={812} 
+                className="drop-shadow-2xl"
+                style={{ maxHeight: '500px', width: 'auto' }}
               />
             </div>
           </div>
