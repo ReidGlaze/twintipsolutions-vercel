@@ -163,21 +163,21 @@ export default function Security() {
                 Normal App Usage
               </h3>
               <p className="text-gray-700 dark:text-gray-300 mb-4">
-                During normal app use, your photos are sent to our secure cloud with double encryption 
-                for AI analysis and immediately deleted after processing. Results are stored only on your device.
+                All data is stored encrypted on your device. When you request an analysis, photos are 
+                temporarily sent to our secure cloud with double encryption for AI processing, then immediately deleted.
               </p>
               <ul className="space-y-2 text-gray-600 dark:text-gray-400">
                 <li className="flex items-start gap-2">
                   <span className="text-green-500">✓</span>
-                  <span>Photos encrypted during transmission for analysis</span>
+                  <span>All data stored encrypted on your device</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-500">✓</span>
-                  <span>Immediate deletion after AI processing</span>
+                  <span>Temporary cloud processing with immediate deletion</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-500">✓</span>
-                  <span>Analysis results stored only on your device</span>
+                  <span>Double encryption during transmission</span>
                 </li>
               </ul>
             </div>
