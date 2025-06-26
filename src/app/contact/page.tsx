@@ -235,10 +235,14 @@ export default function Contact() {
                 <p className="text-gray-600 dark:text-gray-400 mb-4">
                   Prefer to schedule a call directly? Use our calendar to find a time that works for you.
                 </p>
-                <button className="w-full py-3 px-6 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition">
+                <a 
+                  href="https://calendly.com/reid-twintipsolutions/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full py-3 px-6 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition text-center"
+                >
                   Open Calendar
-                </button>
-                {/* TODO: Integrate with Calendly or similar service */}
+                </a>
               </div>
               
             </div>
