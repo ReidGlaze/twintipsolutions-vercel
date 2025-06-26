@@ -117,8 +117,85 @@ export default function Solutions() {
         </div>
       </section>
 
-      {/* How It Works */}
+      {/* AI Training Sources */}
       <section className="py-20 px-4 bg-white dark:bg-gray-900">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">Trained on Trusted Medical Sources</h2>
+          
+          <div className="max-w-4xl mx-auto mb-8">
+            <p className="text-center text-gray-600 dark:text-gray-400 mb-8">
+              Our AI is trained exclusively on reliable, peer-reviewed medical sources. We follow all web scraping 
+              laws and only use publicly available, open-access materials.
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl">
+                <h3 className="font-bold text-lg mb-4 text-blue-600">Primary Medical Sources</h3>
+                <ul className="space-y-3 text-sm">
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">•</span>
+                    <div>
+                      <strong>PubMed Central Open Access</strong>
+                      <p className="text-gray-600 dark:text-gray-400">Peer-reviewed dermatology research</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">•</span>
+                    <div>
+                      <strong>BMC Dermatology</strong>
+                      <p className="text-gray-600 dark:text-gray-400">Open-access clinical research</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 mt-0.5">•</span>
+                    <div>
+                      <strong>PLOS ONE</strong>
+                      <p className="text-gray-600 dark:text-gray-400">Scientific dermatology studies</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl">
+                <h3 className="font-bold text-lg mb-4 text-purple-600">Government Sources</h3>
+                <ul className="space-y-3 text-sm">
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-500 mt-0.5">•</span>
+                    <div>
+                      <strong>NIH Bookshelf</strong>
+                      <p className="text-gray-600 dark:text-gray-400">Public domain medical textbooks</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-500 mt-0.5">•</span>
+                    <div>
+                      <strong>ClinicalTrials.gov</strong>
+                      <p className="text-gray-600 dark:text-gray-400">Latest dermatology trial data</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-500 mt-0.5">•</span>
+                    <div>
+                      <strong>NIH Skin Diseases Institute</strong>
+                      <p className="text-gray-600 dark:text-gray-400">Federal research data</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <div className="mt-6 bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg text-center">
+              <p className="text-sm text-gray-700 dark:text-gray-300">
+                <strong>Legal Compliance:</strong> All sources are open-access with Creative Commons or public domain licensing. 
+                We respect copyright laws and robots.txt directives.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">How Your Branded App Works</h2>
           
