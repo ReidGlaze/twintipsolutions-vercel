@@ -161,22 +161,22 @@ export default function Home() {
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-blue-600 mt-1 flex-shrink-0" />
                   <div>
-                    <strong>EHR Integration</strong>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Seamless integration with your existing systems</p>
+                    <strong>AI Models Stay Current</strong>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Regular updates to AI models for improved accuracy</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-blue-600 mt-1 flex-shrink-0" />
                   <div>
-                    <strong>Advanced Analytics</strong>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Dashboard for tracking clinic performance and patient outcomes</p>
+                    <strong>Basic Reporting</strong>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Track usage and get insights into app performance</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-blue-600 mt-1 flex-shrink-0" />
                   <div>
-                    <strong>Priority Support</strong>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Dedicated account manager and 24/7 technical support</p>
+                    <strong>Direct Founder Support</strong>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Email support directly from the founder</p>
                   </div>
                 </li>
               </ul>
