@@ -42,7 +42,7 @@ export default function Solutions() {
               <FaCloud className="text-4xl text-purple-600 mb-4" />
               <h3 className="text-xl font-bold mb-3">Cloud Infrastructure</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Secure cloud infrastructure for your clinic's data.
+                Secure cloud infrastructure for your clinic&apos;s data.
               </p>
               <ul className="text-sm space-y-2 text-gray-600 dark:text-gray-400">
                 <li>• HIPAA-compliant hosting</li>
