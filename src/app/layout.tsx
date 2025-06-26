@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Navigation from "@/components/Navigation";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,12 +14,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Twin Tip Solutions | AI-Powered Healthcare Technology",
-  description: "Twin Tip Solutions develops cutting-edge AI-powered healthcare applications. Featuring DermaWhiz for skin health education and HeartHealthAI for nutrition tracking. HIPAA-compliant white-label solutions available.",
-  keywords: "AI healthcare, mobile health apps, HIPAA compliant, dermatology AI, nutrition tracking, white label healthcare",
+  title: "Twin Tip Solutions | HIPAA-Compliant AI for Dermatology Clinics",
+  description: "Transform your dermatology practice with AI-powered skin analysis. Increase efficiency by 30%, improve patient outcomes, and grow revenue. Enterprise-grade security, full HIPAA compliance.",
+  keywords: "dermatology AI, HIPAA compliant software, clinic management, skin analysis AI, medical AI, dermatology clinic software, white label healthcare, enterprise dermatology solutions",
   openGraph: {
-    title: "Twin Tip Solutions - AI-Powered Healthcare Technology",
-    description: "Innovative healthcare applications leveraging AI/ML for better health outcomes",
+    title: "Twin Tip Solutions - AI Solutions for Dermatology Clinics",
+    description: "HIPAA-compliant AI platform that helps dermatology clinics see 30% more patients while improving care quality",
     type: "website",
     url: "https://twintipsolutions.com",
   },
@@ -32,11 +33,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}>
-        <header className="w-full py-6 px-4 flex justify-between items-center border-b border-black/10 dark:border-white/10 bg-white/80 dark:bg-black/80 backdrop-blur-md sticky top-0 z-50">
-          <span className="text-2xl font-bold tracking-tight">Twin Tip Solutions</span>
-          <span className="text-sm text-gray-600 dark:text-gray-300 font-mono">Mobile Apps • AI • LLMs</span>
-        </header>
-        <main className="min-h-[80vh] flex flex-col items-center justify-center w-full">{children}</main>
+        <Navigation />
+        <main className="min-h-[80vh] w-full">{children}</main>
         <footer className="w-full py-8 px-4 border-t border-black/10 dark:border-white/10 bg-white/80 dark:bg-black/80 backdrop-blur-md">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-3 gap-6 mb-6 text-sm">
