@@ -163,21 +163,21 @@ export default function Security() {
                 Normal App Usage
               </h3>
               <p className="text-gray-700 dark:text-gray-300 mb-4">
-                All patient data during normal app functionality is stored encrypted securely on the device. 
-                We do not have access to this data - it remains entirely on your phone.
+                During normal app use, your photos are sent to our secure cloud with double encryption 
+                for AI analysis and immediately deleted after processing. Results are stored only on your device.
               </p>
               <ul className="space-y-2 text-gray-600 dark:text-gray-400">
                 <li className="flex items-start gap-2">
                   <span className="text-green-500">✓</span>
-                  <span>Photos stay on your device</span>
+                  <span>Photos encrypted during transmission for analysis</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-500">✓</span>
-                  <span>Analysis results stored locally</span>
+                  <span>Immediate deletion after AI processing</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-500">✓</span>
-                  <span>No cloud backup of patient data</span>
+                  <span>Analysis results stored only on your device</span>
                 </li>
               </ul>
             </div>
