@@ -41,8 +41,6 @@ export default function Contact() {
         contactName: "",
         email: "",
         phone: "",
-        clinicSize: "",
-        currentEHR: "",
         message: "",
       });
     } catch {
