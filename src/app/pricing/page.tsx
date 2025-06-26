@@ -54,7 +54,7 @@ export default function Pricing() {
             </div>
             
             <a 
-              href="mailto:contact@twintipsolutions.com?subject=Pricing%20Inquiry%20-%20Dermatology%20AI%20Solution"
+              href="mailto:reid@twintipsolutions.com?subject=Pricing%20Inquiry%20-%20Dermatology%20AI%20Solution"
               className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold text-lg hover:from-blue-700 hover:to-purple-700 transition shadow-lg"
             >
               <FaEnvelope />
@@ -148,7 +148,7 @@ export default function Pricing() {
             Join our early access program and be among the first clinics to offer AI-powered skin analysis.
           </p>
           <a 
-            href="mailto:contact@twintipsolutions.com?subject=Early%20Access%20Request%20-%20Dermatology%20AI"
+            href="mailto:reid@twintipsolutions.com?subject=Early%20Access%20Request%20-%20Dermatology%20AI"
             className="inline-flex items-center gap-3 px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold text-lg hover:bg-gray-100 transition shadow-lg"
           >
             <FaEnvelope />

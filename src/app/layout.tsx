@@ -57,7 +57,7 @@ export default function RootLayout({
               <div>
                 <h4 className="font-semibold mb-2 text-gray-700 dark:text-gray-300">Contact</h4>
                 <ul className="space-y-1 text-gray-500 dark:text-gray-400 text-xs">
-                  <li>Email: contact@twintipsolutions.com</li>
+                  <li>Email: reid@twintipsolutions.com</li>
                   <li>LinkedIn: <a href="https://www.linkedin.com/in/reidhglaze/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700">Reid Glaze</a></li>
                   <li>Location: United States</li>
                 </ul>

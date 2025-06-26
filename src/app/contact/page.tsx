@@ -226,8 +226,8 @@ export default function Contact() {
                   <FaEnvelope className="text-2xl text-blue-600 mt-1" />
                   <div>
                     <h3 className="font-semibold mb-1">Email</h3>
-                    <a href="mailto:contact@twintipsolutions.com" className="text-gray-600 dark:text-gray-400 hover:text-blue-600">
-                      contact@twintipsolutions.com
+                    <a href="mailto:reid@twintipsolutions.com" className="text-gray-600 dark:text-gray-400 hover:text-blue-600">
+                      reid@twintipsolutions.com
                     </a>
                   </div>
                 </div>
