@@ -52,7 +52,7 @@ export default function About() {
       {/* Founder Section */}
       <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Meet the Founder</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Meet the Developer</h2>
           
           <div className="max-w-4xl mx-auto bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-8 md:p-12">
             <div className="grid md:grid-cols-3 gap-8 items-center">
@@ -79,7 +79,7 @@ export default function About() {
               
               <div className="md:col-span-2">
                 <h3 className="text-2xl font-bold mb-4">Reid Glaze</h3>
-                <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">Founder & CEO</p>
+                <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">Owner</p>
                 
                 <div className="space-y-4 text-gray-700 dark:text-gray-300">
                   <p className="leading-relaxed">
