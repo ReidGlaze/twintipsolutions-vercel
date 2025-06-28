@@ -11,8 +11,8 @@ export default function Security() {
             Professional Security & Compliance
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            Patient data security is the top priority. Twin Tip Solutions maintains the highest standards 
-            of security and compliance for healthcare organizations.
+            Patient data security is the top priority. Twin Tip Solutions maintains strong 
+            security practices and compliance measures for healthcare organizations.
           </p>
         </div>
       </section>
@@ -191,8 +191,107 @@ export default function Security() {
         </div>
       </section>
 
-      {/* Data Handling Practices */}
+      {/* Basic Security Best Practices */}
       <section className="py-20 px-4 bg-white dark:bg-gray-900">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">Defense in Depth: Every Layer Matters</h2>
+          
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-green-50 dark:bg-green-900/20 p-8 rounded-xl mb-8">
+              <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
+                While the platform implements sophisticated HIPAA-aligned security measures, I believe in defense at every level. 
+                Research shows that over 90% of cyberattacks exploit basic vulnerabilities rather than advanced technical systems.
+              </p>
+              
+              <h3 className="text-xl font-bold mb-4">Founder&apos;s Security Practices</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
+                As the founder and sole developer, I personally use these security tools to ensure platform integrity:
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-white dark:bg-gray-800 p-6 rounded-lg">
+                  <h4 className="font-bold text-lg mb-3 flex items-center gap-2">
+                    <FaShieldAlt className="text-blue-600" />
+                    Network Security
+                  </h4>
+                  <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500">✓</span>
+                      <span><strong>ProtonVPN:</strong> All development and administrative work conducted through encrypted VPN connections</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500">✓</span>
+                      <span><strong>Secure DNS:</strong> Protection against DNS hijacking and phishing attempts</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="bg-white dark:bg-gray-800 p-6 rounded-lg">
+                  <h4 className="font-bold text-lg mb-3 flex items-center gap-2">
+                    <FaKey className="text-purple-600" />
+                    Access Management
+                  </h4>
+                  <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500">✓</span>
+                      <span><strong>Password Manager:</strong> Unique, complex passwords for every service</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500">✓</span>
+                      <span><strong>2FA Everything:</strong> Multi-factor authentication on all accounts</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="bg-white dark:bg-gray-800 p-6 rounded-lg">
+                  <h4 className="font-bold text-lg mb-3 flex items-center gap-2">
+                    <FaLock className="text-green-600" />
+                    Browser Security
+                  </h4>
+                  <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500">✓</span>
+                      <span><strong>Mozilla Firefox:</strong> Privacy-focused browser with enhanced tracking protection</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500">✓</span>
+                      <span><strong>Regular Updates:</strong> All software kept current with security patches</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="bg-white dark:bg-gray-800 p-6 rounded-lg">
+                  <h4 className="font-bold text-lg mb-3 flex items-center gap-2">
+                    <FaUserShield className="text-orange-600" />
+                    Operational Security
+                  </h4>
+                  <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500">✓</span>
+                      <span><strong>Zero Trust:</strong> Verify everything, trust nothing</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500">✓</span>
+                      <span><strong>Phishing Awareness:</strong> Continuous vigilance against social engineering</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <div className="text-center p-6 bg-gray-50 dark:bg-gray-800 rounded-xl">
+              <p className="text-lg text-gray-700 dark:text-gray-300">
+                <strong>Security is a mindset, not just technology.</strong> While our technical infrastructure provides 
+                robust protection, we maintain security hygiene at every level - from encrypted communications to 
+                comprehensive access management.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Data Handling Practices */}
+      <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">How Data Is Handled</h2>
           
