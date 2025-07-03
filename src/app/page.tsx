@@ -19,7 +19,7 @@ export default function Home() {
                 AI-Powered Apps for MedSpas & Dermatology
               </h1>
               <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8">
-                HIPAA-compliant AI that identifies dermatitis, eczema, rosacea, and dozens of other skin conditions. 
+                HIPAA-aligned AI that identifies dermatitis, eczema, rosacea, and dozens of other skin conditions. 
                 Help patients understand their skin concerns before treatments or appointments.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -82,7 +82,7 @@ export default function Home() {
           <div className="text-center">
             <div className="inline-flex items-center gap-3 mb-4">
               <FaShieldAlt className="text-4xl" />
-              <h2 className="text-3xl font-bold">HIPAA-Compliant & Medical-Grade Security</h2>
+              <h2 className="text-3xl font-bold">HIPAA-Aligned & Medical-Grade Security</h2>
             </div>
             <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
               Unlike consumer beauty apps, we provide true medical-grade privacy protection that meets 
