@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { FaCheckCircle, FaMobileAlt, FaCloud } from "react-icons/fa";
 
