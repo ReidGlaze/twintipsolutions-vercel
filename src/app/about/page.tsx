@@ -12,8 +12,8 @@ export default function About() {
             About Twin Tip Solutions
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            Twin Tip Solutions is on a mission to revolutionize dermatology care through AI technology, 
-            making advanced skin analysis accessible to clinics and patients worldwide.
+            Twin Tip Solutions is on a mission to revolutionize aesthetic and medical skin care through AI technology, 
+            making advanced analysis accessible to MedSpas and Dermatology clinics worldwide.
           </p>
         </div>
       </section>
@@ -28,8 +28,8 @@ export default function About() {
                 The Mission
               </h2>
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                To empower dermatology clinics with AI technology that enhances patient monitoring, 
-                improves treatment adherence, and increases practice efficiency—all while maintaining 
+                To empower MedSpas and Dermatology clinics with AI technology that enhances treatment tracking, 
+                improves patient satisfaction, and increases practice efficiency—all while maintaining 
                 the highest standards of data privacy and security.
               </p>
             </div>
@@ -40,9 +40,9 @@ export default function About() {
                 The Vision
               </h2>
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                A future where every dermatology patient has access to AI-enhanced care, 
-                where skin conditions are caught earlier, treated more effectively, and 
-                monitored continuously for better health outcomes.
+                A future where every aesthetic and dermatology patient has access to AI-enhanced care, 
+                where treatments are documented precisely, results are tracked effectively, and 
+                progress is monitored continuously for optimal outcomes.
               </p>
             </div>
           </div>
@@ -152,10 +152,10 @@ export default function About() {
           
           <div className="prose prose-lg dark:prose-invert mx-auto">
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-              Twin Tip Solutions began when I realized dermatology patients needed better tools to track 
-              their skin conditions between appointments. Many would forget to monitor their progress, 
-              lose track of changes, or simply feel disconnected from their treatment plans during the 
-              weeks between visits.
+              Twin Tip Solutions began when I realized both MedSpa and dermatology patients needed better 
+              tools to track their treatments. Whether documenting Botox results, monitoring laser treatments, 
+              or tracking medical skin conditions, patients were struggling to see their progress and stay 
+              engaged between visits.
             </p>
             
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">

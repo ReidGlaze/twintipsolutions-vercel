@@ -8,11 +8,11 @@ export default function Solutions() {
       <section className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text leading-tight">
-            AI-Powered Patient Engagement Tools
+            AI Solutions for MedSpas & Dermatology
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            Mobile apps that help patients track their skin conditions between visits, 
-            featuring AI analysis and secure photo storage.
+            Custom mobile apps that help patients track aesthetic treatments and medical skin conditions. 
+            Perfect for documenting Botox, fillers, laser treatments, acne therapy, and more.
           </p>
         </div>
       </section>
@@ -27,13 +27,13 @@ export default function Solutions() {
               <FaMobileAlt className="text-4xl text-blue-600 mb-4" />
               <h3 className="text-xl font-bold mb-3">Patient Mobile App</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
-                White-labeled app for your patients to capture skin concerns and track progress.
+                White-labeled app for tracking both cosmetic treatments and medical conditions.
               </p>
               <ul className="text-sm space-y-2 text-gray-600 dark:text-gray-400">
-                <li>• AI-powered photo analysis</li>
-                <li>• Appointment scheduling</li>
-                <li>• Treatment reminders</li>
-                <li>• Progress tracking</li>
+                <li>• Before/after photo comparisons</li>
+                <li>• Treatment package tracking</li>
+                <li>• Appointment reminders</li>
+                <li>• AI-powered skin analysis</li>
               </ul>
             </div>
             
@@ -67,18 +67,18 @@ export default function Solutions() {
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
                   <div>
-                    <strong>Skin Condition Analysis</strong>
+                    <strong>Multi-Purpose Analysis</strong>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                      Analyzes photos to identify potential skin conditions
+                      Analyzes both aesthetic treatments and medical skin conditions
                     </p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
                   <div>
-                    <strong>Progress Tracking</strong>
+                    <strong>Before/After Comparisons</strong>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                      Automatically compares images over time to track treatment effectiveness
+                      Side-by-side comparisons for injections, laser treatments, and skin conditions
                     </p>
                   </div>
                 </li>
@@ -207,9 +207,9 @@ export default function Solutions() {
                   2
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Take Photos for AI Analysis</h3>
+                  <h3 className="text-xl font-bold mb-2">Capture Treatment Photos</h3>
                   <p className="text-gray-600 dark:text-gray-400">
-                    Simply snap photos of skin concerns and get instant AI-powered educational insights
+                    Document injections, laser treatments, or skin conditions with consistent photo angles
                   </p>
                 </div>
               </div>
@@ -219,9 +219,9 @@ export default function Solutions() {
                   3
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Track Progress Over Time</h3>
+                  <h3 className="text-xl font-bold mb-2">Monitor Treatment Results</h3>
                   <p className="text-gray-600 dark:text-gray-400">
-                    All photos and analyses are stored securely on the device - patients can track changes and improvements
+                    View before/after galleries to see aesthetic improvements or medical treatment progress
                   </p>
                 </div>
               </div>
@@ -231,9 +231,9 @@ export default function Solutions() {
                   4
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Share with Your Doctor</h3>
+                  <h3 className="text-xl font-bold mb-2">Share During Consultations</h3>
                   <p className="text-gray-600 dark:text-gray-400">
-                    Patients can easily show their photo history and AI insights during appointments for better consultations
+                    Show treatment history during appointments to plan next steps or adjust treatments
                   </p>
                 </div>
               </div>
@@ -248,7 +248,7 @@ export default function Solutions() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">See a Demo</h2>
           <p className="text-xl mb-8 opacity-90">
-            Schedule a demo to see how these apps can help your patients track their conditions between visits.
+            See how custom apps can enhance your MedSpa or Dermatology practice.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold text-lg hover:bg-gray-100 transition shadow-lg">

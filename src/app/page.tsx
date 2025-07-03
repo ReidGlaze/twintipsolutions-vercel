@@ -16,11 +16,11 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text leading-tight">
-                HIPAA-Aligned AI for Patient Engagement
+                AI-Powered Apps for MedSpas & Dermatology
               </h1>
               <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8">
-                Custom-branded cross-platform mobile apps with photo-based AI analysis. 
-                Give your dermatology practice a professional edge with your own AI-powered patient engagement tool.
+                Custom-branded mobile apps with AI-powered skin analysis for aesthetic treatments and medical dermatology. 
+                Enhance patient engagement and treatment tracking for your MedSpa or Dermatology clinic.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link href="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold text-lg hover:bg-blue-700 transition shadow-lg">
@@ -53,16 +53,16 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8 mt-16">
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
               <FaRocket className="text-4xl text-blue-600 mb-4" />
-              <h3 className="text-xl font-bold mb-2">Better Patient Monitoring</h3>
+              <h3 className="text-xl font-bold mb-2">Treatment Progress Tracking</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Patients can track skin conditions between visits with AI-powered analysis.
+                Patients track aesthetic treatments & skin conditions with before/after photo comparisons.
               </p>
             </div>
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
               <FaChartLine className="text-4xl text-green-600 mb-4" />
-              <h3 className="text-xl font-bold mb-2">Improved Patient Engagement</h3>
+              <h3 className="text-xl font-bold mb-2">Boost Treatment Compliance</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Keep patients engaged with their treatment through the mobile app.
+                Increase patient satisfaction and treatment adherence with personalized follow-ups.
               </p>
             </div>
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
@@ -81,23 +81,23 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold mb-6">The Challenge Dermatology Clinics Face</h2>
+              <h2 className="text-3xl font-bold mb-6">The Challenge MedSpas & Dermatology Clinics Face</h2>
               <ul className="space-y-4 text-gray-700 dark:text-gray-300">
                 <li className="flex items-start gap-3">
                   <span className="text-red-500 mt-1">✗</span>
-                  <span>Long wait times leading to patient dissatisfaction</span>
+                  <span>Difficulty documenting treatment results for aesthetic procedures</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-red-500 mt-1">✗</span>
-                  <span>Limited time for thorough skin examinations</span>
+                  <span>Patients struggle to track progress of cosmetic treatments</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-red-500 mt-1">✗</span>
-                  <span>Difficulty tracking treatment progress over time</span>
+                  <span>No standardized way to capture before/after photos</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-red-500 mt-1">✗</span>
-                  <span>Patients forget important details between visits</span>
+                  <span>Limited patient engagement between treatment sessions</span>
                 </li>
               </ul>
             </div>
@@ -107,19 +107,19 @@ export default function Home() {
               <ul className="space-y-4 text-gray-700 dark:text-gray-300">
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
-                  <span>Patient-driven skin monitoring between appointments</span>
+                  <span>Before/after photo tracking for aesthetic treatments</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
-                  <span>AI-powered skin analysis for patient education</span>
+                  <span>AI analysis for both medical and cosmetic concerns</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
-                  <span>Photo history tracking to monitor changes over time</span>
+                  <span>Treatment progress visualization for better outcomes</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
-                  <span>Patient app for between-visit monitoring</span>
+                  <span>Boost patient satisfaction with visible progress tracking</span>
                 </li>
               </ul>
             </div>
@@ -217,8 +217,69 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Benefits Section */}
+      {/* MedSpa & Dermatology Use Cases */}
       <section className="py-20 px-4 bg-white dark:bg-gray-900">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">Perfect for MedSpas & Dermatology Clinics</h2>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-gradient-to-br from-pink-50 to-purple-50 dark:from-pink-900/20 dark:to-purple-900/20 p-8 rounded-xl">
+              <h3 className="text-2xl font-bold mb-4 text-purple-700 dark:text-purple-300">For MedSpas</h3>
+              <ul className="space-y-3 text-gray-700 dark:text-gray-300">
+                <li className="flex items-start gap-2">
+                  <span className="text-purple-600 mt-1">•</span>
+                  <span>Track Botox, fillers, and injection results</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-purple-600 mt-1">•</span>
+                  <span>Document laser treatment progress</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-purple-600 mt-1">•</span>
+                  <span>Before/after galleries for marketing consent</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-purple-600 mt-1">•</span>
+                  <span>Treatment package tracking and reminders</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-purple-600 mt-1">•</span>
+                  <span>Chemical peel and microneedling documentation</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 p-8 rounded-xl">
+              <h3 className="text-2xl font-bold mb-4 text-blue-700 dark:text-blue-300">For Dermatology</h3>
+              <ul className="space-y-3 text-gray-700 dark:text-gray-300">
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600 mt-1">•</span>
+                  <span>Monitor acne treatment effectiveness</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600 mt-1">•</span>
+                  <span>Track suspicious moles and lesions</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600 mt-1">•</span>
+                  <span>Document psoriasis and eczema flare-ups</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600 mt-1">•</span>
+                  <span>Post-surgical healing progress photos</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-blue-600 mt-1">•</span>
+                  <span>Medication response tracking</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-12">Benefits for Your Practice</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -241,9 +302,9 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-20 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Enhance Patient Engagement?</h2>
+          <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Practice?</h2>
           <p className="text-xl mb-8 opacity-90">
-            Give your patients the tools to monitor their skin health between visits.
+            Give your MedSpa or Dermatology patients the tools to track their treatment journey.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold text-lg hover:bg-gray-100 transition shadow-lg">

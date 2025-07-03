@@ -10,8 +10,8 @@ export default function Pricing() {
             Pricing
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-            Our HIPAA-aligned AI solution for dermatology clinics is currently in early access. 
-            We&apos;re working with select clinics to perfect our offering.
+            Our HIPAA-aligned AI solution for MedSpas and Dermatology clinics is currently in early access. 
+            We&apos;re working with select practices to perfect our offering.
           </p>
         </div>
       </section>
@@ -23,8 +23,8 @@ export default function Pricing() {
             <FaEnvelope className="text-6xl text-blue-600 mx-auto mb-6" />
             <h2 className="text-3xl font-bold mb-6">Early Access Program</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-              We&apos;re currently offering customized pricing for early adopter clinics. 
-              Each solution is tailored to your specific needs and clinic size.
+              We&apos;re currently offering customized pricing for early adopter MedSpas and Dermatology clinics. 
+              Each solution is tailored to your specific services, whether aesthetic or medical.
             </p>
             
             <div className="space-y-4 text-left max-w-xl mx-auto mb-8">
@@ -32,11 +32,11 @@ export default function Pricing() {
               <ul className="space-y-2 text-gray-600 dark:text-gray-400">
                 <li className="flex items-start gap-2">
                   <span className="text-green-500">✓</span>
-                  <span>Custom white-labeled mobile app for your clinic</span>
+                  <span>Custom white-labeled mobile app for your practice</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-500">✓</span>
-                  <span>AI-powered skin analysis technology</span>
+                  <span>AI-powered analysis for aesthetic and medical treatments</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-500">✓</span>
@@ -54,7 +54,7 @@ export default function Pricing() {
             </div>
             
             <a 
-              href="mailto:reid@twintipsolutions.com?subject=Pricing%20Inquiry%20-%20Dermatology%20AI%20Solution"
+              href="mailto:reid@twintipsolutions.com?subject=Pricing%20Inquiry%20-%20MedSpa%20Dermatology%20AI%20Solution"
               className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold text-lg hover:from-blue-700 hover:to-purple-700 transition shadow-lg"
             >
               <FaEnvelope />
@@ -77,8 +77,8 @@ export default function Pricing() {
               <div>
                 <h3 className="text-xl font-bold mb-2">Email Consultation</h3>
                 <p className="text-gray-600 dark:text-gray-400">
-                  Send us an email with your clinic details and requirements. We&apos;ll schedule 
-                  a call to understand your specific needs.
+                  Tell us about your practice - whether you&apos;re a MedSpa, Dermatology clinic, or both. 
+                  We&apos;ll schedule a call to understand your specific needs.
                 </p>
               </div>
             </div>
@@ -90,8 +90,8 @@ export default function Pricing() {
               <div>
                 <h3 className="text-xl font-bold mb-2">Custom Proposal</h3>
                 <p className="text-gray-600 dark:text-gray-400">
-                  We&apos;ll create a customized proposal based on your clinic size, patient volume, 
-                  and specific requirements.
+                  We&apos;ll create a customized proposal based on your practice type, services offered, 
+                  patient volume, and specific requirements.
                 </p>
               </div>
             </div>
