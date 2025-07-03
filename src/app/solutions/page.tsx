@@ -61,7 +61,7 @@ export default function Solutions() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">AI Features</h2>
           
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="max-w-3xl mx-auto">
             <div>
               <h3 className="text-2xl font-bold mb-6">How the AI Analysis Works</h3>
               <ul className="space-y-4">
@@ -102,20 +102,6 @@ export default function Solutions() {
                   </div>
                 </li>
               </ul>
-            </div>
-            
-            <div className="relative flex items-center justify-center">
-              <Image 
-                src="/History.png" 
-                alt="Patient History Tracking" 
-                width={375} 
-                height={812} 
-                className="drop-shadow-2xl"
-                style={{ 
-                  maxHeight: '500px',
-                  width: 'auto'
-                }}
-              />
             </div>
           </div>
         </div>
