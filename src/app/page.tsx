@@ -228,23 +228,23 @@ export default function Home() {
               <ul className="space-y-3 text-gray-700 dark:text-gray-300">
                 <li className="flex items-start gap-2">
                   <span className="text-purple-600 mt-1">•</span>
-                  <span>Track Botox, fillers, and injection results</span>
+                  <span>Injectable treatments (Botox, Dysport, fillers, Sculptra)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-purple-600 mt-1">•</span>
-                  <span>Document laser treatment progress</span>
+                  <span>Laser therapies (IPL, hair removal, skin resurfacing)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-purple-600 mt-1">•</span>
-                  <span>Before/after galleries for marketing consent</span>
+                  <span>Body contouring (CoolSculpting, RF treatments)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-purple-600 mt-1">•</span>
-                  <span>Treatment package tracking and reminders</span>
+                  <span>Skin rejuvenation (microneedling, PRP, chemical peels)</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-purple-600 mt-1">•</span>
-                  <span>Chemical peel and microneedling documentation</span>
+                  <span>IV therapy and wellness treatment tracking</span>
                 </li>
               </ul>
             </div>

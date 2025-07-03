@@ -12,7 +12,7 @@ export default function Solutions() {
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
             Custom mobile apps that help patients track aesthetic treatments and medical skin conditions. 
-            Perfect for documenting Botox, fillers, laser treatments, acne therapy, and more.
+            Perfect for documenting injectables, laser therapies, body contouring, skin rejuvenation, and dermatological conditions.
           </p>
         </div>
       </section>
