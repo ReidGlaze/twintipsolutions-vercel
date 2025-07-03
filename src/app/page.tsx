@@ -19,8 +19,8 @@ export default function Home() {
                 AI-Powered Apps for MedSpas & Dermatology
               </h1>
               <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8">
-                Custom-branded mobile apps with AI-powered skin analysis for aesthetic treatments and medical dermatology. 
-                Enhance patient engagement and treatment tracking for your MedSpa or Dermatology clinic.
+                HIPAA-compliant mobile apps with AI-powered analysis for aesthetic treatments and medical dermatology. 
+                The only patient photo app with true medical-grade security for your MedSpa or Dermatology clinic.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link href="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold text-lg hover:bg-blue-700 transition shadow-lg">
@@ -71,6 +71,40 @@ export default function Home() {
               <p className="text-gray-600 dark:text-gray-400">
                 Professional security with multi-layer encryption designed for healthcare.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* HIPAA Compliance Section */}
+      <section className="py-16 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center">
+            <div className="inline-flex items-center gap-3 mb-4">
+              <FaShieldAlt className="text-4xl" />
+              <h2 className="text-3xl font-bold">HIPAA-Compliant & Medical-Grade Security</h2>
+            </div>
+            <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+              Unlike consumer beauty apps, we provide true medical-grade privacy protection that meets 
+              healthcare compliance standards. Protect your practice and your patients.
+            </p>
+            <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <h3 className="font-bold mb-2">Multi-Layer Encryption</h3>
+                <p className="text-sm opacity-90">AES-256 encryption in transit and at rest, with immediate deletion after processing</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <h3 className="font-bold mb-2">BAA with Google Cloud</h3>
+                <p className="text-sm opacity-90">Signed Business Associate Agreement for true HIPAA compliance</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <h3 className="font-bold mb-2">Zero Data Training</h3>
+                <p className="text-sm opacity-90">AI never trains on patient data - complete privacy guaranteed</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+                <h3 className="font-bold mb-2">Audit Protection</h3>
+                <p className="text-sm opacity-90">Full audit trails and compliance documentation for your protection</p>
+              </div>
             </div>
           </div>
         </div>
