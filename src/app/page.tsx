@@ -141,11 +141,18 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="relative">
               <Image 
+                src="/DermaWhizSerious.png" 
+                alt="DermaWhiz Demo" 
+                width={200} 
+                height={200} 
+                className="mx-auto rounded-2xl shadow-xl hidden md:block"
+              />
+              <Image 
                 src="/dermawhiz-logo.png" 
                 alt="DermaWhiz Demo" 
                 width={200} 
                 height={200} 
-                className="mx-auto rounded-2xl shadow-xl"
+                className="mx-auto rounded-2xl shadow-xl md:hidden"
               />
               <div className="mt-6 text-center">
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Try the consumer version:</p>
