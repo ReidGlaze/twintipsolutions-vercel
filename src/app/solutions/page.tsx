@@ -27,13 +27,13 @@ export default function Solutions() {
               <FaMobileAlt className="text-4xl text-blue-600 mb-4" />
               <h3 className="text-xl font-bold mb-3">Patient Mobile App</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
-                White-labeled app for tracking both cosmetic treatments and medical conditions.
+                White-labeled app providing AI analysis of skin concerns for your patients.
               </p>
               <ul className="text-sm space-y-2 text-gray-600 dark:text-gray-400">
-                <li>• Before/after photo comparisons</li>
-                <li>• Treatment package tracking</li>
-                <li>• Appointment reminders</li>
-                <li>• AI-powered skin analysis</li>
+                <li>• Instant AI skin analysis</li>
+                <li>• Detailed condition explanations</li>
+                <li>• PDF report generation</li>
+                <li>• Educational patient insights</li>
               </ul>
             </div>
             
@@ -76,9 +76,9 @@ export default function Solutions() {
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
                   <div>
-                    <strong>Before/After Comparisons</strong>
+                    <strong>Instant Condition Identification</strong>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                      Side-by-side comparisons for injections, laser treatments, and skin conditions
+                      AI identifies potential skin conditions and provides educational information
                     </p>
                   </div>
                 </li>
@@ -207,9 +207,9 @@ export default function Solutions() {
                   2
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Capture Treatment Photos</h3>
+                  <h3 className="text-xl font-bold mb-2">Take Photo of Skin Concern</h3>
                   <p className="text-gray-600 dark:text-gray-400">
-                    Document injections, laser treatments, or skin conditions with consistent photo angles
+                    Patient snaps a photo of any skin issue they want to understand better
                   </p>
                 </div>
               </div>
@@ -219,9 +219,9 @@ export default function Solutions() {
                   3
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Monitor Treatment Results</h3>
+                  <h3 className="text-xl font-bold mb-2">Get Instant AI Analysis</h3>
                   <p className="text-gray-600 dark:text-gray-400">
-                    View before/after galleries to see aesthetic improvements or medical treatment progress
+                    Receive immediate AI insights about potential conditions and recommendations
                   </p>
                 </div>
               </div>
@@ -231,9 +231,9 @@ export default function Solutions() {
                   4
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Share During Consultations</h3>
+                  <h3 className="text-xl font-bold mb-2">Generate PDF Report</h3>
                   <p className="text-gray-600 dark:text-gray-400">
-                    Show treatment history during appointments to plan next steps or adjust treatments
+                    Create professional PDF reports to bring to appointments for informed discussions
                   </p>
                 </div>
               </div>

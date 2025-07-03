@@ -53,16 +53,16 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8 mt-16">
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
               <FaRocket className="text-4xl text-blue-600 mb-4" />
-              <h3 className="text-xl font-bold mb-2">Treatment Progress Tracking</h3>
+              <h3 className="text-xl font-bold mb-2">Instant AI Analysis</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Patients track aesthetic treatments & skin conditions with before/after photo comparisons.
+                Patients get immediate AI insights about skin concerns with detailed explanations.
               </p>
             </div>
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
               <FaChartLine className="text-4xl text-green-600 mb-4" />
-              <h3 className="text-xl font-bold mb-2">Boost Treatment Compliance</h3>
+              <h3 className="text-xl font-bold mb-2">PDF Reports for Providers</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Increase patient satisfaction and treatment adherence with personalized follow-ups.
+                Generate professional PDF reports to share with healthcare providers.
               </p>
             </div>
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
@@ -127,11 +127,11 @@ export default function Home() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-red-500 mt-1">✗</span>
-                  <span>No standardized way to capture before/after photos</span>
+                  <span>Patients unsure about skin changes - is it serious?</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-red-500 mt-1">✗</span>
-                  <span>Limited patient engagement between treatment sessions</span>
+                  <span>Long wait times for appointments to ask simple questions</span>
                 </li>
               </ul>
             </div>
@@ -141,7 +141,7 @@ export default function Home() {
               <ul className="space-y-4 text-gray-700 dark:text-gray-300">
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
-                  <span>Before/after photo tracking for aesthetic treatments</span>
+                  <span>Instant AI analysis helps patients understand skin concerns</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
@@ -149,11 +149,11 @@ export default function Home() {
                 </li>
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
-                  <span>Treatment progress visualization for better outcomes</span>
+                  <span>Educational insights encourage proper professional care</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
-                  <span>Boost patient satisfaction with visible progress tracking</span>
+                  <span>PDF reports to bring to appointments for better consultations</span>
                 </li>
               </ul>
             </div>
@@ -262,23 +262,23 @@ export default function Home() {
               <ul className="space-y-3 text-gray-700 dark:text-gray-300">
                 <li className="flex items-start gap-2">
                   <span className="text-purple-600 mt-1">•</span>
-                  <span>Injectable treatments (Botox, Dysport, fillers, Sculptra)</span>
+                  <span>AI analysis of injection sites and treatment areas</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-purple-600 mt-1">•</span>
-                  <span>Laser therapies (IPL, hair removal, skin resurfacing)</span>
+                  <span>Assess skin conditions before laser treatments</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-purple-600 mt-1">•</span>
-                  <span>Body contouring (CoolSculpting, RF treatments)</span>
+                  <span>Identify problem areas needing aesthetic attention</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-purple-600 mt-1">•</span>
-                  <span>Skin rejuvenation (microneedling, PRP, chemical peels)</span>
+                  <span>Analyze skin texture and aging concerns</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-purple-600 mt-1">•</span>
-                  <span>IV therapy and wellness treatment tracking</span>
+                  <span>Document skin reactions and treatment responses</span>
                 </li>
               </ul>
             </div>
