@@ -19,8 +19,8 @@ export default function Home() {
                 AI-Powered Apps for MedSpas & Dermatology
               </h1>
               <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8">
-                HIPAA-compliant mobile apps with AI-powered analysis for aesthetic treatments and medical dermatology. 
-                The only patient photo app with true medical-grade security for your MedSpa or Dermatology clinic.
+                HIPAA-compliant AI that identifies dermatitis, eczema, rosacea, and dozens of other skin conditions. 
+                Help patients understand their skin concerns before treatments or appointments.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link href="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold text-lg hover:bg-blue-700 transition shadow-lg">
@@ -262,23 +262,23 @@ export default function Home() {
               <ul className="space-y-3 text-gray-700 dark:text-gray-300">
                 <li className="flex items-start gap-2">
                   <span className="text-purple-600 mt-1">•</span>
-                  <span>AI analysis of injection sites and treatment areas</span>
+                  <span>Pre-screen for dermatitis, eczema, or rosacea before treatments</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-purple-600 mt-1">•</span>
-                  <span>Assess skin conditions before laser treatments</span>
+                  <span>Identify sun damage and photosensitivity issues</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-purple-600 mt-1">•</span>
-                  <span>Identify problem areas needing aesthetic attention</span>
+                  <span>Detect allergic reactions or contact dermatitis</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-purple-600 mt-1">•</span>
-                  <span>Analyze skin texture and aging concerns</span>
+                  <span>Assess skin barrier health and sensitivity</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-purple-600 mt-1">•</span>
-                  <span>Document skin reactions and treatment responses</span>
+                  <span>Screen for contraindications to aesthetic procedures</span>
                 </li>
               </ul>
             </div>
@@ -288,23 +288,23 @@ export default function Home() {
               <ul className="space-y-3 text-gray-700 dark:text-gray-300">
                 <li className="flex items-start gap-2">
                   <span className="text-blue-600 mt-1">•</span>
-                  <span>Monitor acne treatment effectiveness</span>
+                  <span>Identify various forms of dermatitis and eczema</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-blue-600 mt-1">•</span>
-                  <span>Track suspicious moles and lesions</span>
+                  <span>Assess acne severity and type</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-blue-600 mt-1">•</span>
-                  <span>Document psoriasis and eczema flare-ups</span>
+                  <span>Detect psoriasis, rosacea, and other chronic conditions</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-blue-600 mt-1">•</span>
-                  <span>Post-surgical healing progress photos</span>
+                  <span>Evaluate suspicious moles and lesions</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-blue-600 mt-1">•</span>
-                  <span>Medication response tracking</span>
+                  <span>Identify fungal infections and other skin conditions</span>
                 </li>
               </ul>
             </div>
@@ -312,8 +312,58 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Benefits Section */}
+      {/* AI Capabilities Section */}
       <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">What Our AI Can Identify</h2>
+          <p className="text-lg text-center text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto">
+            Our AI is trained to recognize dozens of common skin conditions, providing educational insights 
+            that help patients understand when to seek professional care.
+          </p>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg">
+              <h3 className="font-bold text-lg mb-4 text-blue-600">Common Conditions</h3>
+              <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <li>• Eyelid dermatitis</li>
+                <li>• Atopic & contact dermatitis</li>
+                <li>• Various types of eczema</li>
+                <li>• Sunburn & sun damage</li>
+                <li>• Dry skin conditions</li>
+              </ul>
+            </div>
+            
+            <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg">
+              <h3 className="font-bold text-lg mb-4 text-purple-600">Inflammatory Conditions</h3>
+              <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <li>• Rosacea</li>
+                <li>• Psoriasis</li>
+                <li>• Seborrheic dermatitis</li>
+                <li>• Allergic reactions</li>
+                <li>• Hives and rashes</li>
+              </ul>
+            </div>
+            
+            <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg">
+              <h3 className="font-bold text-lg mb-4 text-green-600">Other Conditions</h3>
+              <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                <li>• Acne (various types)</li>
+                <li>• Fungal infections</li>
+                <li>• Skin discoloration</li>
+                <li>• Keratosis pilaris</li>
+                <li>• And many more...</li>
+              </ul>
+            </div>
+          </div>
+          
+          <p className="text-center mt-8 text-sm text-gray-500 dark:text-gray-400">
+            <strong>Important:</strong> AI analysis is for educational purposes only. Always consult with a healthcare provider for diagnosis and treatment.
+          </p>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-20 px-4 bg-white dark:bg-gray-900">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-12">Benefits for Your Practice</h2>
           <div className="grid md:grid-cols-3 gap-8">
