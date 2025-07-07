@@ -308,52 +308,52 @@ export default function Home() {
         </div>
       </section>
 
-      {/* AI Capabilities Section */}
+      {/* Custom AI Training Section */}
       <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">What Our AI Can Identify</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">AI That Learns Your Practice</h2>
           <p className="text-lg text-center text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto">
-            Our AI is trained to recognize dozens of common skin conditions, providing educational insights 
-            that help patients understand when to seek professional care.
+            Our AI trains on your specific documents and website content, delivering customized responses 
+            that reflect your practice's unique services, protocols, and expertise.
           </p>
           
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg">
-              <h3 className="font-bold text-lg mb-4 text-blue-600">Common Conditions</h3>
+              <h3 className="font-bold text-lg mb-4 text-blue-600">Custom Knowledge Base</h3>
               <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
-                <li>• Eyelid dermatitis</li>
-                <li>• Atopic & contact dermatitis</li>
-                <li>• Various types of eczema</li>
-                <li>• Sunburn & sun damage</li>
-                <li>• Dry skin conditions</li>
+                <li>• Trains on your treatment protocols</li>
+                <li>• Learns your service offerings</li>
+                <li>• Understands your pricing structures</li>
+                <li>• Adapts to your clinical approach</li>
+                <li>• Reflects your practice philosophy</li>
               </ul>
             </div>
             
             <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg">
-              <h3 className="font-bold text-lg mb-4 text-purple-600">Inflammatory Conditions</h3>
+              <h3 className="font-bold text-lg mb-4 text-purple-600">Personalized Patient Education</h3>
               <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
-                <li>• Rosacea</li>
-                <li>• Psoriasis</li>
-                <li>• Seborrheic dermatitis</li>
-                <li>• Allergic reactions</li>
-                <li>• Hives and rashes</li>
+                <li>• Explains YOUR specific treatments</li>
+                <li>• Uses your terminology and tone</li>
+                <li>• Provides practice-specific guidance</li>
+                <li>• Maintains brand consistency</li>
+                <li>• Educates about available services</li>
               </ul>
             </div>
             
             <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg">
-              <h3 className="font-bold text-lg mb-4 text-green-600">Other Conditions</h3>
+              <h3 className="font-bold text-lg mb-4 text-green-600">Clinical Integration</h3>
               <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
-                <li>• Acne (various types)</li>
-                <li>• Fungal infections</li>
-                <li>• Skin discoloration</li>
-                <li>• Keratosis pilaris</li>
-                <li>• And many more...</li>
+                <li>• Customized AI output formatting</li>
+                <li>• Professional PDF reports</li>
+                <li>• Identifies 40+ skin conditions</li>
+                <li>• Clear educational disclaimers</li>
+                <li>• Seamless workflow integration</li>
               </ul>
             </div>
           </div>
           
           <p className="text-center mt-8 text-sm text-gray-500 dark:text-gray-400">
-            <strong>Important:</strong> AI analysis is for educational purposes only. Always consult with a healthcare provider for diagnosis and treatment.
+            <strong>Important:</strong> AI provides educational information only. Always consult with a healthcare provider for diagnosis and treatment.
           </p>
         </div>
       </section>
