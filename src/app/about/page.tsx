@@ -29,7 +29,7 @@ export default function About() {
               </h2>
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                 To empower MedSpas and Dermatology clinics with AI technology that enhances treatment tracking, 
-                improves patient satisfaction, and increases practice efficiency—all while maintaining 
+                improves client/patient satisfaction, and increases practice efficiency—all while maintaining 
                 the highest standards of data privacy and security.
               </p>
             </div>
@@ -40,7 +40,7 @@ export default function About() {
                 The Vision
               </h2>
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                A future where every aesthetic and dermatology patient has access to AI-enhanced care, 
+                A future where every aesthetic and dermatology client has access to AI-enhanced care, 
                 where treatments are documented precisely, results are tracked effectively, and 
                 progress is monitored continuously for optimal outcomes.
               </p>
@@ -118,7 +118,7 @@ export default function About() {
               </div>
               <h3 className="text-xl font-bold mb-3">Patient-First Innovation</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Every feature starts with the question: How will this improve patient care?
+                Every feature starts with the question: How will this improve client care?
               </p>
             </div>
             
@@ -152,32 +152,34 @@ export default function About() {
           
           <div className="prose prose-lg dark:prose-invert mx-auto">
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-              Twin Tip Solutions began when I realized both MedSpa and dermatology patients needed better 
-              tools to track their treatments. Whether documenting Botox results, monitoring laser treatments, 
-              or tracking medical skin conditions, patients were struggling to see their progress and stay 
-              engaged between visits.
+              Twin Tip Solutions began when I noticed a significant shift in the past 6 months—patients and 
+              clients were increasingly bringing AI-generated health information to their appointments. 
+              People are beginning to trust AI recommendations more than ever, seeking instant insights 
+              about their skin concerns between visits.
             </p>
             
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-              What if clinics could offer their patients a secure, professional app to photograph and 
-              track their skin conditions over time? Not for diagnosis, but as a visual diary that 
-              helps patients see their progress, remember concerns to discuss, and stay engaged with 
-              their treatment plans between visits.
+              The challenge? Between appointments, clients forget important details about their skin changes, 
+              struggle to track treatment progress, and often turn to unreliable online sources. What if 
+              clinics could offer their own AI-powered engagement tool—a professional app that keeps 
+              clients connected to their practice, helps them remember concerns to discuss, and provides 
+              trusted insights while they wait for their next appointment?
             </p>
             
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
               Having previously built <a href="https://hearthealthai.app/" 
               target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 underline">
               HeartHealthAI</a> for nutrition tracking, I understood how to create health apps that support 
-              professional care plans. DermaWhiz became the proof of concept—a tool that gives patients 
-              educational insights while always encouraging them to follow up with their dermatologist.
+              professional care plans. DermaWhiz became the proof of concept—an engagement tool that gives 
+              patients and clients AI-powered educational insights while always encouraging them to follow up 
+              with their dermatologist or aesthetician.
             </p>
             
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              Now, clinics can offer their own branded version of this technology. It&apos;s a tool that 
-              extends their practice beyond office hours, keeps patients engaged with their treatment 
-              plans, and provides a trusted alternative to unreliable online medical advice—all while 
-              strengthening the doctor-patient relationship.
+              Now, clinics can offer their own branded version of this technology. It&apos;s an engagement 
+              tool that extends their practice beyond office hours, helps patients and clients remember 
+              their concerns between visits, and provides a trusted AI-powered alternative to unreliable 
+              online medical advice—all while strengthening the provider-client relationship.
             </p>
           </div>
         </div>
