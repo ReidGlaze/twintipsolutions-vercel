@@ -76,7 +76,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* HIPAA Compliance Section */}
+      {/* HIPAA Alignment Section */}
       <section className="py-16 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center">
@@ -95,7 +95,7 @@ export default function Home() {
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <h3 className="font-bold mb-2">BAA with Google Cloud</h3>
-                <p className="text-sm opacity-90">Signed Business Associate Agreement for true HIPAA compliance</p>
+                <p className="text-sm opacity-90">Signed Business Associate Agreement for true HIPAA alignment</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <h3 className="font-bold mb-2">Zero Data Training</h3>
@@ -251,18 +251,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* MedSpa & Dermatology Use Cases */}
+      {/* Skin Care Practice Use Cases */}
       <section className="py-20 px-4 bg-white dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Perfect for MedSpas & Dermatology Clinics</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Perfect for Dermatology & Aesthetic Clinics</h2>
           
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gradient-to-br from-pink-50 to-purple-50 dark:from-pink-900/20 dark:to-purple-900/20 p-8 rounded-xl">
-              <h3 className="text-2xl font-bold mb-4 text-purple-700 dark:text-purple-300">For MedSpas</h3>
+          <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-8 rounded-xl">
+            <h3 className="text-2xl font-bold mb-6 text-center text-purple-700 dark:text-purple-300">Key Clinical Applications</h3>
+            <div className="grid md:grid-cols-2 gap-6">
               <ul className="space-y-3 text-gray-700 dark:text-gray-300">
                 <li className="flex items-start gap-2">
                   <span className="text-purple-600 mt-1">•</span>
                   <span>Pre-screen for dermatitis, eczema, or rosacea before treatments</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-purple-600 mt-1">•</span>
+                  <span>Assess acne severity and type for treatment planning</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-purple-600 mt-1">•</span>
@@ -274,37 +278,29 @@ export default function Home() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-purple-600 mt-1">•</span>
-                  <span>Assess skin barrier health and sensitivity</span>
+                  <span>Evaluate suspicious moles and lesions for referral</span>
                 </li>
+              </ul>
+              <ul className="space-y-3 text-gray-700 dark:text-gray-300">
                 <li className="flex items-start gap-2">
                   <span className="text-purple-600 mt-1">•</span>
                   <span>Screen for contraindications to aesthetic procedures</span>
                 </li>
-              </ul>
-            </div>
-            
-            <div className="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 p-8 rounded-xl">
-              <h3 className="text-2xl font-bold mb-4 text-blue-700 dark:text-blue-300">For Dermatology</h3>
-              <ul className="space-y-3 text-gray-700 dark:text-gray-300">
                 <li className="flex items-start gap-2">
-                  <span className="text-blue-600 mt-1">•</span>
-                  <span>Identify various forms of dermatitis and eczema</span>
+                  <span className="text-purple-600 mt-1">•</span>
+                  <span>Assess skin barrier health and sensitivity levels</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-blue-600 mt-1">•</span>
-                  <span>Assess acne severity and type</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-blue-600 mt-1">•</span>
+                  <span className="text-purple-600 mt-1">•</span>
                   <span>Detect psoriasis, rosacea, and other chronic conditions</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-blue-600 mt-1">•</span>
-                  <span>Evaluate suspicious moles and lesions</span>
+                  <span className="text-purple-600 mt-1">•</span>
+                  <span>Identify fungal infections and other skin conditions</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-blue-600 mt-1">•</span>
-                  <span>Identify fungal infections and other skin conditions</span>
+                  <span className="text-purple-600 mt-1">•</span>
+                  <span>Document treatment progress with consistent imaging</span>
                 </li>
               </ul>
             </div>

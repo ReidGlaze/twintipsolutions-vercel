@@ -14,7 +14,7 @@ To democratize access to AI-powered health insights through secure, user-friendl
 - **Key Features**:
   - AI photo analysis using advanced computer vision
   - RAG (Retrieval-Augmented Generation) system for evidence-based insights
-  - HIPAA-compliant architecture with end-to-end encryption
+  - HIPAA-aligned architecture with end-to-end encryption
   - Educational content about skin conditions
   - Disclaimer: Not a medical diagnosis tool
 
@@ -70,7 +70,7 @@ Twin Tip Solutions develops AI-powered healthcare applications that make advance
 
 ### Target Audience
 - **B2C**: Health-conscious individuals seeking AI-powered health insights
-- **B2B**: Healthcare organizations requiring HIPAA-compliant AI solutions
+- **B2B**: Healthcare organizations requiring HIPAA-aligned AI solutions
 
 ### Problems We Solve
 1. Limited access to dermatological expertise
