@@ -177,9 +177,11 @@ export default function About() {
             
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               Now, clinics can offer their own branded version of this technology. It&apos;s an engagement 
-              tool that extends their practice beyond office hours, helps patients and clients remember 
-              their concerns between visits, and provides practice-branded AI insights that complement 
-              professional care—all while strengthening the provider-client relationship.
+              tool that extends their practice beyond office hours. Clients can send their AI analysis 
+              results directly to the clinic, ensuring concerns aren&apos;t forgotten and creating opportunities 
+              for follow-up care. Whether tracking progress over time or identifying new treatment needs, 
+              it keeps clients connected while providing practice-branded AI insights that complement 
+              professional care.
             </p>
           </div>
         </div>
