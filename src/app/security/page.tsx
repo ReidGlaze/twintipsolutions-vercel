@@ -42,6 +42,11 @@ export default function Security() {
                 <span><strong>Anonymous Design:</strong> Every user account is created with anonymous identifiers, 
                 but the combination of photo data and clinic association still requires HIPAA-level protection.</span>
               </li>
+              <li className="flex items-start gap-3">
+                <span className="text-blue-600 mt-1">•</span>
+                <span><strong>Optional Patient Outreach:</strong> PDF reports submitted to clinics can include patient 
+                name and phone number when explicitly provided, enabling follow-up care while maintaining consent-based data sharing.</span>
+              </li>
             </ul>
             <p className="text-center mt-6 font-semibold text-gray-700 dark:text-gray-300">
               This is why we&apos;ve built our entire platform with HIPAA alignment from day one.
