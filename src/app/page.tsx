@@ -314,7 +314,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center mb-12">AI That Learns Your Practice</h2>
           <p className="text-lg text-center text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto">
             Our AI trains on your specific documents and website content, delivering customized responses 
-            that reflect your practice's unique services, protocols, and expertise.
+            that reflect your practice&apos;s unique services, protocols, and expertise.
           </p>
           
           <div className="grid md:grid-cols-3 gap-6">
