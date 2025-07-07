@@ -160,7 +160,7 @@ export default function About() {
             
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
               The challenge? Between appointments, clients forget important details about their skin changes, 
-              struggle to track treatment progress, and often turn to unreliable online sources. What if 
+              struggle to track treatment progress, and often search for answers online. What if 
               clinics could offer their own AI-powered engagement tool—a professional app that keeps 
               clients connected to their practice, helps them remember concerns to discuss, and provides 
               trusted insights while they wait for their next appointment?
@@ -169,8 +169,8 @@ export default function About() {
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
               Having previously built <a href="https://hearthealthai.app/" 
               target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 underline">
-              HeartHealthAI</a> for nutrition tracking, I understood how to create health apps that support 
-              professional care plans. DermaWhiz became the proof of concept—an engagement tool that gives 
+              HeartHealthAI</a>, a nutrition tracking app, I understood how to create AI-powered health tools 
+              that people trust and use daily. DermaWhiz became the proof of concept—an engagement tool that gives 
               patients and clients AI-powered educational insights while always encouraging them to follow up 
               with their dermatologist or aesthetician.
             </p>
@@ -178,8 +178,8 @@ export default function About() {
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
               Now, clinics can offer their own branded version of this technology. It&apos;s an engagement 
               tool that extends their practice beyond office hours, helps patients and clients remember 
-              their concerns between visits, and provides a trusted AI-powered alternative to unreliable 
-              online medical advice—all while strengthening the provider-client relationship.
+              their concerns between visits, and provides practice-branded AI insights that complement 
+              professional care—all while strengthening the provider-client relationship.
             </p>
           </div>
         </div>
