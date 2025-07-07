@@ -20,7 +20,7 @@ export default function Home() {
               </h1>
               <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8">
                 HIPAA-aligned AI that identifies dermatitis, eczema, rosacea, and dozens of other skin conditions. 
-                Help patients understand their skin concerns before treatments or appointments.
+                Help clients/patients understand their skin concerns before treatments. Send automated updates and care recommendations directly through the app.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link href="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold text-lg hover:bg-blue-700 transition shadow-lg">
@@ -86,7 +86,7 @@ export default function Home() {
             </div>
             <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
               Unlike consumer beauty apps, we provide enterprise-grade privacy protection that meets 
-              healthcare compliance standards. Protect your practice and your patients.
+              healthcare compliance standards. Protect your practice and your clients/patients.
             </p>
             <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
@@ -141,7 +141,7 @@ export default function Home() {
               <ul className="space-y-4 text-gray-700 dark:text-gray-300">
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
-                  <span>Instant AI analysis helps patients understand skin concerns</span>
+                  <span>Instant AI analysis helps clients/patients understand skin concerns</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
@@ -384,7 +384,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Practice?</h2>
           <p className="text-xl mb-8 opacity-90">
-            Give your MedSpa or Dermatology patients the tools to track their treatment journey.
+            Give your clients/patients the tools to track their treatment journey and receive personalized updates.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold text-lg hover:bg-gray-100 transition shadow-lg">
