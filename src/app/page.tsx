@@ -82,10 +82,10 @@ export default function Home() {
           <div className="text-center">
             <div className="inline-flex items-center gap-3 mb-4">
               <FaShieldAlt className="text-4xl" />
-              <h2 className="text-3xl font-bold">HIPAA-Aligned & Medical-Grade Security</h2>
+              <h2 className="text-3xl font-bold">HIPAA-Aligned & Enterprise-Grade Security</h2>
             </div>
             <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
-              Unlike consumer beauty apps, we provide true medical-grade privacy protection that meets 
+              Unlike consumer beauty apps, we provide enterprise-grade privacy protection that meets 
               healthcare compliance standards. Protect your practice and your patients.
             </p>
             <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
