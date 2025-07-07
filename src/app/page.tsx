@@ -323,7 +323,7 @@ export default function Home() {
               <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
                 <li>• Trains on your treatment protocols</li>
                 <li>• Learns your service offerings</li>
-                <li>• Understands your pricing structures</li>
+                <li>• Scrapes any public websites you specify</li>
                 <li>• Adapts to your clinical approach</li>
                 <li>• Reflects your practice philosophy</li>
               </ul>
