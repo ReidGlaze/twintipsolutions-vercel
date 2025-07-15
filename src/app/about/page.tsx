@@ -13,7 +13,7 @@ export default function About() {
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
             Twin Tip Solutions is on a mission to revolutionize aesthetic and medical skin care through AI technology, 
-            making advanced analysis accessible to MedSpas and Dermatology clinics worldwide.
+            making advanced analysis accessible to medspas and dermatology clinics worldwide.
           </p>
         </div>
       </section>
@@ -28,9 +28,9 @@ export default function About() {
                 The Mission
               </h2>
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                To empower MedSpas and Dermatology clinics with AI technology that enhances treatment tracking, 
-                improves client/patient satisfaction, and increases practice efficiency—all while maintaining 
-                the highest standards of data privacy and security.
+                To empower medspas and dermatology clinics with AI technology that enhances treatment tracking 
+                and client engagement—while giving patients complete autonomy over their health data and 
+                practitioners the freedom to focus on their craft instead of administrative tasks.
               </p>
             </div>
             
@@ -40,9 +40,9 @@ export default function About() {
                 The Vision
               </h2>
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                A future where every aesthetic and dermatology client has access to AI-enhanced care, 
-                where treatments are documented precisely, results are tracked effectively, and 
-                progress is monitored continuously for optimal outcomes.
+                A future where patients have complete control over their health journey and data, 
+                while medspa and clinic owners can dedicate their expertise to treatments and patient care—
+                with AI seamlessly handling documentation, engagement, and progress tracking.
               </p>
             </div>
           </div>
@@ -111,7 +111,7 @@ export default function About() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Core Values</h2>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="w-20 h-20 bg-blue-100 dark:bg-blue-900/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <FaHeart className="text-3xl text-blue-600" />
@@ -129,6 +129,16 @@ export default function About() {
               <h3 className="text-xl font-bold mb-3">Privacy by Design</h3>
               <p className="text-gray-600 dark:text-gray-400">
                 Security and privacy aren&apos;t afterthoughts—they&apos;re built into every line of code.
+              </p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-20 h-20 bg-orange-100 dark:bg-orange-900/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <FaLightbulb className="text-3xl text-orange-600" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Empowering Autonomy</h3>
+              <p className="text-gray-600 dark:text-gray-400">
+                Patients control their health data while practitioners focus on treatments, not paperwork.
               </p>
             </div>
             
