@@ -361,6 +361,88 @@ export default function Security() {
         </div>
       </section>
 
+      {/* PHI Handling Based on User Choice */}
+      <section className="py-20 px-4 bg-white dark:bg-gray-900">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">PHI Handling: Your Choice, Your Control</h2>
+          
+          <div className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-green-50 dark:bg-green-900/20 p-8 rounded-xl">
+                <h3 className="text-xl font-bold mb-4 flex items-center gap-3">
+                  <FaUserShield className="text-green-600" />
+                  If You Keep Results Private
+                </h3>
+                <p className="text-gray-700 dark:text-gray-300 mb-4">
+                  When you choose not to send results to the clinic:
+                </p>
+                <ul className="space-y-3 text-gray-600 dark:text-gray-400">
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500">✓</span>
+                    <span>PHI stays strictly on your device</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500">✓</span>
+                    <span>All data encrypted locally using AES-256</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500">✓</span>
+                    <span>Face ID required for access</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500">✓</span>
+                    <span>No external access possible</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500">✓</span>
+                    <span>Complete privacy control</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="bg-blue-50 dark:bg-blue-900/20 p-8 rounded-xl">
+                <h3 className="text-xl font-bold mb-4 flex items-center gap-3">
+                  <FaDatabase className="text-blue-600" />
+                  If You Send to Clinic
+                </h3>
+                <p className="text-gray-700 dark:text-gray-300 mb-4">
+                  When you choose to share results with the clinic:
+                </p>
+                <ul className="space-y-3 text-gray-600 dark:text-gray-400">
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-500">✓</span>
+                    <span>PHI encrypted in our secure database</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-500">✓</span>
+                    <span>HIPAA-aligned cloud infrastructure</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-500">✓</span>
+                    <span>Signed BAA with Google Cloud</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-500">✓</span>
+                    <span>Access limited to authorized clinic staff</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-blue-500">✓</span>
+                    <span>Full audit trail maintained</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <div className="mt-8 bg-gray-50 dark:bg-gray-800 p-6 rounded-xl text-center">
+              <p className="text-lg font-semibold text-gray-700 dark:text-gray-300">
+                You always control when and how your health information is shared. 
+                The choice to send results to your clinic is always explicit and requires your consent.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* How Mobile Apps Protect You */}
       <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-6xl mx-auto">
