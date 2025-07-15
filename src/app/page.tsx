@@ -60,9 +60,9 @@ export default function Home() {
             </div>
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
               <FaChartLine className="text-4xl text-green-600 mb-4" />
-              <h3 className="text-xl font-bold mb-2">PDF Reports for Providers</h3>
+              <h3 className="text-xl font-bold mb-2">Web Client & PDF Export</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Generate professional PDF reports to share with healthcare providers.
+                Web portal for sending results as PDF reports - perfect for consultations and tracking progress over time.
               </p>
             </div>
             <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg">
@@ -153,7 +153,7 @@ export default function Home() {
                 </li>
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
-                  <span>PDF reports to bring to appointments for better consultations</span>
+                  <span>Web client portal for exporting PDF reports - track progress and share with providers</span>
                 </li>
               </ul>
             </div>
@@ -236,6 +236,13 @@ export default function Home() {
                   <div>
                     <strong>Appointment Integration</strong>
                     <p className="text-sm text-gray-600 dark:text-gray-400">Phone and website links for easy appointment booking</p>
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <FaCheckCircle className="text-blue-600 mt-1 flex-shrink-0" />
+                  <div>
+                    <strong>Web Client Portal</strong>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Secure web access for exporting results as PDFs - perfect for consultations and progress tracking</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
@@ -358,8 +365,65 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Benefits Section */}
+      {/* Web Client Portal Section */}
       <section className="py-20 px-4 bg-white dark:bg-gray-900">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold mb-6">Secure Web Client Portal</h2>
+              <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
+                Beyond the mobile app, your clients/patients get access to a secure web portal where they can:
+              </p>
+              <ul className="space-y-4 text-gray-700 dark:text-gray-300">
+                <li className="flex items-start gap-3">
+                  <FaCheckCircle className="text-blue-600 mt-1 flex-shrink-0" />
+                  <span>Export their analysis results as professional PDF reports</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <FaCheckCircle className="text-blue-600 mt-1 flex-shrink-0" />
+                  <span>Track treatment progress over time with dated reports</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <FaCheckCircle className="text-blue-600 mt-1 flex-shrink-0" />
+                  <span>Share PDFs directly with healthcare providers for consultations</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <FaCheckCircle className="text-blue-600 mt-1 flex-shrink-0" />
+                  <span>Maintain a secure history of all their skin assessments</span>
+                </li>
+              </ul>
+            </div>
+            <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 p-8 rounded-xl">
+              <h3 className="text-xl font-bold mb-4">Perfect for:</h3>
+              <ul className="space-y-3 text-gray-700 dark:text-gray-300">
+                <li className="flex items-start gap-2">
+                  <span className="text-purple-600">•</span>
+                  <span>Pre-consultation documentation</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-purple-600">•</span>
+                  <span>Treatment progress tracking</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-purple-600">•</span>
+                  <span>Insurance documentation</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-purple-600">•</span>
+                  <span>Second opinion requests</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-purple-600">•</span>
+                  <span>Personal health records</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-12">Benefits for Your Practice</h2>
           <div className="grid md:grid-cols-3 gap-8">

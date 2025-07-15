@@ -66,7 +66,7 @@ export default function Contact() {
             Let&apos;s Transform Your Practice Together
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            Ready to see how AI can revolutionize your dermatology clinic? 
+            Ready to see how AI can revolutionize your medspa or dermatology clinic? 
             Schedule a personalized demo or get in touch to learn more.
           </p>
         </div>
@@ -80,14 +80,14 @@ export default function Contact() {
             <div>
               <h2 className="text-3xl font-bold mb-6">Request a Demo</h2>
               <p className="text-gray-600 dark:text-gray-400 mb-8">
-                Fill out the form below and we&apos;ll schedule a personalized demo for your clinic.
+                Fill out the form below and we&apos;ll schedule a personalized demo for your medspa or clinic.
               </p>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="clinicName" className="block text-sm font-medium mb-2">
-                      Clinic Name *
+                      Medspa/Clinic Name *
                     </label>
                     <input
                       type="text"
@@ -158,7 +158,7 @@ export default function Contact() {
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Tell us about your clinic&apos;s needs..."
+                    placeholder="Tell us about your medspa or clinic&apos;s needs..."
                     className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-800"
                   />
                 </div>
@@ -267,10 +267,10 @@ export default function Contact() {
             <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow">
               <h3 className="text-xl font-bold mb-2">What&apos;s included in the customization?</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Your custom app includes: complete branding with your clinic&apos;s logo and colors, 
-                AI training on your website and documentation for clinic-specific insights, 
-                direct phone links and appointment booking integration, and custom App Store 
-                listings with keyword optimization.
+                Your custom app includes: complete branding with your medspa or clinic&apos;s logo and colors, 
+                customized AI prompting and responses tailored to your services, AI training on your 
+                websites and documents for business-specific insights, direct phone links and appointment 
+                booking integration, and custom App Store listings with keyword optimization.
               </p>
             </div>
             

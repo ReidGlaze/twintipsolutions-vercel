@@ -32,23 +32,23 @@ export default function Solutions() {
               <ul className="text-sm space-y-2 text-gray-600 dark:text-gray-400">
                 <li>• Instant AI skin analysis</li>
                 <li>• Detailed condition explanations</li>
-                <li>• PDF report generation</li>
+                <li>• Web client for PDF export</li>
                 <li>• Educational patient insights</li>
               </ul>
             </div>
             
             <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl">
               <FaCloud className="text-4xl text-purple-600 mb-4" />
-              <h3 className="text-xl font-bold mb-3">Cloud Infrastructure</h3>
+              <h3 className="text-xl font-bold mb-3">Web Client Portal</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Secure cloud processing for AI analysis.
+                Secure web access for patients to export and track results.
               </p>
               <ul className="text-sm space-y-2 text-gray-600 dark:text-gray-400">
-                <li>• HIPAA-aligned hosting</li>
-                <li>• Signed BAA with Google Cloud</li>
-                <li>• AI does not train on any data</li>
-                <li>• Reliable infrastructure</li>
-                <li>• Immediate deletion after processing</li>
+                <li>• Export results as PDF reports</li>
+                <li>• Track progress over time</li>
+                <li>• Perfect for consultations</li>
+                <li>• Secure patient portal</li>
+                <li>• HIPAA-aligned infrastructure</li>
               </ul>
             </div>
           </div>
@@ -183,8 +183,45 @@ export default function Solutions() {
         </div>
       </section>
 
-      {/* How It Works */}
+      {/* Web Client Features */}
       <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">Secure Web Client Portal</h2>
+          
+          <div className="max-w-4xl mx-auto">
+            <p className="text-center text-gray-600 dark:text-gray-400 mb-8">
+              Beyond the mobile app, patients get access to a secure web portal for comprehensive result management.
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow">
+                <h3 className="font-bold text-lg mb-4 text-blue-600">Export & Documentation</h3>
+                <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                  <li>• Generate professional PDF reports</li>
+                  <li>• Include AI analysis and recommendations</li>
+                  <li>• Add personal notes and observations</li>
+                  <li>• Perfect for insurance documentation</li>
+                  <li>• Share securely with providers</li>
+                </ul>
+              </div>
+              
+              <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow">
+                <h3 className="font-bold text-lg mb-4 text-purple-600">Progress Tracking</h3>
+                <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                  <li>• View historical analyses</li>
+                  <li>• Track treatment progress over time</li>
+                  <li>• Compare before/after results</li>
+                  <li>• Maintain personal health records</li>
+                  <li>• Date-stamped documentation</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-20 px-4 bg-white dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">How Your Branded App Works</h2>
           
@@ -231,9 +268,9 @@ export default function Solutions() {
                   4
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Generate PDF Report</h3>
+                  <h3 className="text-xl font-bold mb-2">Access Web Portal & Export PDFs</h3>
                   <p className="text-gray-600 dark:text-gray-400">
-                    Create professional PDF reports to bring to appointments for informed discussions
+                    Use the secure web client to export professional PDF reports for consultations and track progress over time
                   </p>
                 </div>
               </div>

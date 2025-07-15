@@ -67,9 +67,7 @@ export default function RootLayout({
               <p className="text-xs text-gray-500 dark:text-gray-400">
                 © {new Date().getFullYear()} Twin Tip Solutions. All rights reserved. 
                 <span className="mx-2">•</span>
-                <a href="/privacy" className="hover:text-gray-700 dark:hover:text-gray-300">Privacy Policy</a>
-                <span className="mx-2">•</span>
-                <a href="/terms" className="hover:text-gray-700 dark:hover:text-gray-300">Terms of Service</a>
+                <a href="https://www.dermawhiz.com/privacy/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 dark:hover:text-gray-300">Privacy Policy</a>
               </p>
             </div>
           </div>
