@@ -264,7 +264,8 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center mb-12">Perfect for Dermatology & Aesthetic Clinics</h2>
           
           <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-8 rounded-xl">
-            <h3 className="text-2xl font-bold mb-6 text-center text-purple-700 dark:text-purple-300">Key Clinical Applications</h3>
+            <h3 className="text-2xl font-bold mb-6 text-center text-purple-700 dark:text-purple-300">Example Clinical Applications</h3>
+            <p className="text-center text-sm text-gray-600 dark:text-gray-400 mb-6">AI can identify 40+ conditions including aesthetic and medical concerns. Here are just a few examples:</p>
             <div className="grid md:grid-cols-2 gap-6">
               <ul className="space-y-3 text-gray-700 dark:text-gray-300">
                 <li className="flex items-start gap-2">
@@ -403,10 +404,6 @@ export default function Home() {
                 <li className="flex items-start gap-2">
                   <span className="text-purple-600">•</span>
                   <span>Treatment progress tracking</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-purple-600">•</span>
-                  <span>Insurance documentation</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-purple-600">•</span>

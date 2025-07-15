@@ -200,7 +200,7 @@ export default function Solutions() {
                   <li>• Generate professional PDF reports</li>
                   <li>• Include AI analysis and recommendations</li>
                   <li>• Add personal notes and observations</li>
-                  <li>• Perfect for insurance documentation</li>
+                  <li>• Create comprehensive health records</li>
                   <li>• Share securely with providers</li>
                 </ul>
               </div>
