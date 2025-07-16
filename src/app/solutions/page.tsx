@@ -11,8 +11,8 @@ export default function Solutions() {
             AI Solutions for MedSpas & Dermatology
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            Custom mobile apps that help patients track aesthetic treatments and medical skin conditions. 
-            Perfect for documenting injectables, laser therapies, body contouring, skin rejuvenation, and dermatological conditions.
+            Custom mobile apps that help your clients track their skin journey and aesthetic treatments. 
+            Perfect for documenting injectables, laser therapies, body contouring, skin rejuvenation, and general skin health.
           </p>
         </div>
       </section>
@@ -69,16 +69,16 @@ export default function Solutions() {
                   <div>
                     <strong>Multi-Purpose Analysis</strong>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                      Analyzes both aesthetic treatments and medical skin conditions
+                      Provides insights for both aesthetic treatments and skin health education
                     </p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
                   <div>
-                    <strong>Instant Condition Identification</strong>
+                    <strong>Instant Skin Analysis</strong>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                      AI identifies potential skin conditions and provides educational information
+                      AI analyzes skin photos and provides educational insights
                     </p>
                   </div>
                 </li>
@@ -109,12 +109,15 @@ export default function Solutions() {
       {/* AI Training Sources */}
       <section className="py-20 px-4 bg-white dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Trained on Trusted Medical Sources</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Customizable AI Training Sources</h2>
           
           <div className="max-w-4xl mx-auto mb-8">
-            <p className="text-center text-gray-600 dark:text-gray-400 mb-8">
-              Our AI is trained exclusively on reliable, peer-reviewed medical sources. We follow all web scraping 
-              laws and only use publicly available, open-access materials.
+            <p className="text-center text-gray-600 dark:text-gray-400 mb-4">
+              Your white-label app can be trained on sources specific to your practice focus. The sources below 
+              are used for our dermatology demo app (DermaWhiz), but can be customized for aesthetic practices.
+            </p>
+            <p className="text-center text-sm text-blue-600 dark:text-blue-400 font-semibold mb-8">
+              For MedSpas: The AI can be trained on aesthetic medicine journals, cosmetic dermatology resources, and injection technique databases.
             </p>
             
             <div className="grid md:grid-cols-2 gap-6">
@@ -258,7 +261,7 @@ export default function Solutions() {
                 <div>
                   <h3 className="text-xl font-bold mb-2">Get Instant AI Analysis</h3>
                   <p className="text-gray-600 dark:text-gray-400">
-                    Receive immediate AI insights about potential skin conditions
+                    Receive immediate AI insights about skin appearance and characteristics
                   </p>
                 </div>
               </div>

@@ -19,8 +19,8 @@ export default function Home() {
                 AI-Powered Apps for MedSpas & Dermatology
               </h1>
               <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8">
-                HIPAA-aligned AI that identifies dermatitis, eczema, rosacea, and dozens of other skin conditions. 
-                Your clients can understand their skin concerns before treatments and share updates directly with your practice through the app.
+                HIPAA-aligned AI that provides educational insights about skin health and aesthetic considerations. 
+                Your clients can better understand their skin before consultations and share photos directly with your practice through the app.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link href="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold text-lg hover:bg-blue-700 transition shadow-lg">
@@ -264,53 +264,59 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-center mb-12">Perfect for Dermatology & Aesthetic Clinics</h2>
           
           <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-8 rounded-xl">
-            <h3 className="text-2xl font-bold mb-6 text-center text-purple-700 dark:text-purple-300">Example Clinical Applications</h3>
-            <p className="text-center text-sm text-gray-600 dark:text-gray-400 mb-6">AI can identify 40+ conditions including aesthetic and medical concerns. Here are just a few examples:</p>
+            <h3 className="text-2xl font-bold mb-6 text-center text-purple-700 dark:text-purple-300">Applications for Your Practice</h3>
+            <p className="text-center text-sm text-gray-600 dark:text-gray-400 mb-6">AI provides educational insights for both aesthetic and medical applications:</p>
             <div className="grid md:grid-cols-2 gap-6">
-              <ul className="space-y-3 text-gray-700 dark:text-gray-300">
-                <li className="flex items-start gap-2">
-                  <span className="text-purple-600 mt-1">•</span>
-                  <span>Pre-screen for dermatitis, eczema, or rosacea before treatments</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-purple-600 mt-1">•</span>
-                  <span>Assess acne severity and type for treatment planning</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-purple-600 mt-1">•</span>
-                  <span>Identify sun damage and photosensitivity issues</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-purple-600 mt-1">•</span>
-                  <span>Detect allergic reactions or contact dermatitis</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-purple-600 mt-1">•</span>
-                  <span>Evaluate suspicious moles and lesions for referral</span>
-                </li>
-              </ul>
-              <ul className="space-y-3 text-gray-700 dark:text-gray-300">
-                <li className="flex items-start gap-2">
-                  <span className="text-purple-600 mt-1">•</span>
-                  <span>Screen for contraindications to aesthetic procedures</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-purple-600 mt-1">•</span>
-                  <span>Assess skin barrier health and sensitivity levels</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-purple-600 mt-1">•</span>
-                  <span>Detect psoriasis, rosacea, and other chronic conditions</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-purple-600 mt-1">•</span>
-                  <span>Identify fungal infections and other skin conditions</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-purple-600 mt-1">•</span>
-                  <span>Document treatment progress with consistent imaging</span>
-                </li>
-              </ul>
+              <div>
+                <h4 className="font-semibold text-purple-700 dark:text-purple-300 mb-3">MedSpa & Aesthetic</h4>
+                <ul className="space-y-3 text-gray-700 dark:text-gray-300">
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-600 mt-1">•</span>
+                    <span>Analyze skin texture and tone before chemical peels</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-600 mt-1">•</span>
+                    <span>Track Botox and filler results over time</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-600 mt-1">•</span>
+                    <span>Document microneedling and laser treatment progress</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-600 mt-1">•</span>
+                    <span>Assess candidates for IPL and skin resurfacing</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-600 mt-1">•</span>
+                    <span>Monitor post-treatment healing and results</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-semibold text-purple-700 dark:text-purple-300 mb-3">Dermatology & Medical</h4>
+                <ul className="space-y-3 text-gray-700 dark:text-gray-300">
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-600 mt-1">•</span>
+                    <span>Educational insights about acne severity and type</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-600 mt-1">•</span>
+                    <span>Track eczema and psoriasis changes between visits</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-600 mt-1">•</span>
+                    <span>Document mole changes for monitoring</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-600 mt-1">•</span>
+                    <span>Assess sun damage and aging signs</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-purple-600 mt-1">•</span>
+                    <span>Monitor treatment response over time</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -371,26 +377,26 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold mb-6">Secure Web Client Portal</h2>
+              <h2 className="text-3xl font-bold mb-6">Staff Portal for Client Reports</h2>
               <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-                Beyond the mobile app, your clients/patients get access to a secure web portal where they can:
+                Your clinic receives client-submitted reports through a secure web portal, enabling seamless care coordination:
               </p>
               <ul className="space-y-4 text-gray-700 dark:text-gray-300">
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-blue-600 mt-1 flex-shrink-0" />
-                  <span>Export their analysis results as professional PDF reports</span>
+                  <span>Receive PDF reports your clients export from their mobile app</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-blue-600 mt-1 flex-shrink-0" />
-                  <span>Track treatment progress over time with dated reports</span>
+                  <span>Review client skin concerns before their appointments</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-blue-600 mt-1 flex-shrink-0" />
-                  <span>Share PDFs directly with healthcare providers for consultations</span>
+                  <span>Track client progress between visits with timestamped photos</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-blue-600 mt-1 flex-shrink-0" />
-                  <span>Maintain a secure history of all their skin assessments</span>
+                  <span>Maintain organized records of all client submissions</span>
                 </li>
               </ul>
             </div>
