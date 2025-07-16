@@ -241,8 +241,8 @@ export default function Home() {
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-blue-600 mt-1 flex-shrink-0" />
                   <div>
-                    <strong>Web Client Portal</strong>
-                    <p className="text-sm text-gray-600 dark:text-gray-400">Secure web access for exporting results as PDFs - perfect for consultations and progress tracking</p>
+                    <strong>Clinic Staff Portal</strong>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">Secure portal for your staff to receive client-submitted PDFs and coordinate follow-up care</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">

@@ -25,29 +25,29 @@ export default function Solutions() {
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl">
               <FaMobileAlt className="text-4xl text-blue-600 mb-4" />
-              <h3 className="text-xl font-bold mb-3">Patient Mobile App</h3>
+              <h3 className="text-xl font-bold mb-3">Client Mobile App</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
-                White-labeled app providing AI analysis of skin concerns for your patients.
+                White-labeled app providing AI analysis of skin concerns for your clients.
               </p>
               <ul className="text-sm space-y-2 text-gray-600 dark:text-gray-400">
                 <li>• Instant AI skin analysis</li>
                 <li>• Detailed condition explanations</li>
-                <li>• Web client for PDF export</li>
-                <li>• Educational patient insights</li>
+                <li>• Client can export PDF reports</li>
+                <li>• Educational skin insights</li>
               </ul>
             </div>
             
             <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl">
               <FaCloud className="text-4xl text-purple-600 mb-4" />
-              <h3 className="text-xl font-bold mb-3">Web Client Portal</h3>
+              <h3 className="text-xl font-bold mb-3">Clinic Staff Portal</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
-                Secure web access for patients to export and track results.
+                Secure web portal for your clinic staff to receive and manage client-submitted reports.
               </p>
               <ul className="text-sm space-y-2 text-gray-600 dark:text-gray-400">
-                <li>• Export results as PDF reports</li>
-                <li>• Track progress over time</li>
-                <li>• Perfect for consultations</li>
-                <li>• Secure patient portal</li>
+                <li>• Receive client-submitted PDF reports</li>
+                <li>• Track client progress over time</li>
+                <li>• Call clients for follow-up appointments</li>
+                <li>• Secure staff-only access</li>
                 <li>• HIPAA-aligned infrastructure</li>
               </ul>
             </div>
