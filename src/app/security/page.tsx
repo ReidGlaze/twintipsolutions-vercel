@@ -129,7 +129,7 @@ export default function Security() {
                 <li className="flex items-start gap-2">
                   <span className="text-orange-600">•</span>
                   <span className="text-gray-600 dark:text-gray-400">
-                    <strong>Immediate Deletion:</strong> Data is deleted immediately after AI processing - never stored in our database (except hallucination reports with double encryption)
+                    <strong>No Cloud Storage:</strong> For cloud processing there is NO storage - data exists only during AI processing then vanishes completely
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
@@ -308,7 +308,8 @@ export default function Security() {
               </h3>
               <p className="text-gray-700 dark:text-gray-300 mb-4">
                 All data is stored encrypted on your device. When you request an analysis, photos are 
-                temporarily sent to secure cloud infrastructure with double encryption for AI processing, then immediately deleted.
+                sent to secure cloud infrastructure with double encryption for AI processing. There is NO storage 
+                during cloud processing - data exists only momentarily for analysis then vanishes.
               </p>
               <ul className="space-y-2 text-gray-600 dark:text-gray-400">
                 <li className="flex items-start gap-2">
@@ -317,7 +318,7 @@ export default function Security() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-500">✓</span>
-                  <span>Temporary cloud processing with immediate deletion</span>
+                  <span>No cloud storage - processing happens without any data persistence</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-green-500">✓</span>
@@ -329,26 +330,54 @@ export default function Security() {
             <div className="bg-purple-50 dark:bg-purple-900/20 p-8 rounded-xl">
               <h3 className="text-xl font-bold mb-4 flex items-center gap-3">
                 <FaShieldAlt className="text-purple-600" />
-                Hallucination Reporting
+                When Data IS Stored (Your Choice)
               </h3>
               <p className="text-gray-700 dark:text-gray-300 mb-4">
-                Only when users report AI hallucinations is data stored in the database with double encryption. 
-                This is required for:
+                Data is ONLY stored in our database with double encryption in these specific cases:
               </p>
-              <ul className="space-y-2 text-gray-600 dark:text-gray-400">
-                <li className="flex items-start gap-2">
-                  <span className="text-purple-500">•</span>
-                  <span>Google Play Store compliance</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-purple-500">•</span>
-                  <span>Legal safeguards and liability protection</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-purple-500">•</span>
-                  <span>Improving AI model accuracy</span>
-                </li>
-              </ul>
+              <div className="space-y-4">
+                <div className="bg-white dark:bg-gray-800 p-4 rounded-lg">
+                  <h4 className="font-semibold text-purple-700 dark:text-purple-300 mb-2">1. When You Send Analysis to Clinic</h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                    If you choose to share results with your clinic, the data is stored with double encryption in our secure database.
+                  </p>
+                  <ul className="space-y-1 text-sm text-gray-600 dark:text-gray-400">
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-500">•</span>
+                      <span>Requires explicit user consent</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-500">•</span>
+                      <span>Double encryption at rest</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-500">•</span>
+                      <span>HIPAA-aligned secure storage</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="bg-white dark:bg-gray-800 p-4 rounded-lg">
+                  <h4 className="font-semibold text-purple-700 dark:text-purple-300 mb-2">2. Hallucination Reporting</h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                    When users report AI errors, data is stored for compliance and improvement:
+                  </p>
+                  <ul className="space-y-1 text-sm text-gray-600 dark:text-gray-400">
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-500">•</span>
+                      <span>Google Play Store compliance</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-500">•</span>
+                      <span>Legal safeguards and liability protection</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-purple-500">•</span>
+                      <span>Improving AI model accuracy</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
             
             <div className="text-center p-6 bg-gray-50 dark:bg-gray-800 rounded-xl">

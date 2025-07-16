@@ -91,7 +91,7 @@ export default function Home() {
             <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <h3 className="font-bold mb-2">Multi-Layer Encryption</h3>
-                <p className="text-sm opacity-90">AES-256 encryption in transit and at rest, with immediate deletion after processing</p>
+                <p className="text-sm opacity-90">AES-256 encryption for cloud AI processing. Zero storage unless client opts to send to clinic</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <h3 className="font-bold mb-2">BAA with Google Cloud</h3>
@@ -99,7 +99,7 @@ export default function Home() {
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <h3 className="font-bold mb-2">Zero Data Training</h3>
-                <p className="text-sm opacity-90">AI never trains on patient data - complete privacy guaranteed</p>
+                <p className="text-sm opacity-90">AI never trains on or stores patient data - complete privacy guaranteed</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
                 <h3 className="font-bold mb-2">Audit Protection</h3>
