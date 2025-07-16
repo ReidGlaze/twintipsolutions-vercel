@@ -29,8 +29,8 @@ export default function About() {
               </h2>
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                 To empower medspas and dermatology clinics with AI technology that enhances treatment tracking 
-                and client engagement—while giving patients complete autonomy over their health data and 
-                practitioners the freedom to focus on their craft instead of administrative tasks.
+                and client engagement—while giving your clients complete autonomy over their health data and 
+                giving you the freedom to focus on your craft instead of administrative tasks.
               </p>
             </div>
             
@@ -40,8 +40,8 @@ export default function About() {
                 The Vision
               </h2>
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                A future where patients have complete control over their health journey and data, 
-                while medspa and clinic owners can dedicate their expertise to treatments and patient care—
+                A future where your clients have complete control over their health journey and data, 
+                while you can dedicate your expertise to treatments and client care—
                 with AI seamlessly handling documentation, engagement, and progress tracking.
               </p>
             </div>
@@ -116,7 +116,7 @@ export default function About() {
               <div className="w-20 h-20 bg-blue-100 dark:bg-blue-900/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <FaHeart className="text-3xl text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Patient-First Innovation</h3>
+              <h3 className="text-xl font-bold mb-3">Client-First Innovation</h3>
               <p className="text-gray-600 dark:text-gray-400">
                 Every feature starts with the question: How will this improve client care?
               </p>
@@ -138,7 +138,7 @@ export default function About() {
               </div>
               <h3 className="text-xl font-bold mb-3">Empowering Autonomy</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Patients control their health data while practitioners focus on treatments, not paperwork.
+                Your clients control their health data while you focus on treatments, not paperwork.
               </p>
             </div>
             
@@ -162,9 +162,9 @@ export default function About() {
           
           <div className="prose prose-lg dark:prose-invert mx-auto">
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-              Twin Tip Solutions began when I noticed a significant shift in the past 6 months—patients and 
-              clients were increasingly bringing AI-generated health information to their appointments. 
-              People are beginning to trust AI recommendations more than ever, seeking instant insights 
+              Twin Tip Solutions began when I noticed a significant shift in the past 6 months—your clients 
+              are increasingly bringing AI-generated health information to their appointments. 
+              People are beginning to trust AI insights more than ever, seeking instant analysis 
               about their skin concerns between visits.
             </p>
             
@@ -181,8 +181,8 @@ export default function About() {
               target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 underline">
               HeartHealthAI</a>, a nutrition tracking app, I understood how to create AI-powered health tools 
               that people trust and use daily. DermaWhiz became the proof of concept—an engagement tool that gives 
-              patients and clients AI-powered educational insights while always encouraging them to follow up 
-              with their dermatologist or aesthetician.
+              your clients AI-powered educational insights while always encouraging them to follow up 
+              with you for professional care.
             </p>
             
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">

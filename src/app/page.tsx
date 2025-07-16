@@ -20,7 +20,7 @@ export default function Home() {
               </h1>
               <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8">
                 HIPAA-aligned AI that identifies dermatitis, eczema, rosacea, and dozens of other skin conditions. 
-                Help clients/patients understand their skin concerns before treatments. Send automated updates and care recommendations directly through the app.
+                Your clients can understand their skin concerns before treatments and share updates directly with your practice through the app.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <Link href="/contact" className="px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold text-lg hover:bg-blue-700 transition shadow-lg">

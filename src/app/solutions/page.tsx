@@ -96,7 +96,7 @@ export default function Solutions() {
                   <div>
                     <strong>RAG-Powered Insights</strong>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                      Provides evidence-based recommendations from latest dermatology research
+                      Provides evidence-based insights from latest dermatology research
                     </p>
                   </div>
                 </li>
@@ -186,33 +186,33 @@ export default function Solutions() {
       {/* Web Client Features */}
       <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Secure Web Client Portal</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Secure Staff Portal</h2>
           
           <div className="max-w-4xl mx-auto">
             <p className="text-center text-gray-600 dark:text-gray-400 mb-8">
-              Beyond the mobile app, patients get access to a secure web portal for comprehensive result management.
+              Your staff receives client-submitted reports through a secure web portal for seamless clinic integration.
             </p>
             
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow">
-                <h3 className="font-bold text-lg mb-4 text-blue-600">Export & Documentation</h3>
+                <h3 className="font-bold text-lg mb-4 text-blue-600">Receive Client Reports</h3>
                 <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
-                  <li>• Generate professional PDF reports</li>
-                  <li>• Include AI analysis and recommendations</li>
-                  <li>• Add personal notes and observations</li>
-                  <li>• Create comprehensive health records</li>
-                  <li>• Share securely with providers</li>
+                  <li>• Receive client-submitted skin analyses</li>
+                  <li>• View AI-generated insights</li>
+                  <li>• Access client notes and concerns</li>
+                  <li>• Review treatment history</li>
+                  <li>• Export reports for consultations</li>
                 </ul>
               </div>
               
               <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow">
-                <h3 className="font-bold text-lg mb-4 text-purple-600">Progress Tracking</h3>
+                <h3 className="font-bold text-lg mb-4 text-purple-600">Client Management</h3>
                 <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
-                  <li>• View historical analyses</li>
-                  <li>• Track treatment progress over time</li>
-                  <li>• Compare before/after results</li>
-                  <li>• Maintain personal health records</li>
-                  <li>• Date-stamped documentation</li>
+                  <li>• Track client progress over time</li>
+                  <li>• Compare before/after treatment results</li>
+                  <li>• Manage multiple client reports</li>
+                  <li>• Schedule follow-up appointments</li>
+                  <li>• Maintain comprehensive client records</li>
                 </ul>
               </div>
             </div>
@@ -234,7 +234,7 @@ export default function Solutions() {
                 <div>
                   <h3 className="text-xl font-bold mb-2">Download & Create Profile</h3>
                   <p className="text-gray-600 dark:text-gray-400">
-                    Patients download your custom-branded app and create a secure profile with their medications and health history
+                    Your clients download your custom-branded app and create a secure profile with their medications and health history
                   </p>
                 </div>
               </div>
@@ -246,7 +246,7 @@ export default function Solutions() {
                 <div>
                   <h3 className="text-xl font-bold mb-2">Take Photo of Skin Concern</h3>
                   <p className="text-gray-600 dark:text-gray-400">
-                    Patient snaps a photo of any skin issue they want to understand better
+                    Your client snaps a photo of any skin issue they want to understand better
                   </p>
                 </div>
               </div>
@@ -258,7 +258,7 @@ export default function Solutions() {
                 <div>
                   <h3 className="text-xl font-bold mb-2">Get Instant AI Analysis</h3>
                   <p className="text-gray-600 dark:text-gray-400">
-                    Receive immediate AI insights about potential conditions and recommendations
+                    Receive immediate AI insights about potential skin conditions
                   </p>
                 </div>
               </div>
@@ -268,9 +268,9 @@ export default function Solutions() {
                   4
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">Access Web Portal & Export PDFs</h3>
+                  <h3 className="text-xl font-bold mb-2">Share Reports with Your Clinic</h3>
                   <p className="text-gray-600 dark:text-gray-400">
-                    Use the secure web client to export professional PDF reports for consultations and track progress over time
+                    Clients can share their AI analysis reports directly with your clinic through the app for consultation prep
                   </p>
                 </div>
               </div>
