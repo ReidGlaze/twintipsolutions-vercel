@@ -5,9 +5,9 @@ export default function Security() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 py-16 px-4">
+      <section className="bg-gradient-to-br from-sky-50 via-blue-50 to-slate-50 dark:from-gray-900 dark:via-gray-850 dark:to-gray-800 py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text leading-tight">
+          <h1 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-sky-600 via-blue-600 to-slate-600 text-transparent bg-clip-text leading-tight">
             Professional Security & Compliance
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
@@ -45,7 +45,7 @@ export default function Security() {
               <li className="flex items-start gap-3">
                 <span className="text-blue-600 mt-1">•</span>
                 <span><strong>Optional Patient Outreach:</strong> PDF reports submitted to clinics can include patient 
-                name and phone number when explicitly provided, enabling follow-up care while maintaining consent-based data sharing.</span>
+                name and phone number when explicitly provided. This data is stored encrypted in our database, enabling follow-up care while maintaining consent-based data sharing.</span>
               </li>
             </ul>
             <p className="text-center mt-6 font-semibold text-gray-700 dark:text-gray-300">
@@ -133,7 +133,7 @@ export default function Security() {
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-purple-600">•</span>
+                  <span className="text-indigo-600">•</span>
                   <span className="text-gray-600 dark:text-gray-400">
                     <strong>Encryption First:</strong> All data is encrypted both at rest and in transit
                   </span>
@@ -186,7 +186,7 @@ export default function Security() {
             </div>
             
             <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg">
-              <FaKey className="text-3xl text-purple-600 mb-4" />
+              <FaKey className="text-3xl text-indigo-600 mb-4" />
               <h3 className="text-xl font-bold mb-2">Biometric Authentication</h3>
               <p className="text-gray-600 dark:text-gray-400">
                 Face ID required for app access, adding an extra layer of security.
@@ -233,7 +233,7 @@ export default function Security() {
                 
                 <div className="bg-white dark:bg-gray-800 p-6 rounded-lg">
                   <h4 className="font-bold text-lg mb-3 flex items-center gap-2">
-                    <FaKey className="text-purple-600" />
+                    <FaKey className="text-indigo-600" />
                     Access Management
                   </h4>
                   <ul className="space-y-2 text-gray-600 dark:text-gray-400">
@@ -327,9 +327,9 @@ export default function Security() {
               </ul>
             </div>
             
-            <div className="bg-purple-50 dark:bg-purple-900/20 p-8 rounded-xl">
+            <div className="bg-indigo-50 dark:bg-indigo-900/20 p-8 rounded-xl">
               <h3 className="text-xl font-bold mb-4 flex items-center gap-3">
-                <FaShieldAlt className="text-purple-600" />
+                <FaShieldAlt className="text-indigo-600" />
                 When Data IS Stored (Your Choice)
               </h3>
               <p className="text-gray-700 dark:text-gray-300 mb-4">
@@ -337,42 +337,42 @@ export default function Security() {
               </p>
               <div className="space-y-4">
                 <div className="bg-white dark:bg-gray-800 p-4 rounded-lg">
-                  <h4 className="font-semibold text-purple-700 dark:text-purple-300 mb-2">1. When You Send Analysis to Clinic</h4>
+                  <h4 className="font-semibold text-indigo-700 dark:text-indigo-300 mb-2">1. When You Send Analysis to Clinic</h4>
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
                     If you choose to share results with your clinic, the data is stored with double encryption in our secure database.
                   </p>
                   <ul className="space-y-1 text-sm text-gray-600 dark:text-gray-400">
                     <li className="flex items-start gap-2">
-                      <span className="text-purple-500">•</span>
+                      <span className="text-indigo-500">•</span>
                       <span>Requires explicit user consent</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-purple-500">•</span>
+                      <span className="text-indigo-500">•</span>
                       <span>Double encryption at rest</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-purple-500">•</span>
+                      <span className="text-indigo-500">•</span>
                       <span>HIPAA-aligned secure storage</span>
                     </li>
                   </ul>
                 </div>
                 
                 <div className="bg-white dark:bg-gray-800 p-4 rounded-lg">
-                  <h4 className="font-semibold text-purple-700 dark:text-purple-300 mb-2">2. Hallucination Reporting</h4>
+                  <h4 className="font-semibold text-indigo-700 dark:text-indigo-300 mb-2">2. Hallucination Reporting</h4>
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
                     When users report AI errors, data is stored for compliance and improvement:
                   </p>
                   <ul className="space-y-1 text-sm text-gray-600 dark:text-gray-400">
                     <li className="flex items-start gap-2">
-                      <span className="text-purple-500">•</span>
+                      <span className="text-indigo-500">•</span>
                       <span>Google Play Store compliance</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-purple-500">•</span>
+                      <span className="text-indigo-500">•</span>
                       <span>Legal safeguards and liability protection</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="text-purple-500">•</span>
+                      <span className="text-indigo-500">•</span>
                       <span>Improving AI model accuracy</span>
                     </li>
                   </ul>
@@ -547,18 +547,18 @@ export default function Security() {
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-0.5 flex-shrink-0" />
                   <div>
-                    <strong>Anonymous Processing</strong>
+                    <strong>Mostly Anonymous Processing</strong>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                      AI analysis happens without any personal identifiers
+                      AI analysis happens without names or locations, though facial photos are biometric identifiers
                     </p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-0.5 flex-shrink-0" />
                   <div>
-                    <strong>Secure Cloud Infrastructure</strong>
+                    <strong>Secure Cloud Infrastructure with BAA</strong>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                      Google Cloud&apos;s enterprise-grade security for AI processing
+                      Google Cloud&apos;s enterprise-grade security with signed Business Associate Agreement (BAA) for HIPAA alignment
                     </p>
                   </div>
                 </li>
@@ -572,6 +572,110 @@ export default function Security() {
               Your health data is yours. It can&apos;t be seen, stored, or shared by Twin Tip Solutions. 
               Everything stays encrypted on your phone where only you can access it.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Medical Device Disclaimer Section */}
+      <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12">Medical Advice Disclaimer & Regulatory Status</h2>
+          
+          <div className="max-w-4xl mx-auto space-y-8">
+            <div className="bg-red-50 dark:bg-red-900/20 p-8 rounded-xl border-2 border-red-200 dark:border-red-800">
+              <h3 className="text-xl font-bold mb-4 flex items-center gap-3 text-red-700 dark:text-red-300">
+                <FaShieldAlt className="text-2xl" />
+                Important Medical Disclaimer
+              </h3>
+              <ul className="space-y-3 text-gray-700 dark:text-gray-300">
+                <li className="flex items-start gap-2">
+                  <span className="text-red-600 mt-1">•</span>
+                  <span><strong>Not Medical Advice:</strong> This app provides educational information only and does not provide medical diagnoses, treatment recommendations, or medical advice.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-red-600 mt-1">•</span>
+                  <span><strong>Not FDA Approved:</strong> This software has not been evaluated or approved by the FDA as a medical device.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-red-600 mt-1">•</span>
+                  <span><strong>Always Consult Professionals:</strong> Users should always consult with qualified healthcare providers for medical concerns.</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="bg-blue-50 dark:bg-blue-900/20 p-8 rounded-xl">
+              <h3 className="text-xl font-bold mb-4">Understanding Software as a Medical Device (SaMD)</h3>
+              
+              <div className="space-y-6">
+                <div>
+                  <h4 className="font-semibold mb-2">Why General AI Tools (like ChatGPT) Are Not Medical Devices:</h4>
+                  <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500">✓</span>
+                      <span>General purpose tools not specifically intended for medical use</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500">✓</span>
+                      <span>No specific medical claims or diagnostic capabilities</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-green-500">✓</span>
+                      <span>Users apply them for various non-medical purposes</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 className="font-semibold mb-2">Why Specialized Health Apps Could Be Considered Medical Devices:</h4>
+                  <ul className="space-y-2 text-gray-600 dark:text-gray-400">
+                    <li className="flex items-start gap-2">
+                      <span className="text-orange-500">•</span>
+                      <span>Specifically designed and marketed for health/medical purposes</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-orange-500">•</span>
+                      <span>Analyze medical images or patient-specific data</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-orange-500">•</span>
+                      <span>Could influence clinical decision-making if they provided diagnoses</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-green-50 dark:bg-green-900/20 p-8 rounded-xl">
+              <h3 className="text-xl font-bold mb-4 flex items-center gap-3">
+                <FaCheckCircle className="text-green-600" />
+                How Our App Empowers Without Diagnosing
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-4">
+                Instead of making medical recommendations, our app empowers users by:
+              </p>
+              <ul className="space-y-3 text-gray-700 dark:text-gray-300">
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600">•</span>
+                  <span><strong>Providing Educational Context:</strong> Helps users understand general information about skin conditions</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600">•</span>
+                  <span><strong>Generating Informed Questions:</strong> Creates specific, detailed questions users can ask their healthcare providers</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600">•</span>
+                  <span><strong>Documenting Changes:</strong> Helps track skin changes over time for discussion with providers</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-600">•</span>
+                  <span><strong>Facilitating Communication:</strong> Bridges the gap between appointments with organized information</span>
+                </li>
+              </ul>
+              <p className="mt-4 text-sm text-gray-600 dark:text-gray-400 italic">
+                By focusing on education and communication rather than diagnosis or treatment, we help users become more informed 
+                participants in their healthcare journey while maintaining clear boundaries about the app&apos;s role.
+              </p>
+            </div>
           </div>
         </div>
       </section>

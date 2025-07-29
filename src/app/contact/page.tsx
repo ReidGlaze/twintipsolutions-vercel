@@ -60,13 +60,13 @@ export default function Contact() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 py-16 px-4">
+      <section className="bg-gradient-to-br from-indigo-50 via-sky-50 to-blue-50 dark:from-gray-900 dark:via-gray-850 dark:to-gray-800 py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text leading-tight">
-            Let&apos;s Transform Your Practice Together
+          <h1 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-indigo-600 via-sky-600 to-blue-600 text-transparent bg-clip-text leading-tight">
+            Let&apos;s Future-Proof Your Practice Together
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            Ready to see how AI can revolutionize your medspa or dermatology clinic? 
+            Ready to see how AI can enhance your medspa or dermatology clinic? 
             Schedule a personalized demo or get in touch to learn more.
           </p>
         </div>
@@ -166,7 +166,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3 px-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition disabled:opacity-50"
+                  className="w-full py-3 px-6 bg-gradient-to-r from-indigo-600 to-blue-600 text-white rounded-lg font-semibold hover:from-indigo-700 hover:to-blue-700 transition disabled:opacity-50"
                 >
                   {isSubmitting ? "Sending..." : "Schedule Demo"}
                 </button>
@@ -278,7 +278,8 @@ export default function Contact() {
               <h3 className="text-xl font-bold mb-2">Can I see how it works first?</h3>
               <p className="text-gray-600 dark:text-gray-400">
                 Yes! Download DermaWhiz from the App Store or Google Play to experience 
-                the technology. Your custom app will have the same features with your branding.
+                the technology. Your custom app will have the same features with your branding. 
+                You can also schedule a demo to see the web client portal in action.
               </p>
             </div>
           </div>

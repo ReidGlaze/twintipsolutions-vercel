@@ -4,9 +4,9 @@ export default function Pricing() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 py-16 px-4">
+      <section className="bg-gradient-to-br from-rose-50 via-orange-50 to-amber-50 dark:from-gray-900 dark:via-gray-850 dark:to-gray-800 py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text leading-tight">
+          <h1 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-rose-600 via-orange-600 to-amber-600 text-transparent bg-clip-text leading-tight">
             Pricing
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-8">
@@ -19,7 +19,7 @@ export default function Pricing() {
       {/* Early Access Section */}
       <section className="py-20 px-4 bg-white dark:bg-gray-900">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-12 shadow-xl">
+          <div className="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-12 shadow-xl">
             <FaEnvelope className="text-6xl text-blue-600 mx-auto mb-6" />
             <h2 className="text-3xl font-bold mb-6">Early Access Program</h2>
             <p className="text-lg text-gray-700 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
@@ -55,7 +55,7 @@ export default function Pricing() {
             
             <a 
               href="mailto:reid@twintipsolutions.com?subject=Pricing%20Inquiry%20-%20MedSpa%20Dermatology%20AI%20Solution"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold text-lg hover:from-blue-700 hover:to-purple-700 transition shadow-lg"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-rose-600 to-orange-600 text-white rounded-lg font-semibold text-lg hover:from-rose-700 hover:to-orange-700 transition shadow-lg"
             >
               <FaEnvelope />
               Email for Custom Quote
@@ -141,7 +141,7 @@ export default function Pricing() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <section className="py-20 px-4 bg-gradient-to-r from-rose-600 via-orange-600 to-amber-600 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Get Started?</h2>
           <p className="text-xl mb-8 opacity-90">

@@ -6,16 +6,16 @@ export default function Home() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 py-20 px-4">
+      <section className="relative bg-gradient-to-br from-teal-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-gray-850 dark:to-gray-800 py-20 px-4">
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-72 h-72 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"></div>
+          <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-teal-400/20 to-indigo-400/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-72 h-72 bg-gradient-to-br from-cyan-400/20 to-blue-400/20 rounded-full blur-3xl"></div>
         </div>
         
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-center lg:text-left">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text leading-tight">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 bg-gradient-to-r from-teal-600 via-blue-600 to-indigo-600 text-transparent bg-clip-text leading-tight">
                 AI-Powered Apps for MedSpas & Dermatology
               </h1>
               <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8">
@@ -77,7 +77,7 @@ export default function Home() {
       </section>
 
       {/* HIPAA Alignment Section */}
-      <section className="py-16 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <section className="py-16 px-4 bg-gradient-to-r from-indigo-600 via-blue-600 to-teal-600 text-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center">
             <div className="inline-flex items-center gap-3 mb-4">
@@ -263,56 +263,56 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Perfect for Dermatology & Aesthetic Clinics</h2>
           
-          <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-8 rounded-xl">
-            <h3 className="text-2xl font-bold mb-6 text-center text-purple-700 dark:text-purple-300">Applications for Your Practice</h3>
+          <div className="bg-gradient-to-br from-emerald-50 to-cyan-50 dark:from-emerald-900/20 dark:to-cyan-900/20 p-8 rounded-xl">
+            <h3 className="text-2xl font-bold mb-6 text-center text-teal-700 dark:text-teal-300">Applications for Your Practice</h3>
             <p className="text-center text-sm text-gray-600 dark:text-gray-400 mb-6">AI provides educational insights for both aesthetic and medical applications:</p>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h4 className="font-semibold text-purple-700 dark:text-purple-300 mb-3">MedSpa & Aesthetic</h4>
+                <h4 className="font-semibold text-teal-700 dark:text-teal-300 mb-3">MedSpa & Aesthetic</h4>
                 <ul className="space-y-3 text-gray-700 dark:text-gray-300">
                   <li className="flex items-start gap-2">
-                    <span className="text-purple-600 mt-1">•</span>
+                    <span className="text-teal-600 mt-1">•</span>
                     <span>Analyze skin texture and tone before chemical peels</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-purple-600 mt-1">•</span>
+                    <span className="text-teal-600 mt-1">•</span>
                     <span>Track Botox and filler results over time</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-purple-600 mt-1">•</span>
+                    <span className="text-teal-600 mt-1">•</span>
                     <span>Document microneedling and laser treatment progress</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-purple-600 mt-1">•</span>
+                    <span className="text-teal-600 mt-1">•</span>
                     <span>Assess candidates for IPL and skin resurfacing</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-purple-600 mt-1">•</span>
+                    <span className="text-teal-600 mt-1">•</span>
                     <span>Monitor post-treatment healing and results</span>
                   </li>
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold text-purple-700 dark:text-purple-300 mb-3">Dermatology & Medical</h4>
+                <h4 className="font-semibold text-teal-700 dark:text-teal-300 mb-3">Dermatology & Medical</h4>
                 <ul className="space-y-3 text-gray-700 dark:text-gray-300">
                   <li className="flex items-start gap-2">
-                    <span className="text-purple-600 mt-1">•</span>
+                    <span className="text-teal-600 mt-1">•</span>
                     <span>Educational insights about acne severity and type</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-purple-600 mt-1">•</span>
+                    <span className="text-teal-600 mt-1">•</span>
                     <span>Track eczema and psoriasis changes between visits</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-purple-600 mt-1">•</span>
+                    <span className="text-teal-600 mt-1">•</span>
                     <span>Document mole changes for monitoring</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-purple-600 mt-1">•</span>
+                    <span className="text-teal-600 mt-1">•</span>
                     <span>Assess sun damage and aging signs</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-purple-600 mt-1">•</span>
+                    <span className="text-teal-600 mt-1">•</span>
                     <span>Monitor treatment response over time</span>
                   </li>
                 </ul>
@@ -344,7 +344,7 @@ export default function Home() {
             </div>
             
             <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg">
-              <h3 className="font-bold text-lg mb-4 text-purple-600">Personalized Patient Education</h3>
+              <h3 className="font-bold text-lg mb-4 text-indigo-600">Personalized Patient Education</h3>
               <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
                 <li>• Explains YOUR specific treatments</li>
                 <li>• Uses your terminology and tone</li>
@@ -355,7 +355,7 @@ export default function Home() {
             </div>
             
             <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg">
-              <h3 className="font-bold text-lg mb-4 text-green-600">Clinical Integration</h3>
+              <h3 className="font-bold text-lg mb-4 text-emerald-600">Clinical Integration</h3>
               <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
                 <li>• Customized AI output formatting</li>
                 <li>• Professional PDF reports</li>
@@ -400,7 +400,7 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 p-8 rounded-xl">
+            <div className="bg-gradient-to-br from-slate-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 p-8 rounded-xl">
               <h3 className="text-xl font-bold mb-4">Perfect for:</h3>
               <ul className="space-y-3 text-gray-700 dark:text-gray-300">
                 <li className="flex items-start gap-2">
@@ -430,16 +430,16 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-12">Benefits for Your Practice</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 p-8 rounded-xl">
+            <div className="bg-gradient-to-br from-sky-50 to-blue-100 dark:from-sky-900/20 dark:to-blue-800/20 p-8 rounded-xl">
               <div className="text-4xl font-bold text-blue-600 mb-2">Better</div>
               <p className="text-gray-700 dark:text-gray-300">Treatment adherence through continuous monitoring</p>
             </div>
-            <div className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 p-8 rounded-xl">
-              <div className="text-4xl font-bold text-green-600 mb-2">Improved</div>
+            <div className="bg-gradient-to-br from-emerald-50 to-teal-100 dark:from-emerald-900/20 dark:to-teal-800/20 p-8 rounded-xl">
+              <div className="text-4xl font-bold text-emerald-600 mb-2">Improved</div>
               <p className="text-gray-700 dark:text-gray-300">Patient engagement between visits</p>
             </div>
-            <div className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 p-8 rounded-xl">
-              <div className="text-4xl font-bold text-purple-600 mb-2">Enhanced</div>
+            <div className="bg-gradient-to-br from-rose-50 to-orange-100 dark:from-rose-900/20 dark:to-orange-800/20 p-8 rounded-xl">
+              <div className="text-4xl font-bold text-rose-600 mb-2">Enhanced</div>
               <p className="text-gray-700 dark:text-gray-300">Documentation of treatment progress</p>
             </div>
           </div>
@@ -447,7 +447,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <section className="py-20 px-4 bg-gradient-to-r from-teal-600 via-cyan-600 to-blue-600 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Practice?</h2>
           <p className="text-xl mb-8 opacity-90">

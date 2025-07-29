@@ -6,14 +6,14 @@ export default function About() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 py-16 px-4">
+      <section className="bg-gradient-to-br from-slate-50 via-zinc-50 to-gray-50 dark:from-gray-900 dark:via-gray-850 dark:to-gray-800 py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text leading-tight">
+          <h1 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-slate-600 via-gray-600 to-zinc-600 text-transparent bg-clip-text leading-tight">
             About Twin Tip Solutions
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
             Twin Tip Solutions is on a mission to revolutionize aesthetic and medical skin care through AI technology, 
-            making advanced analysis accessible to medspas and dermatology clinics worldwide.
+            making advanced analysis accessible to medspas and dermatology clinics.
           </p>
         </div>
       </section>
@@ -29,7 +29,7 @@ export default function About() {
               </h2>
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                 To empower medspas and dermatology clinics with AI technology that enhances treatment tracking 
-                and client engagement—while giving your clients complete autonomy over their health data and 
+                and client engagement while giving your clients complete autonomy over their health data and 
                 giving you the freedom to focus on your craft instead of administrative tasks.
               </p>
             </div>
@@ -41,7 +41,7 @@ export default function About() {
               </h2>
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                 A future where your clients have complete control over their health journey and data, 
-                while you can dedicate your expertise to treatments and client care—
+                while you can dedicate your expertise to treatments and client care,
                 with AI seamlessly handling documentation, engagement, and progress tracking.
               </p>
             </div>
@@ -79,14 +79,14 @@ export default function About() {
               
               <div className="md:col-span-2">
                 <h3 className="text-2xl font-bold mb-4">Reid Glaze</h3>
-                <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">Owner</p>
+                <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">Developer</p>
                 
                 <div className="space-y-4 text-gray-700 dark:text-gray-300">
                   <p className="leading-relaxed">
                     Reid brings a unique combination of engineering expertise and entrepreneurial vision 
                     to Twin Tip Solutions. With a Master&apos;s degree in Mechanical Engineering from 
                     CU Boulder with a focus on AI/ML, he is particularly passionate about the intersection 
-                    of AI, cybersecurity, and data privacy—ensuring that powerful technology can be 
+                    of AI, cybersecurity, and data privacy, ensuring that powerful technology can be 
                     deployed while protecting user information.
                   </p>
                   
@@ -128,7 +128,7 @@ export default function About() {
               </div>
               <h3 className="text-xl font-bold mb-3">Privacy by Design</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Security and privacy aren&apos;t afterthoughts—they&apos;re built into every line of code.
+                Security and privacy aren&apos;t afterthoughts; they&apos;re built into every line of code.
               </p>
             </div>
             
@@ -138,13 +138,13 @@ export default function About() {
               </div>
               <h3 className="text-xl font-bold mb-3">Empowering Autonomy</h3>
               <p className="text-gray-600 dark:text-gray-400">
-                Your clients control their health data while you focus on treatments, not paperwork.
+                Clients control their health data while practitioners focus on treatments, not paperwork.
               </p>
             </div>
             
             <div className="text-center">
-              <div className="w-20 h-20 bg-purple-100 dark:bg-purple-900/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <FaRocket className="text-3xl text-purple-600" />
+              <div className="w-20 h-20 bg-indigo-100 dark:bg-indigo-900/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <FaRocket className="text-3xl text-indigo-600" />
               </div>
               <h3 className="text-xl font-bold mb-3">Continuous Innovation</h3>
               <p className="text-gray-600 dark:text-gray-400">
@@ -162,25 +162,31 @@ export default function About() {
           
           <div className="prose prose-lg dark:prose-invert mx-auto">
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-              Twin Tip Solutions began when I noticed a significant shift in the past 6 months—your clients 
+              Twin Tip Solutions began when I noticed a significant shift in the past 6 months: your clients 
               are increasingly bringing AI-generated health information to their appointments. 
               People are beginning to trust AI insights more than ever, seeking instant analysis 
               about their skin concerns between visits.
             </p>
             
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+              People often have binary opinions about things they don&apos;t fully understand, especially 
+              with AI in healthcare. This can create an adversarial relationship between practitioners 
+              and clients, which benefits no one. Instead, practitioners can become steerers of this 
+              technology, helping patients understand the nuances of their concerns while maintaining 
+              their role as the trusted expert.
+            </p>
+            
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
               The challenge? Between appointments, clients forget important details about their skin changes, 
               struggle to track treatment progress, and often search for answers online. What if 
-              clinics could offer their own AI-powered engagement tool—a professional app that keeps 
+              clinics could offer their own AI-powered engagement tool, a professional app that keeps 
               clients connected to their practice, helps them remember concerns to discuss, and provides 
               trusted insights while they wait for their next appointment?
             </p>
             
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-              Having previously built <a href="https://hearthealthai.app/" 
-              target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-700 underline">
-              HeartHealthAI</a>, a nutrition tracking app, I understood how to create AI-powered health tools 
-              that people trust and use daily. DermaWhiz became the proof of concept—an engagement tool that gives 
+              Having previously built HeartHealthAI, a nutrition tracking app, I understood how to create AI-powered health tools 
+              that people trust and use daily. DermaWhiz became the proof of concept, an engagement tool that gives 
               your clients AI-powered educational insights while always encouraging them to follow up 
               with you for professional care.
             </p>
@@ -198,11 +204,11 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <section className="py-20 px-4 bg-gradient-to-r from-slate-600 via-gray-700 to-zinc-700 text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">Join the Revolution in Dermatology Care</h2>
+          <h2 className="text-4xl font-bold mb-6">Join the Future of Skin Care Technology</h2>
           <p className="text-xl mb-8 opacity-90">
-            Bring AI-powered skin analysis to your clinic today.
+            Bring AI-powered skin analysis to your medspa or dermatology clinic today.
           </p>
           <Link href="/contact" className="px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold text-lg hover:bg-gray-100 transition shadow-lg inline-block">
             Get Started Today

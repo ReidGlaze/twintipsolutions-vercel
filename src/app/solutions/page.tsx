@@ -5,9 +5,9 @@ export default function Solutions() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 py-16 px-4">
+      <section className="bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 dark:from-gray-900 dark:via-gray-850 dark:to-gray-800 py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-blue-600 to-purple-600 text-transparent bg-clip-text leading-tight">
+          <h1 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 text-transparent bg-clip-text leading-tight">
             AI Solutions for MedSpas & Dermatology
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
@@ -38,7 +38,7 @@ export default function Solutions() {
             </div>
             
             <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl">
-              <FaCloud className="text-4xl text-purple-600 mb-4" />
+              <FaCloud className="text-4xl text-indigo-600 mb-4" />
               <h3 className="text-xl font-bold mb-3">Clinic Staff Portal</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
                 Secure web portal for your clinic staff to receive and manage client-submitted reports.
@@ -149,24 +149,24 @@ export default function Solutions() {
               </div>
               
               <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl">
-                <h3 className="font-bold text-lg mb-4 text-purple-600">Government Sources</h3>
+                <h3 className="font-bold text-lg mb-4 text-indigo-600">Government Sources</h3>
                 <ul className="space-y-3 text-sm">
                   <li className="flex items-start gap-2">
-                    <span className="text-purple-500 mt-0.5">•</span>
+                    <span className="text-indigo-500 mt-0.5">•</span>
                     <div>
                       <strong>NIH Bookshelf</strong>
                       <p className="text-gray-600 dark:text-gray-400">Public domain medical textbooks</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-purple-500 mt-0.5">•</span>
+                    <span className="text-indigo-500 mt-0.5">•</span>
                     <div>
                       <strong>ClinicalTrials.gov</strong>
                       <p className="text-gray-600 dark:text-gray-400">Latest dermatology trial data</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-purple-500 mt-0.5">•</span>
+                    <span className="text-indigo-500 mt-0.5">•</span>
                     <div>
                       <strong>NIH Skin Diseases Institute</strong>
                       <p className="text-gray-600 dark:text-gray-400">Federal research data</p>
@@ -209,7 +209,7 @@ export default function Solutions() {
               </div>
               
               <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow">
-                <h3 className="font-bold text-lg mb-4 text-purple-600">Client Management</h3>
+                <h3 className="font-bold text-lg mb-4 text-indigo-600">Client Management</h3>
                 <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
                   <li>• Track client progress over time</li>
                   <li>• Compare before/after treatment results</li>
@@ -284,7 +284,7 @@ export default function Solutions() {
 
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <section className="py-20 px-4 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">See a Demo</h2>
           <p className="text-xl mb-8 opacity-90">
