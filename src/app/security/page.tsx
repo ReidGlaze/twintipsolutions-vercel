@@ -157,7 +157,7 @@ export default function Security() {
           
           <div className="mb-12">
             <Image 
-              src="/security-architecture.png" 
+              src="/securityarch.png" 
               alt="Security Architecture Diagram" 
               width={1200} 
               height={800} 
@@ -330,16 +330,16 @@ export default function Security() {
             <div className="bg-indigo-50 dark:bg-indigo-900/20 p-8 rounded-xl">
               <h3 className="text-xl font-bold mb-4 flex items-center gap-3">
                 <FaShieldAlt className="text-indigo-600" />
-                When Data IS Stored (Your Choice)
+                When Patient Data IS Stored
               </h3>
               <p className="text-gray-700 dark:text-gray-300 mb-4">
-                Data is ONLY stored in our database with double encryption in these specific cases:
+                Patient data is ONLY stored in our database with double encryption in these specific cases:
               </p>
               <div className="space-y-4">
                 <div className="bg-white dark:bg-gray-800 p-4 rounded-lg">
-                  <h4 className="font-semibold text-indigo-700 dark:text-indigo-300 mb-2">1. When You Send Analysis to Clinic</h4>
+                  <h4 className="font-semibold text-indigo-700 dark:text-indigo-300 mb-2">1. When Patients Send Analysis to Your Clinic</h4>
                   <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
-                    If you choose to share results with your clinic, the data is stored with double encryption in our secure database.
+                    When patients choose to share results with your clinic, the data is stored with double encryption in our secure database.
                   </p>
                   <ul className="space-y-1 text-sm text-gray-600 dark:text-gray-400">
                     <li className="flex items-start gap-2">
@@ -393,22 +393,22 @@ export default function Security() {
       {/* PHI Handling Based on User Choice */}
       <section className="py-20 px-4 bg-white dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">PHI Handling: Your Choice, Your Control</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">How Patient PHI is Handled</h2>
           
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-green-50 dark:bg-green-900/20 p-8 rounded-xl">
                 <h3 className="text-xl font-bold mb-4 flex items-center gap-3">
                   <FaUserShield className="text-green-600" />
-                  If You Keep Results Private
+                  When Patients Keep Results Private
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
-                  When you choose not to send results to the clinic:
+                  When patients choose not to send results to your clinic:
                 </p>
                 <ul className="space-y-3 text-gray-600 dark:text-gray-400">
                   <li className="flex items-start gap-2">
                     <span className="text-green-500">✓</span>
-                    <span>PHI stays strictly on your device</span>
+                    <span>PHI stays strictly on patient&apos;s device</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-green-500">✓</span>
@@ -432,10 +432,10 @@ export default function Security() {
               <div className="bg-blue-50 dark:bg-blue-900/20 p-8 rounded-xl">
                 <h3 className="text-xl font-bold mb-4 flex items-center gap-3">
                   <FaDatabase className="text-blue-600" />
-                  If You Send to Clinic
+                  When Patients Send to Your Clinic
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
-                  When you choose to share results with the clinic:
+                  When patients choose to share results with your clinic:
                 </p>
                 <ul className="space-y-3 text-gray-600 dark:text-gray-400">
                   <li className="flex items-start gap-2">
@@ -452,7 +452,7 @@ export default function Security() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-blue-500">✓</span>
-                    <span>Access limited to authorized clinic staff</span>
+                    <span>Access limited to your authorized staff</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-blue-500">✓</span>
@@ -464,8 +464,8 @@ export default function Security() {
             
             <div className="mt-8 bg-gray-50 dark:bg-gray-800 p-6 rounded-xl text-center">
               <p className="text-lg font-semibold text-gray-700 dark:text-gray-300">
-                You always control when and how your health information is shared. 
-                The choice to send results to your clinic is always explicit and requires your consent.
+                Patients always control when and how their health information is shared. 
+                The choice to send results to your clinic is always explicit and requires patient consent.
               </p>
             </div>
           </div>
@@ -475,13 +475,13 @@ export default function Security() {
       {/* How Mobile Apps Protect You */}
       <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">How Mobile Apps Protect You</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">How Our Mobile Apps Protect Patient Data</h2>
           
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
                 <FaDatabase className="text-blue-600" />
-                Your Data Stays With You
+                Patient Data Stays on Their Device
               </h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
@@ -489,7 +489,7 @@ export default function Security() {
                   <div>
                     <strong>On-Device Storage</strong>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                      All your photos and analysis results stay on your phone
+                      All patient photos and analysis results stay on their phones
                     </p>
                   </div>
                 </li>
@@ -498,7 +498,7 @@ export default function Security() {
                   <div>
                     <strong>Face ID Protection</strong>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                      Only you can access your app with biometric authentication
+                      Only patients can access their app with biometric authentication
                     </p>
                   </div>
                 </li>
@@ -507,16 +507,16 @@ export default function Security() {
                   <div>
                     <strong>Local Encryption</strong>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                      Your data is encrypted on your device using military-grade encryption
+                      Patient data is encrypted on their device using military-grade encryption
                     </p>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <FaCheckCircle className="text-green-500 mt-0.5 flex-shrink-0" />
                   <div>
-                    <strong>You Control Your Data</strong>
+                    <strong>Patients Control Their Data</strong>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                      Delete your data anytime - it can&apos;t be accessed externally
+                      Patients can delete their data anytime - it can&apos;t be accessed externally
                     </p>
                   </div>
                 </li>
@@ -540,7 +540,7 @@ export default function Security() {
                   <div>
                     <strong>Double Encryption</strong>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
-                      Your data is encrypted twice during transmission
+                      Patient data is encrypted twice during transmission
                     </p>
                   </div>
                 </li>
@@ -569,8 +569,8 @@ export default function Security() {
           <div className="mt-12 bg-blue-50 dark:bg-blue-900/20 p-8 rounded-xl text-center">
             <h3 className="text-xl font-bold mb-4">Simple Privacy Promise</h3>
             <p className="text-gray-700 dark:text-gray-300">
-              Your health data is yours. It can&apos;t be seen, stored, or shared by Twin Tip Solutions. 
-              Everything stays encrypted on your phone where only you can access it.
+              Patient health data belongs to them. It can&apos;t be seen, stored, or shared by Twin Tip Solutions. 
+              Everything stays encrypted on patient phones where only they can access it.
             </p>
           </div>
         </div>

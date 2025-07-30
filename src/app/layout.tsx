@@ -50,7 +50,7 @@ export default function RootLayout({
               <div>
                 <h4 className="font-semibold mb-2 text-gray-700 dark:text-gray-300">Important Disclaimers</h4>
                 <p className="text-gray-500 dark:text-gray-400 text-xs leading-relaxed">
-                  Our applications are for educational and informational purposes only. They do not provide medical diagnoses 
+                  These applications are for educational and informational purposes only. They do not provide medical diagnoses 
                   or replace professional medical advice. Always consult qualified healthcare providers for medical concerns.
                 </p>
               </div>
@@ -67,7 +67,7 @@ export default function RootLayout({
               <p className="text-xs text-gray-500 dark:text-gray-400">
                 © {new Date().getFullYear()} Twin Tip Solutions. All rights reserved. 
                 <span className="mx-2">•</span>
-                <a href="https://www.dermawhiz.com/privacy/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 dark:hover:text-gray-300">Privacy Policy</a>
+                <a href="/privacy" className="hover:text-gray-700 dark:hover:text-gray-300">Privacy Policy</a>
               </p>
             </div>
           </div>

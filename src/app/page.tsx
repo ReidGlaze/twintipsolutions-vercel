@@ -33,16 +33,16 @@ export default function Home() {
             </div>
             
             <div className="relative">
-              <div className="relative mx-auto max-w-sm">
+              <div className="relative mx-auto">
                 <Image 
-                  src="/Analysis.png" 
-                  alt="DermaWhiz Mobile App Analysis Screen" 
-                  width={375}
-                  height={812}
+                  src="/twophones.png" 
+                  alt="DermaWhiz AI Analysis Results on Mobile Devices" 
+                  width={800}
+                  height={800}
                   className="mx-auto drop-shadow-2xl"
                   priority
                 />
-                <div className="absolute -bottom-4 -right-4 bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg">
+                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white px-6 py-3 rounded-full shadow-lg">
                   <p className="text-sm font-semibold">Live on iOS & Android</p>
                 </div>
               </div>
@@ -357,11 +357,11 @@ export default function Home() {
             <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-lg">
               <h3 className="font-bold text-lg mb-4 text-emerald-600">Clinical Integration</h3>
               <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
-                <li>• Customized AI output formatting</li>
+                <li>• Secure web portal for clinic staff</li>
+                <li>• Clinic admin manages staff logins</li>
+                <li>• TOTP 2FA for enhanced security</li>
                 <li>• Professional PDF reports</li>
-                <li>• Identifies 40+ skin conditions</li>
                 <li>• Clear educational disclaimers</li>
-                <li>• Seamless workflow integration</li>
               </ul>
             </div>
           </div>

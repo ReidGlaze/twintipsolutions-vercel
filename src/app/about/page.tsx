@@ -106,6 +106,55 @@ export default function About() {
         </div>
       </section>
 
+      {/* Google for Startups Section */}
+      <section className="py-20 px-4 bg-blue-50 dark:bg-blue-900/10">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-8 md:p-12">
+            <Image 
+              src="/startups_gpxYjQP.max-2500x2500.jpg" 
+              alt="Google for Startups" 
+              width={400} 
+              height={150} 
+              className="mx-auto mb-8"
+            />
+            <h2 className="text-2xl font-bold mb-6">Backed by Google for Startups</h2>
+            <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 max-w-2xl mx-auto">
+              Twin Tip Solutions is proud to be part of the Google for Startups Cloud Program, 
+              providing us with the resources and support to build secure, scalable healthcare solutions.
+            </p>
+            <div className="grid md:grid-cols-3 gap-6 text-left max-w-3xl mx-auto">
+              <div className="flex items-start gap-3">
+                <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                <div>
+                  <h3 className="font-semibold mb-1">Technical Mentorship</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    Direct access to Google Cloud experts for healthcare compliance guidance
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
+                <div>
+                  <h3 className="font-semibold mb-1">Infrastructure Support</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    Cloud credits and resources to ensure reliable, scalable service
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="w-2 h-2 bg-orange-600 rounded-full mt-2 flex-shrink-0"></div>
+                <div>
+                  <h3 className="font-semibold mb-1">Startup Ecosystem</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
+                    Connection to Google&apos;s network of healthcare innovators and partners
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Company Values */}
       <section className="py-20 px-4 bg-white dark:bg-gray-900">
         <div className="max-w-6xl mx-auto">
