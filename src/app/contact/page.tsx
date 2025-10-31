@@ -63,11 +63,10 @@ export default function Contact() {
       <section className="bg-gradient-to-br from-indigo-50 via-sky-50 to-blue-50 dark:from-gray-900 dark:via-gray-850 dark:to-gray-800 py-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-indigo-600 via-sky-600 to-blue-600 text-transparent bg-clip-text leading-tight">
-            Let&apos;s Future-Proof Your Practice Together
+            Get In Touch
           </h1>
           <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            Ready to see how AI can enhance your medspa or dermatology clinic? 
-            Schedule a personalized demo or get in touch to learn more.
+            Have a question or want to learn more? Send us a message.
           </p>
         </div>
       </section>
@@ -78,22 +77,21 @@ export default function Contact() {
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div>
-              <h2 className="text-3xl font-bold mb-6">Request a Demo</h2>
+              <h2 className="text-3xl font-bold mb-6">Send a Message</h2>
               <p className="text-gray-600 dark:text-gray-400 mb-8">
-                Fill out the form below and we&apos;ll schedule a personalized demo for your medspa or clinic.
+                Fill out the form below and we&apos;ll get back to you as soon as possible.
               </p>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="clinicName" className="block text-sm font-medium mb-2">
-                      Medspa/Clinic Name *
+                      Company/Organization
                     </label>
                     <input
                       type="text"
                       id="clinicName"
                       name="clinicName"
-                      required
                       value={formData.clinicName}
                       onChange={handleChange}
                       className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-800"
@@ -158,7 +156,7 @@ export default function Contact() {
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Tell us about your medspa or clinic&apos;s needs..."
+                    placeholder="Your message..."
                     className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-800"
                   />
                 </div>
@@ -168,12 +166,12 @@ export default function Contact() {
                   disabled={isSubmitting}
                   className="w-full py-3 px-6 bg-gradient-to-r from-indigo-600 to-blue-600 text-white rounded-lg font-semibold hover:from-indigo-700 hover:to-blue-700 transition disabled:opacity-50"
                 >
-                  {isSubmitting ? "Sending..." : "Schedule Demo"}
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </button>
                 
                 {submitStatus === "success" && (
                   <div className="bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 p-4 rounded-lg">
-                    Thank you! We&apos;ll be in touch within 24 hours to schedule your demo.
+                    Thank you! We&apos;ll be in touch soon.
                   </div>
                 )}
                 
@@ -245,42 +243,6 @@ export default function Contact() {
                 </a>
               </div>
               
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Common Questions</h2>
-          
-          <div className="space-y-6">
-            <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow">
-              <h3 className="text-xl font-bold mb-2">How long does implementation take?</h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                It typically takes 2-3 weeks to customize the app with your branding and get it 
-                approved on both the App Store and Google Play.
-              </p>
-            </div>
-            
-            <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow">
-              <h3 className="text-xl font-bold mb-2">What&apos;s included in the customization?</h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                Your custom app includes: complete branding with your medspa or clinic&apos;s logo and colors, 
-                customized AI prompting and responses tailored to your services, AI training on your 
-                websites and documents for business-specific insights, direct phone links and appointment 
-                booking integration, and custom App Store listings with keyword optimization.
-              </p>
-            </div>
-            
-            <div className="bg-white dark:bg-gray-900 p-6 rounded-xl shadow">
-              <h3 className="text-xl font-bold mb-2">Can I see how it works first?</h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                Yes! Download DermaWhiz from the App Store or Google Play to experience 
-                the technology. Your custom app will have the same features with your branding. 
-                You can also schedule a demo to see the web client portal in action.
-              </p>
             </div>
           </div>
         </div>
