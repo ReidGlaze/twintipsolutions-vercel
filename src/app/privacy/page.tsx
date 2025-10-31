@@ -54,10 +54,9 @@ export default function Privacy() {
 
             <h2 className="text-2xl font-bold mb-4">1. Introduction</h2>
             <p className="mb-6">
-              Twin Tip Solutions LLC (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) provides white-label AI-powered mobile applications 
-              and web services for medical spas and dermatology clinics (the &quot;Service&quot;). This Privacy Policy 
-              explains how we handle information for both clinics using our service and their patients using 
-              the white-labeled applications.
+              Twin Tip Solutions LLC (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) develops AI-powered mobile applications
+              for health and wellness (the &quot;Service&quot;). Our apps include DermaWhiz, HeartHealthAI, and AI Cough Checker.
+              This Privacy Policy explains how we collect, use, and protect your information when you use our applications.
             </p>
 
             <h2 className="text-2xl font-bold mb-4 mt-8">2. HIPAA Compliance</h2>
@@ -78,40 +77,33 @@ export default function Privacy() {
 
             <h2 className="text-2xl font-bold mb-4 mt-8">3. Information We Collect</h2>
             
-            <h3 className="text-xl font-semibold mb-3">3.1 For Clinics (B2B Customers)</h3>
+            <h3 className="text-xl font-semibold mb-3">3.1 Information We Collect</h3>
             <ul className="list-disc list-inside space-y-2 mb-6">
-              <li>Business contact information (names, emails, phone numbers)</li>
-              <li>Clinic details and branding materials</li>
-              <li>Usage analytics and performance metrics</li>
-              <li>Support communications and feedback</li>
-            </ul>
-
-            <h3 className="text-xl font-semibold mb-3">3.2 For App Users (Your Patients)</h3>
-            <ul className="list-disc list-inside space-y-2 mb-6">
-              <li><strong>On-Device Only:</strong> Photos and analysis results stored encrypted on patient devices</li>
-              <li><strong>When Shared with Clinic:</strong> Patient-submitted photos and contact info (with explicit consent)</li>
+              <li><strong>On-Device Only:</strong> Photos and analysis results stored encrypted on your device</li>
+              <li><strong>Account Information:</strong> Email address and basic profile information (if you create an account)</li>
               <li><strong>Technical Data:</strong> Anonymous device information for app functionality</li>
-              <li><strong>No Background Collection:</strong> No location, contacts, or personal data collected</li>
+              <li><strong>Usage Analytics:</strong> Anonymous usage metrics to improve app performance</li>
+              <li><strong>No Background Collection:</strong> We do not collect location, contacts, or other personal data</li>
             </ul>
 
-            <h2 className="text-2xl font-bold mb-4 mt-8">4. How Patient Data Is Handled</h2>
+            <h2 className="text-2xl font-bold mb-4 mt-8">4. How Your Data Is Handled</h2>
             <div className="bg-green-50 dark:bg-green-900/20 p-6 rounded-lg mb-6">
-              <h4 className="font-semibold mb-3">Default Privacy Model:</h4>
+              <h4 className="font-semibold mb-3">Privacy-First Approach:</h4>
               <ul className="list-disc list-inside space-y-2">
-                <li>All patient data stays on their device by default</li>
-                <li>AI processing happens without cloud storage</li>
-                <li>No patient data visible to Twin Tip Solutions</li>
-                <li>Patients explicitly choose what to share with their clinic</li>
+                <li>All personal data stays on your device by default</li>
+                <li>AI processing happens with minimal cloud storage</li>
+                <li>Photos and health data are not stored on our servers</li>
+                <li>You control what data you choose to share</li>
               </ul>
             </div>
 
             <h2 className="text-2xl font-bold mb-4 mt-8">5. Data Sharing and Disclosure</h2>
             <p className="mb-4">We share information only as follows:</p>
             <ul className="list-disc list-inside space-y-2 mb-6">
-              <li><strong>With Your Clinic:</strong> Patient data shared only when patients explicitly submit it</li>
-              <li><strong>Service Providers:</strong> Google Cloud Platform under strict BAA terms</li>
+              <li><strong>Service Providers:</strong> Google Cloud Platform and other trusted providers under strict privacy terms</li>
               <li><strong>Legal Requirements:</strong> Only when required by law with appropriate protections</li>
-              <li><strong>Never For:</strong> Marketing, advertising, data sales, or AI training</li>
+              <li><strong>With Your Consent:</strong> Only when you explicitly choose to share information</li>
+              <li><strong>Never For:</strong> Marketing, advertising, data sales, or AI training on your personal data</li>
             </ul>
 
             <h2 className="text-2xl font-bold mb-4 mt-8">6. Data Security</h2>
@@ -130,14 +122,14 @@ export default function Privacy() {
 
             <h2 className="text-2xl font-bold mb-4 mt-8">7. Data Retention and Deletion</h2>
             <ul className="list-disc list-inside space-y-2 mb-6">
-              <li><strong>Clinic Data:</strong> Retained for duration of service agreement plus 90 days</li>
-              <li><strong>Patient Data on Devices:</strong> Controlled entirely by patients</li>
-              <li><strong>Submitted Patient Data:</strong> Retained per clinic&apos;s retention policy</li>
-              <li><strong>Deletion Rights:</strong> Clinics can request data deletion at any time</li>
+              <li><strong>On-Device Data:</strong> Controlled entirely by you - delete anytime from your device</li>
+              <li><strong>Account Data:</strong> Retained while your account is active</li>
+              <li><strong>Analytics Data:</strong> Anonymous data retained to improve app performance</li>
+              <li><strong>Deletion Rights:</strong> You can request account and data deletion at any time</li>
             </ul>
 
             <h2 className="text-2xl font-bold mb-4 mt-8">8. Your Rights</h2>
-            <p className="mb-4">Clinics and their patients have the right to:</p>
+            <p className="mb-4">As a user, you have the right to:</p>
             <ul className="list-disc list-inside space-y-2 mb-6">
               <li>Access their personal data</li>
               <li>Correct inaccurate information</li>
