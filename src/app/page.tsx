@@ -136,7 +136,7 @@ export default function Home() {
               </p>
               <div className="flex flex-col gap-3">
                 <a
-                  href="#"
+                  href="https://apps.apple.com/us/app/ai-cough-checker/id6748887358"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition text-sm font-semibold"
