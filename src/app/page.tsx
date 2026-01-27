@@ -19,7 +19,7 @@ export default function Home() {
             Twin Tip Solutions
           </p>
           <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto">
-            AI/ML Engineer & Founder building intelligent applications
+            AI/ML Engineer building intelligent applications
           </p>
           <p className="text-lg text-gray-500 dark:text-gray-500 mb-8">
             MS Mechanical Engineering (AI/ML Focus) - CU Boulder
@@ -107,7 +107,7 @@ export default function Home() {
               </p>
               <div className="flex flex-col gap-3">
                 <a
-                  href="https://apps.apple.com/us/app/hearthealthai/id6738994173"
+                  href="https://apps.apple.com/us/app/hearthealthai-meal-analyzer/id6743356123"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition text-sm font-semibold"
@@ -115,7 +115,7 @@ export default function Home() {
                   App Store
                 </a>
                 <a
-                  href="https://play.google.com/store/apps/details?id=com.twintipsolutions.HeartHealthAI"
+                  href="https://play.google.com/store/apps/details?id=com.reidglaze.hearthealthai"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition text-sm font-semibold"
@@ -144,7 +144,7 @@ export default function Home() {
                   App Store
                 </a>
                 <a
-                  href="#"
+                  href="https://play.google.com/store/apps/details?id=com.twintipsolutions.cough"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition text-sm font-semibold"
