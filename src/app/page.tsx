@@ -54,7 +54,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Past Projects</h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* DermaWhiz */}
             <div className="bg-gradient-to-br from-teal-50 to-cyan-50 dark:from-teal-900/20 dark:to-cyan-900/20 p-8 rounded-xl shadow-lg hover:shadow-xl transition">
               <div className="flex justify-center mb-6">
@@ -125,10 +125,51 @@ export default function Home() {
               </div>
             </div>
 
+            {/* ACL Rehab Tracker */}
+            <div className="bg-gradient-to-br from-emerald-50 to-green-50 dark:from-emerald-900/20 dark:to-green-900/20 p-8 rounded-xl shadow-lg hover:shadow-xl transition">
+              <div className="flex justify-center mb-6">
+                <Image
+                  src="/AppIcon.png"
+                  alt="ACL Rehab Tracker Logo"
+                  width={120}
+                  height={120}
+                  className="rounded-xl"
+                />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-center">ACL Rehab Tracker</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-6 text-center">
+                AI-powered knee extension and flexion tracking for ACL rehabilitation recovery
+              </p>
+              <div className="flex flex-col gap-3">
+                <a
+                  href="https://apps.apple.com/us/app/acl-rehab-tracker/id6758809797"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition text-sm font-semibold"
+                >
+                  App Store
+                </a>
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.twintipsolutions.aclrehabtracker"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition text-sm font-semibold"
+                >
+                  Google Play
+                </a>
+              </div>
+            </div>
+
             {/* AI Cough Checker */}
             <div className="bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 p-8 rounded-xl shadow-lg hover:shadow-xl transition">
-              <div className="flex justify-center mb-6 h-[120px] items-center">
-                <div className="text-6xl">🎤</div>
+              <div className="flex justify-center mb-6">
+                <Image
+                  src="/CoughAppIcon.png"
+                  alt="AI Cough Checker Logo"
+                  width={120}
+                  height={120}
+                  className="rounded-xl"
+                />
               </div>
               <h3 className="text-2xl font-bold mb-4 text-center">AI Cough Checker</h3>
               <p className="text-gray-700 dark:text-gray-300 mb-6 text-center">
