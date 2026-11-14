@@ -5,6 +5,9 @@ import { FaApple, FaGooglePlay } from "react-icons/fa";
 import ReadingDeck from "@/components/ReadingDeck";
 import { Reading, ReadingFrame } from "@/components/readings";
 import type { ReadingKind } from "@/components/readings";
+import UsageCharts from "@/components/UsageCharts";
+import type { ChartApp } from "@/components/UsageCharts";
+import { getUsage } from "@/lib/usage";
 import Interactions from "@/components/Interactions";
 
 /* ------------------------------------------------------------------ data */
@@ -325,7 +328,27 @@ function Shots({ items, tall = false }: { items: Shot[]; tall?: boolean }) {
 
 /* ------------------------------------------------------------------ page */
 
-export default function Home() {
+// Rebuild this page about once an hour so the usage numbers stay current
+// without calling Google Analytics per visitor.
+export const revalidate = 3600;
+
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+export default async function Home() {
+  const usage = await getUsage();
+  // Only apps that actually returned data get a chart, in the same order as the cards.
+  const charts: ChartApp[] = usage
+    ? allApps.flatMap((app) => {
+        const u = usage.apps.find((x) => x.id === app.id);
+        return u ? [{ ...u, name: app.name.split(":")[0], icon: app.icon, accent: app.accent }] : [];
+      })
+    : [];
+  const read = usage ? new Date(usage.fetchedAt) : null;
+  const readAt = read
+    ? `${MONTHS[read.getUTCMonth()]} ${read.getUTCDate()}, ${String(read.getUTCHours()).padStart(2, "0")}:${String(read.getUTCMinutes()).padStart(2, "0")} UTC`
+    : "";
+  const showUsage = usage !== null && charts.length > 0;
+
   return (
     <div className="w-full">
       <Interactions />
@@ -433,11 +456,20 @@ export default function Home() {
         </div>
       </section>
 
+      {showUsage && (
+        <UsageCharts
+          apps={charts}
+          total30={charts.reduce((sum, c) => sum + c.total30, 0)}
+          readAt={readAt}
+          sheet="03"
+        />
+      )}
+
       {/* Drawn by + revisions */}
       <section className="border-t border-line bg-paper-2 px-4 py-16 sm:px-6 lg:py-20">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-16">
           <div className="reveal">
-            <p className="label">Sheet 03 / Drawn by</p>
+            <p className="label">Sheet {showUsage ? "04" : "03"} / Drawn by</p>
             <p className="mt-4 font-display text-3xl font-medium leading-[1.12] tracking-tight sm:text-[2.6rem]">
               Reid Glaze is an AI/ML engineer with a mechanical engineer&rsquo;s habit of{" "}
               <span className="text-accent">measuring things</span>. Twin Tip Solutions is where
