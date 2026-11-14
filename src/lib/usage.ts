@@ -1,18 +1,25 @@
-import { createSign } from "node:crypto";
+import { getVercelOidcToken } from "@vercel/functions/oidc";
 import { unstable_cache } from "next/cache";
 
 /* Daily active users per app, read from each app's GA4 property with the
    Google Analytics Data API.
 
-   Configuration lives only in environment variables:
-     GA_SERVICE_ACCOUNT_KEY  service-account JSON key (raw JSON or base64).
-                             The account needs Viewer on each GA4 property.
-     GA4_PROPERTY_IDS        JSON map of app id -> GA4 property id, e.g.
-                             {"cough-checker":"123456789"}
-                             Where two apps share one property, give each
-                             its data streams instead:
-                             {"acl-rehab-tracker":{"property":"123456789",
-                               "streams":["111","222"]}}
+   There is no stored Google credential. Vercel issues each deployment a
+   short-lived OIDC identity token; Google's Security Token Service accepts
+   it through a workload identity provider that trusts only this Vercel
+   project, and that federated token is used to borrow a read-only service
+   account for a few minutes. The account needs Viewer on each GA4 property.
+
+   Configuration lives in environment variables, none of them secret:
+     GCP_WORKLOAD_IDENTITY_PROVIDER  projects/<number>/locations/global/
+                                     workloadIdentityPools/<pool>/providers/<id>
+     GCP_SERVICE_ACCOUNT_EMAIL       the read-only service account
+     GA4_PROPERTY_IDS                JSON map of app id -> GA4 property id, e.g.
+                                     {"cough-checker":"123456789"}
+                                     Where two apps share one property, give each
+                                     its data streams instead:
+                                     {"acl-rehab-tracker":{"property":"123456789",
+                                       "streams":["111","222"]}}
 
    Nothing here invents numbers. An app whose report fails is left out, and
    if nothing loads the caller gets null and the section is not rendered. */
@@ -25,22 +32,19 @@ export type Usage = { apps: AppUsage[]; total30: number; fetchedAt: string };
 export const USAGE_REVALIDATE_SECONDS = 3600;
 
 const SCOPE = "https://www.googleapis.com/auth/analytics.readonly";
-const TOKEN_URL = "https://oauth2.googleapis.com/token";
+const STS_URL = "https://sts.googleapis.com/v1/token";
+const IAM_API = "https://iamcredentials.googleapis.com/v1";
 const DATA_API = "https://analyticsdata.googleapis.com/v1beta";
 
-type ServiceKey = { client_email: string; private_key: string };
+type Identity = { provider: string; serviceAccount: string };
 
-function readKey(): ServiceKey | null {
-  const raw = process.env.GA_SERVICE_ACCOUNT_KEY?.trim();
-  if (!raw) return null;
-  try {
-    const json = raw.startsWith("{") ? raw : Buffer.from(raw, "base64").toString("utf8");
-    const key = JSON.parse(json) as ServiceKey;
-    if (!key.client_email || !key.private_key) return null;
-    return { client_email: key.client_email, private_key: key.private_key.replace(/\\n/g, "\n") };
-  } catch {
-    return null;
-  }
+function readIdentity(): Identity | null {
+  const provider = process.env.GCP_WORKLOAD_IDENTITY_PROVIDER?.trim().replace(/^\/\/iam\.googleapis\.com\//, "");
+  const serviceAccount = process.env.GCP_SERVICE_ACCOUNT_EMAIL?.trim();
+  if (!provider || !serviceAccount) return null;
+  if (!/^projects\/\d+\/locations\/global\/workloadIdentityPools\/[\w-]+\/providers\/[\w-]+$/.test(provider)) return null;
+  if (!/^[\w.-]+@[\w.-]+\.iam\.gserviceaccount\.com$/.test(serviceAccount)) return null;
+  return { provider, serviceAccount };
 }
 
 type Source = { id: string; property: string; streams: string[] };
@@ -62,27 +66,39 @@ function readSources(): Source[] {
   }
 }
 
-const b64url = (input: string | Buffer) => Buffer.from(input).toString("base64url");
+async function accessToken({ provider, serviceAccount }: Identity): Promise<string> {
+  // 1. Vercel's identity token for this deployment (build env or request context).
+  const oidc = await getVercelOidcToken();
 
-async function accessToken(key: ServiceKey): Promise<string> {
-  const now = Math.floor(Date.now() / 1000);
-  const unsigned = `${b64url(JSON.stringify({ alg: "RS256", typ: "JWT" }))}.${b64url(
-    JSON.stringify({ iss: key.client_email, scope: SCOPE, aud: TOKEN_URL, iat: now, exp: now + 600 }),
-  )}`;
-  const signature = createSign("RSA-SHA256").update(unsigned).sign(key.private_key);
-  const res = await fetch(TOKEN_URL, {
+  // 2. Trade it for a Google federated token through the workload identity provider.
+  const sts = await fetch(STS_URL, {
     method: "POST",
-    headers: { "content-type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams({
-      grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
-      assertion: `${unsigned}.${b64url(signature)}`,
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({
+      grantType: "urn:ietf:params:oauth:grant-type:token-exchange",
+      audience: `//iam.googleapis.com/${provider}`,
+      scope: "https://www.googleapis.com/auth/cloud-platform",
+      requestedTokenType: "urn:ietf:params:oauth:token-type:access_token",
+      subjectTokenType: "urn:ietf:params:oauth:token-type:jwt",
+      subjectToken: oidc,
     }),
     cache: "no-store",
   });
-  if (!res.ok) throw new Error(`token exchange failed: ${res.status}`);
-  const body = (await res.json()) as { access_token?: string };
-  if (!body.access_token) throw new Error("token exchange returned no token");
-  return body.access_token;
+  if (!sts.ok) throw new Error(`token exchange failed: ${sts.status}`);
+  const federated = ((await sts.json()) as { access_token?: string }).access_token;
+  if (!federated) throw new Error("token exchange returned no token");
+
+  // 3. Borrow the read-only service account, scoped to Analytics read access only.
+  const res = await fetch(`${IAM_API}/projects/-/serviceAccounts/${encodeURIComponent(serviceAccount)}:generateAccessToken`, {
+    method: "POST",
+    headers: { authorization: `Bearer ${federated}`, "content-type": "application/json" },
+    body: JSON.stringify({ scope: [SCOPE], lifetime: "600s" }),
+    cache: "no-store",
+  });
+  if (!res.ok) throw new Error(`service account impersonation failed: ${res.status}`);
+  const token = ((await res.json()) as { accessToken?: string }).accessToken;
+  if (!token) throw new Error("service account impersonation returned no token");
+  return token;
 }
 
 /* Calendar maths on plain YYYY-MM-DD strings, anchored to the property's
@@ -162,10 +178,10 @@ async function fetchApp({ id, property, streams }: Source, token: string): Promi
 }
 
 async function load(): Promise<Usage> {
-  const key = readKey();
+  const identity = readIdentity();
   const sources = readSources();
-  if (!key || sources.length === 0) throw new Error("usage is not configured");
-  const token = await accessToken(key);
+  if (!identity || sources.length === 0) throw new Error("usage is not configured");
+  const token = await accessToken(identity);
   const settled = await Promise.allSettled(sources.map((source) => fetchApp(source, token)));
   const apps: AppUsage[] = [];
   settled.forEach((r, i) => {
