@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 
 /* Usage section: a headline total and one bar chart per app, drawn in the
@@ -14,12 +14,14 @@ export type ChartApp = {
   icon: string;
   accent: string;
   total30: number;
-  daily: { date: string; users: number }[];
-  weekly: { start: string; end: string; users: number }[];
+  daily: ({ date: string; users: number } & Split)[];
+  weekly: ({ start: string; end: string; users: number } & Split)[];
 };
 
+type Split = { ios: number; android: number; web: number };
+
 type Mode = "weekly" | "daily";
-type Bar = { key: string; label: string; short: string; value: number };
+type Bar = { key: string; label: string; short: string; value: number } & Split;
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const day = (iso: string) => `${MONTHS[Number(iso.slice(5, 7)) - 1]} ${Number(iso.slice(8, 10))}`;
@@ -27,13 +29,16 @@ const fmt = (n: number) => n.toLocaleString("en-US");
 
 function barsFor(app: ChartApp, mode: Mode): Bar[] {
   if (mode === "daily") {
-    return app.daily.map((d) => ({ key: d.date, label: day(d.date), short: day(d.date), value: d.users }));
+    return app.daily.map((d) => ({ key: d.date, label: day(d.date), short: day(d.date), value: d.users, ios: d.ios, android: d.android, web: d.web }));
   }
   return app.weekly.map((w) => ({
     key: w.start,
     label: `${day(w.start)} to ${day(w.end)}`,
     short: day(w.start),
     value: w.users,
+    ios: w.ios,
+    android: w.android,
+    web: w.web,
   }));
 }
 
@@ -41,8 +46,25 @@ function Chart({ app, mode, index }: { app: ChartApp; mode: Mode; index: number 
   const bars = barsFor(app, mode);
   const max = Math.max(1, ...bars.map((b) => b.value));
   const [picked, setPicked] = useState<string | null>(null);
-  const shown = bars.find((b) => b.key === picked) ?? bars[bars.length - 1];
+  const plot = useRef<HTMLDivElement>(null);
+  const pickedIndex = bars.findIndex((b) => b.key === picked);
+  const tip = pickedIndex >= 0 ? bars[pickedIndex] : null;
+  const shown = tip ?? bars[bars.length - 1];
   const unit = mode === "daily" ? "active that day" : "active that week";
+  // Anchor the tooltip over its bar, sliding its own origin so it stays inside the chart.
+  const at = tip ? ((pickedIndex + 0.5) / bars.length) * 100 : 50;
+  const describe = (b: Bar) =>
+    `${b.label}: ${fmt(b.value)} ${unit}. iOS ${fmt(b.ios)}, Android ${fmt(b.android)}${b.web > 0 ? `, web ${fmt(b.web)}` : ""}.`;
+
+  // A tap pins the tooltip; tapping anywhere outside the bars lets it go.
+  useEffect(() => {
+    if (picked === null) return;
+    const away = (e: PointerEvent) => {
+      if (plot.current && !plot.current.contains(e.target as Node)) setPicked(null);
+    };
+    document.addEventListener("pointerdown", away);
+    return () => document.removeEventListener("pointerdown", away);
+  }, [picked]);
 
   return (
     <article
@@ -86,32 +108,70 @@ function Chart({ app, mode, index }: { app: ChartApp; mode: Mode; index: number 
           <span className="absolute -top-4 right-0 font-mono text-[0.6rem] uppercase tracking-[0.1em] tabular-nums text-ink-3" aria-hidden="true">
             Scale top {fmt(max)}
           </span>
-          <ul
-            className={`flex h-32 items-end border-b border-ink-3 ${mode === "daily" ? "gap-[2px]" : "gap-3 px-2"}`}
-            onPointerLeave={() => setPicked(null)}
-          >
-            {bars.map((b, i) => (
-              <li
-                key={b.key}
-                tabIndex={0}
-                aria-label={`${b.label}: ${fmt(b.value)} ${unit}`}
-                onPointerEnter={() => setPicked(b.key)}
-                onFocus={() => setPicked(b.key)}
-                onBlur={() => setPicked(null)}
-                className="flex h-full min-w-0 flex-1 cursor-crosshair items-end outline-offset-2"
+          <div ref={plot} className="relative">
+            {tip && (
+              <div
+                role="tooltip"
+                className="usage-tip pointer-events-none absolute bottom-[calc(100%+8px)] z-10 min-w-[9.5rem] border border-ink bg-ink px-3 py-2 text-paper shadow-[4px_4px_0_var(--a)]"
+                style={{ left: `${at}%`, transform: `translateX(-${at}%)` }}
               >
-                <span
-                  className="usage-bar block w-full"
-                  style={{
-                    height: b.value === 0 ? "1px" : `max(3px, ${((b.value / max) * 100).toFixed(2)}%)`,
-                    background: b.value === 0 ? "var(--ink-3)" : "var(--a)",
-                    opacity: shown.key === b.key || picked === null ? 1 : 0.45,
-                    ...({ "--i": i } as CSSProperties),
+                <p className="font-mono text-[0.6rem] uppercase tracking-[0.12em] opacity-70">{tip.label}</p>
+                <p className="mt-0.5 whitespace-nowrap text-sm">
+                  <b className="text-lg font-semibold tabular-nums">{fmt(tip.value)}</b> active users
+                </p>
+                <dl className="mt-1.5 border-t border-paper/25 pt-1.5 font-mono text-xs tabular-nums">
+                  <div className="flex justify-between gap-6">
+                    <dt>iOS</dt>
+                    <dd>{fmt(tip.ios)}</dd>
+                  </div>
+                  <div className="flex justify-between gap-6">
+                    <dt>Android</dt>
+                    <dd>{fmt(tip.android)}</dd>
+                  </div>
+                  {tip.web > 0 && (
+                    <div className="flex justify-between gap-6">
+                      <dt>Web</dt>
+                      <dd>{fmt(tip.web)}</dd>
+                    </div>
+                  )}
+                </dl>
+              </div>
+            )}
+            <ul
+              className={`flex h-32 items-end border-b border-ink-3 ${mode === "daily" ? "gap-[2px]" : "gap-3 px-2"}`}
+              onPointerLeave={(e) => {
+                if (e.pointerType === "mouse") setPicked(null);
+              }}
+            >
+              {bars.map((b, i) => (
+                <li
+                  key={b.key}
+                  tabIndex={0}
+                  aria-label={describe(b)}
+                  onPointerEnter={(e) => {
+                    if (e.pointerType === "mouse") setPicked(b.key);
                   }}
-                />
-              </li>
-            ))}
-          </ul>
+                  onClick={() => setPicked(b.key)}
+                  onFocus={() => setPicked(b.key)}
+                  onBlur={() => setPicked(null)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Escape") setPicked(null);
+                  }}
+                  className="flex h-full min-w-0 flex-1 cursor-crosshair items-end outline-offset-2"
+                >
+                  <span
+                    className="usage-bar block w-full"
+                    style={{
+                      height: b.value === 0 ? "1px" : `max(3px, ${((b.value / max) * 100).toFixed(2)}%)`,
+                      background: b.value === 0 ? "var(--ink-3)" : "var(--a)",
+                      opacity: shown.key === b.key || picked === null ? 1 : 0.45,
+                      ...({ "--i": i } as CSSProperties),
+                    }}
+                  />
+                </li>
+              ))}
+            </ul>
+          </div>
           <div className="mt-1.5 flex justify-between font-mono text-[0.6rem] uppercase tracking-[0.1em] text-ink-3" aria-hidden="true">
             {mode === "daily" ? (
               <>
@@ -190,7 +250,8 @@ export default function UsageCharts({
         </div>
 
         <p className="mt-6 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-ink-3">
-          Each chart has its own scale; the dashed line marks its tallest bar.{" "}
+          Hover or tap a bar for its iOS and Android split. Each chart has its own scale; the dashed line marks its
+          tallest bar.{" "}
           {mode === "weekly" ? "Weekly bars count each person once per week." : "Daily bars count each person once per day."}
         </p>
       </div>

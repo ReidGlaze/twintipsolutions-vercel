@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { getUsage, USAGE_REVALIDATE_SECONDS } from "@/lib/usage";
+import { getUsage } from "@/lib/usage";
 
 /* Public, read-only: daily active users per app for the last 30 days.
    Fetched server-side from GA4 and cached for about an hour, so visitors
@@ -12,6 +12,7 @@ export async function GET() {
     return NextResponse.json({ error: "usage unavailable" }, { status: 503, headers: { "cache-control": "no-store" } });
   }
   return NextResponse.json(usage, {
-    headers: { "cache-control": `public, s-maxage=${USAGE_REVALIDATE_SECONDS}, stale-while-revalidate=600` },
+    // The hourly cache lives in getUsage; keep the CDN copy short so it never outlives it by much.
+    headers: { "cache-control": "public, s-maxage=300, stale-while-revalidate=300" },
   });
 }

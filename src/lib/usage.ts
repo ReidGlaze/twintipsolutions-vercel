@@ -24,8 +24,12 @@ import { unstable_cache } from "next/cache";
    Nothing here invents numbers. An app whose report fails is left out, and
    if nothing loads the caller gets null and the section is not rendered. */
 
-export type DayPoint = { date: string; users: number };
-export type WeekPoint = { start: string; end: string; users: number };
+/* users is the de-duplicated count for the bar. ios / android / web are the
+   same people broken out by GA4's platform dimension; someone active on two
+   platforms is counted in each, so the parts can add up to slightly more. */
+export type Platforms = { ios: number; android: number; web: number };
+export type DayPoint = { date: string; users: number } & Platforms;
+export type WeekPoint = { start: string; end: string; users: number } & Platforms;
 export type AppUsage = { id: string; total30: number; daily: DayPoint[]; weekly: WeekPoint[] };
 export type Usage = { apps: AppUsage[]; total30: number; fetchedAt: string };
 
@@ -121,6 +125,14 @@ const count = (row: Row | undefined) => {
   return n;
 };
 
+const noPlatforms = (): Platforms => ({ ios: 0, android: 0, web: 0 });
+function addPlatform(into: Platforms, platform: string, n: number) {
+  const p = platform.toLowerCase();
+  if (p === "ios") into.ios += n;
+  else if (p === "android") into.android += n;
+  else if (p === "web") into.web += n;
+}
+
 const WEEKS = [
   { name: "w0", startDate: "28daysAgo", endDate: "22daysAgo", from: -28, to: -22 },
   { name: "w1", startDate: "21daysAgo", endDate: "15daysAgo", from: -21, to: -15 },
@@ -143,14 +155,21 @@ async function fetchApp({ id, property, streams }: Source, token: string): Promi
         { dateRanges: last30, dimensions: [{ name: "date" }], metrics, limit: 100, ...scope },
         { dateRanges: last30, metrics, ...scope },
         { dateRanges: WEEKS.map(({ name, startDate, endDate }) => ({ name, startDate, endDate })), metrics, ...scope },
+        { dateRanges: last30, dimensions: [{ name: "date" }, { name: "platform" }], metrics, limit: 500, ...scope },
+        {
+          dateRanges: WEEKS.map(({ name, startDate, endDate }) => ({ name, startDate, endDate })),
+          dimensions: [{ name: "platform" }],
+          metrics,
+          ...scope,
+        },
       ],
     }),
     cache: "no-store",
   });
   if (!res.ok) throw new Error(`GA4 report for ${id} failed: ${res.status}`);
   const { reports } = (await res.json()) as { reports?: Report[] };
-  if (!reports || reports.length !== 3) throw new Error(`GA4 report for ${id} was incomplete`);
-  const [byDay, total, byWeek] = reports;
+  if (!reports || reports.length !== 5) throw new Error(`GA4 report for ${id} was incomplete`);
+  const [byDay, total, byWeek, byDayPlatform, byWeekPlatform] = reports;
 
   const timeZone = byDay.metadata?.timeZone || "UTC";
   const today = todayIn(timeZone);
@@ -161,17 +180,36 @@ async function fetchApp({ id, property, streams }: Source, token: string): Promi
     if (/^\d{8}$/.test(v)) seen.set(`${v.slice(0, 4)}-${v.slice(4, 6)}-${v.slice(6, 8)}`, count(row));
   }
   // GA4 omits days with no activity; those are genuine zeros, so fill them in.
+  const dayPlatforms = new Map<string, Platforms>();
+  for (const row of byDayPlatform.rows ?? []) {
+    const v = row.dimensionValues?.[0]?.value ?? "";
+    if (!/^\d{8}$/.test(v)) continue;
+    const date = `${v.slice(0, 4)}-${v.slice(4, 6)}-${v.slice(6, 8)}`;
+    const entry = dayPlatforms.get(date) ?? noPlatforms();
+    addPlatform(entry, row.dimensionValues?.[1]?.value ?? "", count(row));
+    dayPlatforms.set(date, entry);
+  }
   const daily: DayPoint[] = Array.from({ length: 30 }, (_, i) => {
     const date = shift(today, i - 30);
-    return { date, users: seen.get(date) ?? 0 };
+    return { date, users: seen.get(date) ?? 0, ...(dayPlatforms.get(date) ?? noPlatforms()) };
   });
 
   const weekRows = new Map<string, number>();
   for (const row of byWeek.rows ?? []) weekRows.set(row.dimensionValues?.[0]?.value ?? "", count(row));
+  // With several date ranges GA4 appends the range name as the last dimension.
+  const weekPlatforms = new Map<string, Platforms>();
+  for (const row of byWeekPlatform.rows ?? []) {
+    const dims = (row.dimensionValues ?? []).map((d) => d.value ?? "");
+    const range = dims[dims.length - 1];
+    const entry = weekPlatforms.get(range) ?? noPlatforms();
+    addPlatform(entry, dims[0], count(row));
+    weekPlatforms.set(range, entry);
+  }
   const weekly: WeekPoint[] = WEEKS.map((w) => ({
     start: shift(today, w.from),
     end: shift(today, w.to),
     users: weekRows.get(w.name) ?? 0,
+    ...(weekPlatforms.get(w.name) ?? noPlatforms()),
   }));
 
   return { id, total30: count(total.rows?.[0]), daily, weekly };
@@ -198,8 +236,8 @@ async function load(requireAll: boolean): Promise<Usage> {
 /* Failures throw, so they are never stored. A read where every app loaded is
    kept for the hour. A read where some apps failed is kept for only a few
    minutes, so an app that was briefly unreadable comes back quickly. */
-const cachedComplete = unstable_cache(() => load(true), ["ga4-usage-complete-v2"], { revalidate: USAGE_REVALIDATE_SECONDS });
-const cachedPartial = unstable_cache(() => load(false), ["ga4-usage-partial-v2"], { revalidate: 300 });
+const cachedComplete = unstable_cache(() => load(true), ["ga4-usage-complete-v3"], { revalidate: USAGE_REVALIDATE_SECONDS });
+const cachedPartial = unstable_cache(() => load(false), ["ga4-usage-partial-v3"], { revalidate: 300 });
 
 export async function getUsage(): Promise<Usage | null> {
   try {
