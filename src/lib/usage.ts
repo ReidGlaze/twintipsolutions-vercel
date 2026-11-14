@@ -8,7 +8,11 @@ import { unstable_cache } from "next/cache";
      GA_SERVICE_ACCOUNT_KEY  service-account JSON key (raw JSON or base64).
                              The account needs Viewer on each GA4 property.
      GA4_PROPERTY_IDS        JSON map of app id -> GA4 property id, e.g.
-                             {"acl-rehab-tracker":"123456789"}
+                             {"cough-checker":"123456789"}
+                             Where two apps share one property, give each
+                             its data streams instead:
+                             {"acl-rehab-tracker":{"property":"123456789",
+                               "streams":["111","222"]}}
 
    Nothing here invents numbers. An app whose report fails is left out, and
    if nothing loads the caller gets null and the section is not rendered. */
@@ -39,12 +43,20 @@ function readKey(): ServiceKey | null {
   }
 }
 
-function readProperties(): [string, string][] {
+type Source = { id: string; property: string; streams: string[] };
+
+function readSources(): Source[] {
   try {
     const map = JSON.parse(process.env.GA4_PROPERTY_IDS ?? "{}") as Record<string, unknown>;
-    return Object.entries(map)
-      .map(([id, prop]) => [id, String(prop).replace(/^properties\//, "")] as [string, string])
-      .filter(([, prop]) => /^\d+$/.test(prop));
+    return Object.entries(map).flatMap(([id, value]) => {
+      const entry = (typeof value === "object" && value !== null ? value : { property: value }) as {
+        property?: unknown;
+        streams?: unknown;
+      };
+      const property = String(entry.property ?? "").replace(/^properties\//, "");
+      const streams = Array.isArray(entry.streams) ? entry.streams.map(String).filter((x) => /^\d+$/.test(x)) : [];
+      return /^\d+$/.test(property) ? [{ id, property, streams }] : [];
+    });
   } catch {
     return [];
   }
@@ -100,17 +112,21 @@ const WEEKS = [
   { name: "w3", startDate: "7daysAgo", endDate: "yesterday", from: -7, to: -1 },
 ];
 
-async function fetchApp(id: string, property: string, token: string): Promise<AppUsage> {
+async function fetchApp({ id, property, streams }: Source, token: string): Promise<AppUsage> {
   const metrics = [{ name: "activeUsers" }];
+  // Apps that share a property are told apart by their data streams.
+  const scope = streams.length
+    ? { dimensionFilter: { filter: { fieldName: "streamId", inListFilter: { values: streams } } } }
+    : {};
   const last30 = [{ startDate: "30daysAgo", endDate: "yesterday" }];
   const res = await fetch(`${DATA_API}/properties/${property}:batchRunReports`, {
     method: "POST",
     headers: { authorization: `Bearer ${token}`, "content-type": "application/json" },
     body: JSON.stringify({
       requests: [
-        { dateRanges: last30, dimensions: [{ name: "date" }], metrics, limit: 100 },
-        { dateRanges: last30, metrics },
-        { dateRanges: WEEKS.map(({ name, startDate, endDate }) => ({ name, startDate, endDate })), metrics },
+        { dateRanges: last30, dimensions: [{ name: "date" }], metrics, limit: 100, ...scope },
+        { dateRanges: last30, metrics, ...scope },
+        { dateRanges: WEEKS.map(({ name, startDate, endDate }) => ({ name, startDate, endDate })), metrics, ...scope },
       ],
     }),
     cache: "no-store",
@@ -147,14 +163,14 @@ async function fetchApp(id: string, property: string, token: string): Promise<Ap
 
 async function load(): Promise<Usage> {
   const key = readKey();
-  const properties = readProperties();
-  if (!key || properties.length === 0) throw new Error("usage is not configured");
+  const sources = readSources();
+  if (!key || sources.length === 0) throw new Error("usage is not configured");
   const token = await accessToken(key);
-  const settled = await Promise.allSettled(properties.map(([id, prop]) => fetchApp(id, prop, token)));
+  const settled = await Promise.allSettled(sources.map((source) => fetchApp(source, token)));
   const apps: AppUsage[] = [];
   settled.forEach((r, i) => {
     if (r.status === "fulfilled") apps.push(r.value);
-    else console.error(`[usage] ${properties[i][0]}:`, r.reason instanceof Error ? r.reason.message : r.reason);
+    else console.error(`[usage] ${sources[i].id}:`, r.reason instanceof Error ? r.reason.message : r.reason);
   });
   if (apps.length === 0) throw new Error("no GA4 property could be read");
   return { apps, total30: apps.reduce((sum, a) => sum + a.total30, 0), fetchedAt: new Date().toISOString() };
