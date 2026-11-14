@@ -177,7 +177,9 @@ async function fetchApp({ id, property, streams }: Source, token: string): Promi
   return { id, total30: count(total.rows?.[0]), daily, weekly };
 }
 
-async function load(): Promise<Usage> {
+class Incomplete extends Error {}
+
+async function load(requireAll: boolean): Promise<Usage> {
   const identity = readIdentity();
   const sources = readSources();
   if (!identity || sources.length === 0) throw new Error("usage is not configured");
@@ -186,18 +188,30 @@ async function load(): Promise<Usage> {
   const apps: AppUsage[] = [];
   settled.forEach((r, i) => {
     if (r.status === "fulfilled") apps.push(r.value);
-    else console.error(`[usage] ${sources[i].id}:`, r.reason instanceof Error ? r.reason.message : r.reason);
+    else if (!requireAll) console.error(`[usage] ${sources[i].id}:`, r.reason instanceof Error ? r.reason.message : r.reason);
   });
   if (apps.length === 0) throw new Error("no GA4 property could be read");
+  if (requireAll && apps.length < sources.length) throw new Incomplete();
   return { apps, total30: apps.reduce((sum, a) => sum + a.total30, 0), fetchedAt: new Date().toISOString() };
 }
 
-// Failures throw, so they are never stored: only real data is cached for the hour.
-const cached = unstable_cache(load, ["ga4-usage-v1"], { revalidate: USAGE_REVALIDATE_SECONDS });
+/* Failures throw, so they are never stored. A read where every app loaded is
+   kept for the hour. A read where some apps failed is kept for only a few
+   minutes, so an app that was briefly unreadable comes back quickly. */
+const cachedComplete = unstable_cache(() => load(true), ["ga4-usage-complete-v2"], { revalidate: USAGE_REVALIDATE_SECONDS });
+const cachedPartial = unstable_cache(() => load(false), ["ga4-usage-partial-v2"], { revalidate: 300 });
 
 export async function getUsage(): Promise<Usage | null> {
   try {
-    return await cached();
+    return await cachedComplete();
+  } catch (err) {
+    if (!(err instanceof Incomplete)) {
+      console.error("[usage] hidden:", err instanceof Error ? err.message : err);
+      return null;
+    }
+  }
+  try {
+    return await cachedPartial();
   } catch (err) {
     console.error("[usage] hidden:", err instanceof Error ? err.message : err);
     return null;
