@@ -25,9 +25,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://twintipsolutions.com"),
-  title: "Twin Tip Solutions | Health apps that measure, by Reid Glaze",
+  title: "Twin Tip Solutions | AI health apps by Reid Glaze",
   description:
-    "Twin Tip Solutions builds health and recovery apps that turn a phone photo into a number you can track: AI Cough Checker, ACL Rehab Tracker, HeartHealthAI, DermaWhiz, AI Gut Health and IBS Tracker and Shoulder Rehab ROM Tracker. Built by AI/ML engineer Reid Glaze.",
+    "Twin Tip Solutions builds AI health apps that turn a photo, a meal or a cough into a reading you can track: AI Cough Checker, ACL Rehab Tracker, HeartHealthAI, DermaWhiz, AI Gut Health and IBS Tracker and Shoulder Rehab ROM Tracker. Built by AI/ML engineer Reid Glaze.",
   keywords: [
     "Twin Tip Solutions",
     "Reid Glaze",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     "range of motion tracking",
   ],
   openGraph: {
-    title: "Twin Tip Solutions - Health apps that measure",
+    title: "Twin Tip Solutions - AI health readings from your phone",
     description:
       "AI Cough Checker, ACL Rehab Tracker, HeartHealthAI, DermaWhiz, AI Gut Health and Shoulder Rehab. Tracking and education tools for iPhone and Android, built by Reid Glaze.",
     type: "website",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Twin Tip Solutions - Health apps that measure",
+    title: "Twin Tip Solutions - AI health readings from your phone",
     description:
       "Six tracking and education apps for iPhone and Android, built by AI/ML engineer Reid Glaze.",
   },

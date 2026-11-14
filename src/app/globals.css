@@ -610,3 +610,45 @@ button:focus-visible {
     transform: none;
   }
 }
+
+/* Hero reading deck: panels share one grid cell and crossfade */
+.deck-panel {
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.45s ease,
+    visibility 0s linear 0.45s;
+}
+.deck-panel.is-on {
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 0.45s ease,
+    visibility 0s;
+}
+@keyframes deck-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.deck-progress {
+  animation: deck-progress linear both;
+}
+.motion .deck-panel.is-on .wave-bar {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: wave 0.9s ease-in-out infinite alternate;
+  animation-delay: calc(var(--i) * -53ms);
+}
+@media (prefers-reduced-motion: reduce) {
+  .deck-panel,
+  .deck-panel.is-on {
+    transition: none;
+  }
+  .deck-progress {
+    animation: none;
+  }
+}

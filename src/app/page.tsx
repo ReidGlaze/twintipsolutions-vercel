@@ -2,7 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
 import { FaApple, FaGooglePlay } from "react-icons/fa";
-import Goniometer from "@/components/Goniometer";
+import ReadingDeck from "@/components/ReadingDeck";
+import { Reading, ReadingFrame } from "@/components/readings";
+import type { ReadingKind } from "@/components/readings";
 import Interactions from "@/components/Interactions";
 
 /* ------------------------------------------------------------------ data */
@@ -245,13 +247,15 @@ function Info({ app }: { app: App }) {
 
 function Plate({
   app,
+  reading,
   className = "",
   children,
   wide = false,
 }: {
   app: App;
+  reading: ReadingKind;
   className?: string;
-  children: ReactNode;
+  children?: ReactNode;
   wide?: boolean;
 }) {
   return (
@@ -270,12 +274,15 @@ function Plate({
           {app.appStore ? "iPhone + Android" : "Android / iOS in review"}
         </span>
       </header>
-      <div className={`grid flex-1 ${wide ? "lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]" : ""}`}>
+      <div className={`grid flex-1 ${wide ? "lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]" : "grid-rows-[auto_1fr]"}`}>
         <Info app={app} />
-        <div
-          className={`relative overflow-hidden border-t border-line ${wide ? "lg:border-l lg:border-t-0" : ""}`}
-        >
-          {children}
+        <div className={`flex min-w-0 flex-col border-t border-line ${wide ? "lg:border-l lg:border-t-0" : ""}`}>
+          <div className={children ? "border-b border-line" : "flex-1"}>
+            <ReadingFrame fill={!children}>
+              <Reading kind={reading} />
+            </ReadingFrame>
+          </div>
+          {children && <div className="relative flex-1 overflow-hidden">{children}</div>}
         </div>
       </div>
     </article>
@@ -316,87 +323,6 @@ function Shots({ items, tall = false }: { items: Shot[]; tall?: boolean }) {
   );
 }
 
-/* Schematic: a plate of food with leader lines out to readouts. No real values. */
-function PlateDrawing() {
-  const rows: [string, number][] = [
-    ["Calories", 0.72],
-    ["Protein", 0.55],
-    ["Sat. fat", 0.28],
-    ["Sodium", 0.4],
-    ["Fiber", 0.63],
-  ];
-  return (
-    <div className="grid-bg flex h-full min-h-[320px] items-center justify-center p-5">
-      <svg viewBox="0 0 420 300" className="w-full max-w-[460px]" role="img" aria-label="Schematic of a plate of food with leader lines to nutrition readouts">
-        <circle cx="120" cy="150" r="96" className="fill-sheet stroke-ink" strokeWidth="1.5" />
-        <circle cx="120" cy="150" r="70" fill="none" className="stroke-ink-3" strokeWidth="1" strokeDasharray="2 4" />
-        <g className="pie">
-        <path d="M120 150 L120 80 A70 70 0 0 1 186 172 Z" fill="var(--a)" opacity="0.9" />
-        <path d="M120 150 L186 172 A70 70 0 0 1 72 201 Z" fill="var(--a)" opacity="0.45" />
-        <path d="M120 150 L72 201 A70 70 0 0 1 120 80 Z" fill="var(--a)" opacity="0.18" />
-        </g>
-        <circle cx="120" cy="150" r="5" className="fill-sheet stroke-ink" strokeWidth="1.5" />
-        {rows.map(([label, v], i) => {
-          const y = 52 + i * 49;
-          return (
-            <g key={label}>
-              <path d={`M${150 + (i % 2) * 22} ${110 + i * 20} L236 ${y} L250 ${y}`} fill="none" className="stroke-ink-3" strokeWidth="1" />
-              <circle cx={150 + (i % 2) * 22} cy={110 + i * 20} r="2.5" className="fill-ink" />
-              <text x="256" y={y - 6} className="fill-ink-2 font-mono" fontSize="10" letterSpacing="1.4">
-                {label.toUpperCase()}
-              </text>
-              <rect x="256" y={y + 1} width="150" height="6" className="fill-line-soft" />
-              <rect x="256" y={y + 1} width={150 * v} height="6" fill="var(--a)" className="gauge" style={{ "--i": i } as CSSProperties} />
-            </g>
-          );
-        })}
-      </svg>
-    </div>
-  );
-}
-
-/* Schematic: three cough bursts as an amplitude trace. */
-function Waveform() {
-  const n = 132;
-  const bars = Array.from({ length: n }, (_, i) => {
-    const x = i / n;
-    const burst = (c: number, w: number, a: number) => a * Math.exp(-Math.pow((x - c) / w, 2));
-    const env = burst(0.16, 0.035, 1) + burst(0.26, 0.05, 0.55) + burst(0.52, 0.03, 0.85) + burst(0.6, 0.06, 0.4) + burst(0.84, 0.04, 0.7);
-    const jitter = 0.55 + 0.45 * Math.abs(Math.sin(i * 12.9898) * Math.cos(i * 4.1414));
-    return Math.round((0.03 + env * jitter) * 1000) / 1000;
-  });
-  return (
-    <div className="grid-bg flex h-full min-h-[240px] flex-col justify-center px-5 py-8 sm:px-8">
-      <svg viewBox={`0 0 ${n * 6} 160`} className="w-full" preserveAspectRatio="none" role="img" aria-label="Schematic audio waveform of three coughs">
-        <line x1="0" y1="80" x2={n * 6} y2="80" className="stroke-line" strokeWidth="1" />
-        {bars.map((b, i) => (
-          <rect
-            key={i}
-            x={i * 6 + 1}
-            y={80 - Math.min(b, 1) * 74}
-            width="3"
-            height={Math.max(2, Math.min(b, 1) * 148)}
-            fill="var(--a)"
-            opacity={b > 0.12 ? 1 : 0.4}
-            className="wave-bar"
-            style={{ "--i": i } as CSSProperties}
-          />
-        ))}
-      </svg>
-      <div className="mt-4 flex items-center justify-between">
-        <span className="label flex items-center gap-2">
-          <span className="pulse-dot inline-block h-2 w-2 rounded-full bg-coral" />
-          Rec
-        </span>
-        <span className="label max-sm:hidden">Cough 1</span>
-        <span className="label">Cough 2</span>
-        <span className="label max-sm:hidden">Cough 3</span>
-        <span className="label">00:06</span>
-      </div>
-    </div>
-  );
-}
-
 /* ------------------------------------------------------------------ page */
 
 export default function Home() {
@@ -410,12 +336,12 @@ export default function Home() {
           <div className="hero-in">
             <p className="label flex items-center gap-3">
               <span className="inline-block h-px w-8 bg-accent" />
-              Sheet 01 / Health and recovery apps
+              Sheet 01 / AI health readings
             </p>
             <h1 className="mt-5 font-display text-[clamp(3.1rem,10.5vw,5.5rem)] font-semibold leading-[0.9] tracking-[-0.035em]">
               Point a phone.
               <br />
-              Get a <span className="relative whitespace-nowrap text-accent">number
+              Get a <span className="relative whitespace-nowrap text-accent">reading
                 <svg viewBox="0 0 300 14" preserveAspectRatio="none" className="absolute -bottom-2 left-0 h-3 w-full" aria-hidden="true">
                   <path d="M2 9 C 60 2, 120 12, 180 6 S 270 4, 298 8" fill="none" stroke="var(--coral)" strokeWidth="3" strokeLinecap="round" pathLength={1} className="squiggle" />
                 </svg>
@@ -423,9 +349,9 @@ export default function Home() {
               .
             </h1>
             <p className="mt-8 max-w-[52ch] text-lg leading-relaxed text-ink-2 sm:text-xl">
-              Twin Tip Solutions makes apps that turn a photo, a meal or a cough into something you
-              can track. How far the knee bends this week. What was actually on the plate. Six apps
-              so far, all designed and built by one engineer.
+              Twin Tip Solutions is a small studio for AI health apps. Each one takes something
+              your phone can capture, like a bent knee, a plate of food, a patch of skin or a few
+              seconds of coughing, and hands back a reading you can follow over time.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
               <a href="#apps" className="store-btn">
@@ -438,10 +364,9 @@ export default function Home() {
             </div>
           </div>
           <div className="hero-in [animation-delay:150ms]">
-            <Goniometer />
+            <ReadingDeck />
             <p className="mt-3 text-sm text-ink-3">
-              This is how ACL Rehab Tracker works: the phone camera reads your knee angle from a
-              photo, so you can watch it change.
+              Five kinds of reading across six apps. Pick a tab, or drag the arm on Angle.
             </p>
           </div>
         </div>
@@ -485,29 +410,25 @@ export default function Home() {
           </div>
 
           <div className="grid gap-6 lg:grid-cols-12 lg:gap-8">
-            <Plate app={cough} wide className="lg:col-span-12">
-              <Waveform />
-            </Plate>
-            <Plate app={acl} className="lg:col-span-7">
+            <Plate app={cough} reading="cough" wide className="lg:col-span-12" />
+            <Plate app={acl} reading="acl" className="lg:col-span-7">
               <Shots items={shots.acl} />
             </Plate>
-            <Plate app={heart} className="lg:col-span-5">
-              <PlateDrawing />
-            </Plate>
-            <Plate app={derma} className="lg:col-span-7">
+            <Plate app={heart} reading="heart" className="lg:col-span-5" />
+            <Plate app={derma} reading="derma" className="lg:col-span-7">
               <Shots items={shots.derma} />
             </Plate>
-            <Plate app={gut} className="lg:col-span-5">
+            <Plate app={gut} reading="gut" className="lg:col-span-5">
               <Shots items={shots.gut} />
             </Plate>
-            <Plate app={shoulder} wide className="lg:col-span-12">
+            <Plate app={shoulder} reading="shoulder" wide className="lg:col-span-12">
               <Shots items={shots.shoulder} tall />
             </Plate>
           </div>
 
           <p className="mt-6 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-ink-3">
-            Figs. 01 and 03 are schematics, not screenshots. All apps are tracking and education
-            tools, not medical devices.
+            Sample readings use made-up example data, not real results. All apps are tracking and
+            education tools, not medical devices.
           </p>
         </div>
       </section>

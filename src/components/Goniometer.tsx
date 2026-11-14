@@ -2,8 +2,9 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
-/* Hero instrument: a protractor whose arm follows the pointer.
-   Server-renders at 135 degrees (a common knee flexion goal), sways gently until someone touches it. */
+/* A protractor whose arm follows the pointer. Used as the "Angle" panel of
+   the hero reading deck. Server-renders at 135 degrees and sways gently
+   while it is the active panel, until someone touches it. */
 
 const W = 560;
 const H = 320;
@@ -19,11 +20,12 @@ const pt = (deg: number, r: number) => {
 
 const ticks = Array.from({ length: 37 }, (_, i) => i * 5);
 
-export default function Goniometer() {
+export default function Goniometer({ active = true }: { active?: boolean }) {
   const [angle, setAngle] = useState(135);
   const touched = useRef(false);
 
   useEffect(() => {
+    if (!active || touched.current) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     let raf = 0;
     const start = performance.now();
@@ -35,7 +37,7 @@ export default function Goniometer() {
     };
     raf = requestAnimationFrame(loop);
     return () => cancelAnimationFrame(raf);
-  }, []);
+  }, [active]);
 
   const fromPointer = useCallback((e: React.PointerEvent<SVGSVGElement>) => {
     const box = e.currentTarget.getBoundingClientRect();
@@ -52,13 +54,7 @@ export default function Goniometer() {
   const pct = Math.round((angle / 180) * 100);
 
   return (
-    <div className="reg-marks border border-line bg-sheet">
-      <div className="flex items-center justify-between border-b border-line px-4 py-2">
-        <span className="label">Fig. 00 / Knee flexion</span>
-        <span className="label hidden sm:inline">Move the arm</span>
-        <span className="label sm:hidden">Tap to set</span>
-      </div>
-
+    <div>
       <svg
         viewBox={`0 0 ${W} ${H}`}
         className="block w-full cursor-crosshair select-none"
@@ -68,12 +64,11 @@ export default function Goniometer() {
         role="img"
         aria-label={`Protractor reading ${angle} degrees`}
       >
-        {/* swept sector */}
         <path
           d={`M ${CX} ${CY} L ${CX + R - 8} ${CY} A ${R - 8} ${R - 8} 0 0 0 ${ax} ${ay} Z`}
-          fill="var(--glow)"
+          fill="var(--a)"
+          fillOpacity="0.14"
         />
-        {/* scale */}
         <path
           d={`M ${CX - R} ${CY} A ${R} ${R} 0 0 1 ${CX + R} ${CY}`}
           fill="none"
@@ -97,27 +92,14 @@ export default function Goniometer() {
                 strokeWidth={major ? 1.4 : 1}
               />
               {major && (
-                <text
-                  x={tx}
-                  y={ty + 4}
-                  textAnchor="middle"
-                  className="fill-ink-2 font-mono"
-                  fontSize="12"
-                >
+                <text x={tx} y={ty + 4} textAnchor="middle" className="fill-ink-2 font-mono" fontSize="12">
                   {d}
                 </text>
               )}
             </g>
           );
         })}
-        {/* inner angle arc */}
-        <path
-          d={`M ${CX + 78} ${CY} A 78 78 0 0 0 ${sx} ${sy}`}
-          fill="none"
-          className="stroke-accent"
-          strokeWidth="2"
-        />
-        {/* baseline (fixed arm) */}
+        <path d={`M ${CX + 78} ${CY} A 78 78 0 0 0 ${sx} ${sy}`} fill="none" stroke="var(--a)" strokeWidth="2" />
         <line x1={CX - R} y1={CY} x2={CX + R} y2={CY} className="stroke-line" strokeWidth="1" />
         <line
           x1={CX}
@@ -129,26 +111,25 @@ export default function Goniometer() {
           strokeDasharray="1 7"
           strokeLinecap="round"
         />
-        {/* moving arm */}
         <line x1={CX} y1={CY} x2={ax} y2={ay} className="stroke-ink" strokeWidth="3" strokeLinecap="round" />
         <line x1={ax} y1={ay} x2={lx} y2={ly} className="stroke-coral" strokeWidth="3" strokeLinecap="round" />
-        <circle cx={ax} cy={ay} r="9" className="fill-sheet stroke-accent" strokeWidth="3" />
+        <circle cx={ax} cy={ay} r="9" className="fill-sheet" stroke="var(--a)" strokeWidth="3" />
         <circle cx={CX} cy={CY} r="11" className="fill-coral" />
         <circle cx={CX} cy={CY} r="3.5" className="fill-sheet" />
       </svg>
 
-      <div className="grid grid-cols-[auto_1fr] items-end gap-x-6 border-t border-line px-4 py-3 sm:px-5">
+      <div className="grid grid-cols-[auto_1fr] items-end gap-x-6 border-t border-line-soft pt-3">
         <p
-          className="font-display text-6xl font-semibold leading-none tracking-tight tabular-nums sm:text-7xl"
+          className="font-display text-6xl font-semibold leading-none tracking-tight tabular-nums"
           aria-hidden="true"
         >
           {angle}
-          <span className="text-accent">&deg;</span>
+          <span style={{ color: "var(--a)" }}>&deg;</span>
         </p>
         <div className="min-w-0 pb-1">
           <div className="flex items-baseline justify-between gap-3">
-            <span className="label">Reading</span>
-            <span className="font-mono text-xs tabular-nums text-ink-2">{pct}% of 180&deg;</span>
+            <span className="label">Knee flexion / drag the arm</span>
+            <span className="font-mono text-xs tabular-nums text-ink-2">{pct}%</span>
           </div>
           <input
             type="range"
@@ -156,6 +137,7 @@ export default function Goniometer() {
             max={180}
             value={angle}
             aria-label="Arm angle in degrees"
+            tabIndex={active ? 0 : -1}
             onChange={(e) => {
               touched.current = true;
               setAngle(Number(e.target.value));
