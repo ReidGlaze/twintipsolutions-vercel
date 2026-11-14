@@ -1,73 +1,612 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ------------------------------------------------------------------
+   Twin Tip Solutions — "drafting sheet" system
+   Light = vellum paper, dark = blueprint. Everything is a token.
+   ------------------------------------------------------------------ */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root {
+  color-scheme: light dark;
+  --paper: #f3eee4;
+  --paper-2: #e9e2d3;
+  --sheet: #faf7f0;
+  --ink: #141d1b;
+  --ink-2: #566360;
+  --ink-3: #8a948f;
+  --line: rgba(20, 29, 27, 0.18);
+  --line-soft: rgba(20, 29, 27, 0.09);
+  --grid: rgba(20, 29, 27, 0.075);
+  --grid-major: rgba(20, 29, 27, 0.14);
+  --accent: #0e7c6b;
+  --accent-ink: #ffffff;
+  --coral: #ea6f55;
+  --glow: rgba(14, 124, 107, 0.16);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --paper: #0b1826;
+    --paper-2: #0f2032;
+    --sheet: #10213a;
+    --ink: #eaf0f4;
+    --ink-2: #a8b8c6;
+    --ink-3: #6f8395;
+    --line: rgba(180, 210, 235, 0.22);
+    --line-soft: rgba(180, 210, 235, 0.1);
+    --grid: rgba(180, 210, 235, 0.07);
+    --grid-major: rgba(180, 210, 235, 0.14);
+    --accent: #5fd8c3;
+    --accent-ink: #0b1826;
+    --coral: #ff9a82;
+    --glow: rgba(95, 216, 195, 0.14);
   }
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-sheet: var(--sheet);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-line: var(--line);
+  --color-line-soft: var(--line-soft);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-coral: var(--coral);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-display: var(--font-bricolage), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  background: var(--paper);
+  overflow-x: clip;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Cool animations and effects */
-@keyframes gradient-x {
-  0%, 100% {
-    transform: translateX(0%);
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Drafting grid: minor lines every 24px, major every 120px */
+.grid-bg {
+  background-image:
+    linear-gradient(to right, var(--grid-major) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-major) 1px, transparent 1px),
+    linear-gradient(to right, var(--grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+  background-size:
+    120px 120px,
+    120px 120px,
+    24px 24px,
+    24px 24px;
+  background-position: -1px -1px;
+}
+
+.grid-fade {
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 0%, #000 40%, transparent 100%);
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 0%, #000 40%, transparent 100%);
+}
+
+/* Dimension line: a thin rule with end ticks */
+.dim-line {
+  position: relative;
+  height: 1px;
+  background: var(--line);
+}
+.dim-line::before,
+.dim-line::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  width: 1px;
+  height: 11px;
+  background: var(--line);
+}
+.dim-line::before {
+  left: 0;
+}
+.dim-line::after {
+  right: 0;
+}
+
+/* Corner registration marks on a block */
+.reg-marks {
+  position: relative;
+}
+.reg-marks::before,
+.reg-marks::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: var(--ink-3);
+  border-style: solid;
+  pointer-events: none;
+}
+.reg-marks::before {
+  top: -1px;
+  left: -1px;
+  border-width: 1px 0 0 1px;
+}
+.reg-marks::after {
+  bottom: -1px;
+  right: -1px;
+  border-width: 0 1px 1px 0;
+}
+
+/* Mono labels */
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+/* Device bezel for flat screenshots */
+.bezel {
+  border-radius: 2rem;
+  padding: 7px;
+  background: #0a0c0f;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.16),
+    0 24px 48px -20px rgba(0, 0, 0, 0.45);
+}
+.bezel > * {
+  border-radius: 1.6rem;
+  display: block;
+}
+
+/* Protractor sweep */
+@keyframes sweep {
+  from {
+    stroke-dashoffset: var(--sweep-len);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.sweep {
+  stroke-dasharray: var(--sweep-len);
+  stroke-dashoffset: 0;
+}
+
+/* Float */
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
   }
   50% {
-    transform: translateX(100%);
+    transform: translateY(-10px);
   }
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
+/* Ticker */
+@keyframes ticker {
+  from {
+    transform: translateX(0);
   }
-  50% {
-    transform: translateY(-20px);
+  to {
+    transform: translateX(-50%);
+  }
+}
+.ticker {
+  display: flex;
+  width: max-content;
+  animation: ticker 60s linear infinite;
+}
+.ticker:hover {
+  animation-play-state: paused;
+}
+
+/* Entry reveal, scroll-driven where supported */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.animate-gradient-x {
-  background-size: 400% 400%;
-  animation: gradient-x 3s ease infinite;
+@media (prefers-reduced-motion: no-preference) {
+  .sweep {
+    animation: sweep 1.6s cubic-bezier(0.2, 0.7, 0.2, 1) 0.3s both;
+  }
+  .bob {
+    animation: bob 7s ease-in-out infinite;
+  }
+  .bob-slow {
+    animation: bob 9s ease-in-out 1s infinite;
+  }
+  .hero-in {
+    animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
+@media (prefers-reduced-motion: reduce) {
+  .ticker {
+    animation: none;
+  }
 }
 
-.shadow-3xl {
-  box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+/* Underline that draws in */
+.link-draw {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  transition: background-size 0.3s ease;
+}
+.link-draw:hover,
+.link-draw:focus-visible {
+  background-size: 100% 1px;
 }
 
-/* Glassmorphism effect */
-.glass {
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(255, 255, 255, 0.75);
-  border: 1px solid rgba(209, 213, 219, 0.3);
+/* Hide scrollbar on the figures strip without breaking scroll */
+.strip {
+  scrollbar-width: none;
+}
+.strip::-webkit-scrollbar {
+  display: none;
 }
 
-.glass-dark {
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(0, 0, 0, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.125);
+/* Goniometer slider */
+.gonio-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 22px;
+  background: transparent;
+  cursor: ew-resize;
+}
+.gonio-range::-webkit-slider-runnable-track {
+  height: 1px;
+  background: var(--ink-3);
+}
+.gonio-range::-moz-range-track {
+  height: 1px;
+  background: var(--ink-3);
+}
+.gonio-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 22px;
+  margin-top: -11px;
+  background: var(--accent);
+  border: 0;
+  border-radius: 0;
+  clip-path: polygon(50% 100%, 0 45%, 0 0, 100% 0, 100% 45%);
+}
+.gonio-range::-moz-range-thumb {
+  width: 14px;
+  height: 22px;
+  background: var(--accent);
+  border: 0;
+  border-radius: 0;
+  clip-path: polygon(50% 100%, 0 45%, 0 0, 100% 0, 100% 45%);
+}
+.gonio-range:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* Per-figure accent: set --a inline on the plate */
+.plate {
+  --a: var(--accent);
+}
+.plate-accent {
+  color: var(--a);
+}
+.plate-rule {
+  background: var(--a);
+}
+
+/* Store buttons */
+.store-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 46px;
+  padding: 0.45rem 0.85rem 0.45rem 0.7rem;
+  background: var(--ink);
+  color: var(--paper);
+  border: 1px solid var(--ink);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.store-btn:hover,
+.store-btn:focus-visible {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--a, var(--accent));
+}
+.store-btn small {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  line-height: 1.1;
+}
+.store-btn b {
+  display: block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+.store-pending {
+  background: transparent;
+  color: var(--ink-2);
+  border: 1px dashed var(--ink-3);
+  cursor: default;
+}
+.store-pending:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Hatched fill for schematic drawings */
+.hatch {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--line-soft) 0 1px,
+    transparent 1px 7px
+  );
+}
+
+/* Cough waveform draws in */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes pulse-dot {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.25;
+    }
+  }
+  .pulse-dot {
+    animation: pulse-dot 1.6s ease-in-out infinite;
+  }
+}
+
+/* Long-form policy text */
+.policy h2 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  gap: 0.9rem;
+  align-items: baseline;
+}
+.policy h2 span {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+}
+.policy p,
+.policy li {
+  color: var(--ink-2);
+  line-height: 1.7;
+}
+.policy p {
+  margin-bottom: 1rem;
+}
+.policy ul {
+  margin-bottom: 1rem;
+  border-top: 1px solid var(--line-soft);
+}
+.policy li {
+  padding: 0.55rem 0 0.55rem 1.4rem;
+  border-bottom: 1px solid var(--line-soft);
+  position: relative;
+}
+.policy li::before {
+  content: "";
+  position: absolute;
+  left: 0.2rem;
+  top: 1.15rem;
+  width: 7px;
+  height: 1px;
+  background: var(--accent);
+}
+.policy strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ------------------------------------------------------------------
+   Interactivity. Everything is transform/opacity only, gated on the
+   .motion class that Interactions.tsx sets when motion is welcome.
+   ------------------------------------------------------------------ */
+
+/* Section reveal: uses the standalone translate property so it never
+   fights the tilt transform on the same element. */
+.motion .reveal {
+  opacity: 0;
+  translate: 0 26px;
+  transition:
+    opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+    translate 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.motion .reveal.is-in {
+  opacity: 1;
+  translate: 0 0;
+}
+
+/* Plate tilt + cursor glow */
+.motion .plate {
+  transform: perspective(1500px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition:
+    opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+    translate 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 0.45s ease,
+    border-color 0.3s ease;
+}
+.plate-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  background: radial-gradient(
+    420px circle at var(--mx, 50%) var(--my, 50%),
+    color-mix(in srgb, var(--a) 16%, transparent),
+    transparent 70%
+  );
+}
+@media (hover: hover) and (pointer: fine) {
+  .plate:hover {
+    border-color: color-mix(in srgb, var(--a) 55%, var(--line));
+  }
+  .motion .plate:hover {
+    box-shadow: 0 30px 60px -40px color-mix(in srgb, var(--a) 60%, transparent);
+  }
+  .plate:hover .plate-glow {
+    opacity: 1;
+  }
+}
+
+/* Screenshots: rise in one after another, lift on hover */
+.shot {
+  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.motion .reveal .shot {
+  opacity: 0;
+  transform: translateY(46px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.motion .reveal.is-in .shot {
+  opacity: 1;
+  transform: none;
+}
+.motion .reveal.is-in .shot:nth-child(1) {
+  transition-delay: 0.12s;
+}
+.motion .reveal.is-in .shot:nth-child(2) {
+  transition-delay: 0.24s;
+}
+.motion .reveal.is-in .shot:nth-child(3) {
+  transition-delay: 0.36s;
+}
+@media (hover: hover) and (pointer: fine) {
+  .motion .reveal.is-in .shot:hover {
+    transform: translateY(-14px) rotate(-1.2deg);
+    transition-delay: 0s;
+    transition-duration: 0.35s;
+  }
+  .motion .reveal.is-in .shot:nth-child(even):hover {
+    transform: translateY(-14px) rotate(1.2deg);
+  }
+}
+
+/* Schematic gauges grow from the left once in view */
+.motion .reveal .gauge {
+  transform: scaleX(0);
+  transform-box: fill-box;
+  transform-origin: left center;
+  transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: calc(0.25s + var(--i, 0) * 0.09s);
+}
+.motion .reveal.is-in .gauge {
+  transform: scaleX(1);
+}
+.pie {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 1.2s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.motion .reveal .pie {
+  transform: rotate(-120deg);
+}
+.motion .reveal.is-in .pie {
+  transform: rotate(0deg);
+}
+@media (hover: hover) and (pointer: fine) {
+  .motion .plate:hover .pie {
+    transform: rotate(40deg);
+  }
+}
+
+/* Cough trace breathes while on screen */
+@keyframes wave {
+  from {
+    transform: scaleY(0.55);
+  }
+  to {
+    transform: scaleY(1.08);
+  }
+}
+.motion .reveal.is-in .wave-bar {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: wave 0.9s ease-in-out infinite alternate;
+  animation-delay: calc(var(--i) * -53ms);
+}
+
+/* Hero: the underline draws itself, the index icons hop */
+@keyframes draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .squiggle {
+    stroke-dasharray: 1;
+    animation: draw 0.9s cubic-bezier(0.6, 0, 0.2, 1) 0.7s both;
+  }
+  .index-item {
+    animation: rise 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    animation-delay: calc(0.5s + var(--i, 0) * 0.07s);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .store-btn,
+  .shot,
+  .pie,
+  .link-draw {
+    transition: none;
+  }
+  .store-btn:hover,
+  .store-btn:focus-visible {
+    transform: none;
+  }
 }

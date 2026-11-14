@@ -1,251 +1,80 @@
-"use client";
+import type { Metadata } from "next";
 
-import { useState } from "react";
-import { FaEnvelope, FaPhone, FaLinkedin, FaCalendar } from "react-icons/fa";
+export const metadata: Metadata = {
+  title: "Contact | Twin Tip Solutions",
+  description: "Get in touch with Reid Glaze at Twin Tip Solutions about any of the apps.",
+};
+
+const channels = [
+  {
+    label: "Email",
+    value: "reid@twintipsolutions.com",
+    note: "App support, feedback, press, anything else. Mention which app and whether you are on iPhone or Android.",
+    href: "mailto:reid@twintipsolutions.com",
+    external: false,
+  },
+  {
+    label: "Call",
+    value: "Book 30 minutes",
+    note: "Pick a time on the calendar.",
+    href: "https://calendly.com/reid-twintipsolutions/30min",
+    external: true,
+  },
+  {
+    label: "LinkedIn",
+    value: "Reid Glaze",
+    note: "Connect or send a message.",
+    href: "https://www.linkedin.com/in/reidhglaze/",
+    external: true,
+  },
+];
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    clinicName: "",
-    contactName: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to send message');
-      }
-
-      setSubmitStatus("success");
-      
-      // Reset form
-      setFormData({
-        clinicName: "",
-        contactName: "",
-        email: "",
-        phone: "",
-        message: "",
-      });
-    } catch (error) {
-      console.error('Form submission error:', error);
-      setSubmitStatus("error");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
     <div className="w-full">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-indigo-50 via-sky-50 to-blue-50 dark:from-gray-900 dark:via-gray-850 dark:to-gray-800 py-16 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-black mb-6 bg-gradient-to-r from-indigo-600 via-sky-600 to-blue-600 text-transparent bg-clip-text leading-tight">
-            Get In Touch
+      <section className="relative border-b border-line">
+        <div className="grid-bg grid-fade pointer-events-none absolute inset-0" aria-hidden="true" />
+        <div className="relative mx-auto max-w-7xl px-4 pb-14 pt-12 sm:px-6 lg:pb-20 lg:pt-20">
+          <p className="label hero-in flex items-center gap-3">
+            <span className="inline-block h-px w-8 bg-accent" />
+            Sheet 03 / Contact
+          </p>
+          <h1 className="hero-in mt-5 font-display text-[clamp(2.8rem,9vw,6rem)] font-semibold leading-[0.92] tracking-[-0.035em]">
+            Say <span className="text-accent">hello</span>.
           </h1>
-          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            Have a question or want to learn more? Send us a message.
+          <p className="hero-in mt-6 max-w-[48ch] text-lg text-ink-2">
+            Messages go straight to the person who writes the code, so bug reports tend to get
+            fixed.
           </p>
         </div>
       </section>
 
-      {/* Contact Options */}
-      <section className="py-20 px-4 bg-white dark:bg-gray-900">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <div>
-              <h2 className="text-3xl font-bold mb-6">Send a Message</h2>
-              <p className="text-gray-600 dark:text-gray-400 mb-8">
-                Fill out the form below and we&apos;ll get back to you as soon as possible.
-              </p>
-              
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="clinicName" className="block text-sm font-medium mb-2">
-                      Company/Organization
-                    </label>
-                    <input
-                      type="text"
-                      id="clinicName"
-                      name="clinicName"
-                      value={formData.clinicName}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-800"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="contactName" className="block text-sm font-medium mb-2">
-                      Your Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="contactName"
-                      name="contactName"
-                      required
-                      value={formData.contactName}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-800"
-                    />
-                  </div>
-                </div>
-                
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2">
-                      Email *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-800"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium mb-2">
-                      Phone
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-800"
-                    />
-                  </div>
-                </div>
-                
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Your message..."
-                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:bg-gray-800"
-                  />
-                </div>
-                
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full py-3 px-6 bg-gradient-to-r from-indigo-600 to-blue-600 text-white rounded-lg font-semibold hover:from-indigo-700 hover:to-blue-700 transition disabled:opacity-50"
+      <section className="px-4 py-14 sm:px-6 lg:py-20">
+        <ul className="mx-auto max-w-7xl border-t border-line">
+          {channels.map((c, i) => (
+            <li key={c.label} className="border-b border-line">
+              <a
+                href={c.href}
+                {...(c.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className="group grid items-baseline gap-x-8 gap-y-1 py-7 transition-colors hover:bg-sheet sm:grid-cols-[7rem_minmax(0,1fr)_minmax(0,18rem)_2rem] sm:px-4"
+              >
+                <span className="label">
+                  0{i + 1} / {c.label}
+                </span>
+                <span className="break-words font-display text-3xl font-semibold tracking-tight transition-colors group-hover:text-accent sm:text-5xl">
+                  {c.value}
+                </span>
+                <span className="text-sm text-ink-2">{c.note}</span>
+                <span
+                  className="hidden font-mono text-xl text-ink-3 transition-transform group-hover:translate-x-1 group-hover:text-accent sm:block"
+                  aria-hidden="true"
                 >
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                </button>
-                
-                {submitStatus === "success" && (
-                  <div className="bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 p-4 rounded-lg">
-                    Thank you! We&apos;ll be in touch soon.
-                  </div>
-                )}
-                
-                {submitStatus === "error" && (
-                  <div className="bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-300 p-4 rounded-lg">
-                    Something went wrong. Please try again or contact us directly.
-                  </div>
-                )}
-              </form>
-            </div>
-            
-            {/* Contact Information */}
-            <div>
-              <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
-              
-              <div className="space-y-6 mb-12">
-                <div className="flex items-start gap-4">
-                  <FaEnvelope className="text-2xl text-blue-600 mt-1" />
-                  <div>
-                    <h3 className="font-semibold mb-1">Email</h3>
-                    <a href="mailto:reid@twintipsolutions.com" className="text-gray-600 dark:text-gray-400 hover:text-blue-600">
-                      reid@twintipsolutions.com
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <FaPhone className="text-2xl text-blue-600 mt-1" />
-                  <div>
-                    <h3 className="font-semibold mb-1">Phone</h3>
-                    <p className="text-gray-600 dark:text-gray-400">
-                      Available upon request
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <FaLinkedin className="text-2xl text-blue-600 mt-1" />
-                  <div>
-                    <h3 className="font-semibold mb-1">LinkedIn</h3>
-                    <a 
-                      href="https://www.linkedin.com/in/reidhglaze/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-gray-600 dark:text-gray-400 hover:text-blue-600"
-                    >
-                      Connect with Reid Glaze
-                    </a>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Calendar Widget Placeholder */}
-              <div className="bg-gray-50 dark:bg-gray-800 p-8 rounded-xl">
-                <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                  <FaCalendar className="text-blue-600" />
-                  Schedule a Call
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 mb-4">
-                  Prefer to schedule a call directly? Use our calendar to find a time that works for you.
-                </p>
-                <a 
-                  href="https://calendly.com/reid-twintipsolutions/30min"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full py-3 px-6 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition text-center"
-                >
-                  Open Calendar
-                </a>
-              </div>
-              
-            </div>
-          </div>
-        </div>
+                  {c.external ? "↗" : "→"}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
       </section>
     </div>
   );

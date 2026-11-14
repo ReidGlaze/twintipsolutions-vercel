@@ -1,243 +1,573 @@
 import Image from "next/image";
-import { FaLinkedin, FaEnvelope, FaExternalLinkAlt } from "react-icons/fa";
+import Link from "next/link";
+import type { CSSProperties, ReactNode } from "react";
+import { FaApple, FaGooglePlay } from "react-icons/fa";
+import Goniometer from "@/components/Goniometer";
+import Interactions from "@/components/Interactions";
+
+/* ------------------------------------------------------------------ data */
+
+type Shot = { src: string; w: number; h: number; alt: string; framed?: boolean };
+
+type App = {
+  fig: string;
+  id: string;
+  name: string;
+  kind: string;
+  icon: string;
+  accent: string;
+  pitch: string;
+  spec: [string, string][];
+  appStore?: string;
+  googlePlay: string;
+  website?: string;
+};
+
+const shoulder: App = {
+  fig: "06",
+  id: "shoulder-rehab",
+  name: "Shoulder Rehab: ROM Tracker",
+  kind: "Range of motion",
+  icon: "/art/icon-ShoulderRehabIcon.png",
+  accent: "#12a08c",
+  pitch:
+    "Stand side-on, raise your arm, take a photo. The app marks your joints and reads the angle, so every week of rehab has a number next to it.",
+  spec: [
+    ["Input", "One photo, side-on"],
+    ["Output", "Flexion and abduction, in degrees"],
+    ["For", "Rotator cuff, frozen shoulder, post-surgery rehab"],
+  ],
+  googlePlay: "https://play.google.com/store/apps/details?id=com.twintipsolutions.shoulderrehab",
+  website: "https://shoulderrehab.twintipsolutions.com",
+};
+
+const acl: App = {
+  fig: "02",
+  id: "acl-rehab-tracker",
+  name: "ACL Rehab Tracker",
+  kind: "Range of motion",
+  icon: "/art/icon-AppIcon.png",
+  accent: "#e5484d",
+  pitch:
+    "Knee extension and flexion from a photo of your leg, charted against the goals you are working toward.",
+  spec: [
+    ["Input", "One photo of the knee, from the side"],
+    ["Output", "Extension and flexion, in degrees"],
+    ["For", "ACL reconstruction recovery"],
+  ],
+  appStore: "https://apps.apple.com/us/app/acl-rehab-tracker/id6758809797",
+  googlePlay: "https://play.google.com/store/apps/details?id=com.twintipsolutions.aclrehabtracker",
+  website: "https://aclrehabtracker.vercel.app",
+};
+
+const gut: App = {
+  fig: "05",
+  id: "gut-health",
+  name: "AI Gut Health and IBS Tracker",
+  kind: "Food and symptoms",
+  icon: "/art/icon-GutHealthIcon.png",
+  accent: "#5d9c3f",
+  pitch:
+    "Photograph a meal and it is broken into foods with a FODMAP rating for each. Log symptoms alongside and watch for the patterns.",
+  spec: [
+    ["Input", "Meal photos, symptom check-ins"],
+    ["Output", "Per-food FODMAP ratings, trends over time"],
+    ["For", "IBS and sensitive stomachs"],
+  ],
+  appStore: "https://apps.apple.com/us/app/ai-gut-health-and-ibs-tracker/id6759844665",
+  googlePlay: "https://play.google.com/store/apps/details?id=com.twintipsolutions.guthealth",
+};
+
+const derma: App = {
+  fig: "04",
+  id: "dermawhiz",
+  name: "DermaWhiz: AI Skin Analyzer",
+  kind: "Skin education",
+  icon: "/art/icon-derma-icon.png",
+  accent: "#c98a1b",
+  pitch:
+    "A photo of your skin comes back as a plain-language description, questions worth asking a provider, and sources you can read. Education, not diagnosis.",
+  spec: [
+    ["Input", "One photo of the skin"],
+    ["Output", "Description, questions to ask, cited sources"],
+    ["For", "Getting more out of a dermatology visit"],
+  ],
+  appStore: "https://apps.apple.com/us/app/dermawhiz-ai-skin-analyzer/id6746768900",
+  googlePlay: "https://play.google.com/store/apps/details?id=com.twintipsolutions.DermaBuddy",
+};
+
+const heart: App = {
+  fig: "03",
+  id: "hearthealthai",
+  name: "HeartHealthAI",
+  kind: "Nutrition",
+  icon: "/art/icon-heart-logo.png",
+  accent: "#e23d3d",
+  pitch:
+    "Point the camera at your plate. Calories and macros are filled in for you, with a heart-health score for the meal.",
+  spec: [
+    ["Input", "A photo of the meal"],
+    ["Output", "Calories, macros, heart-health score"],
+    ["For", "Eating with your heart in mind"],
+  ],
+  appStore: "https://apps.apple.com/us/app/hearthealthai-meal-analyzer/id6743356123",
+  googlePlay: "https://play.google.com/store/apps/details?id=com.reidglaze.hearthealthai",
+};
+
+const cough: App = {
+  fig: "01",
+  id: "cough-checker",
+  name: "AI Cough Checker",
+  kind: "Respiratory",
+  icon: "/art/icon-CoughAppIcon.png",
+  accent: "#2f86d6",
+  pitch:
+    "Record a cough and a machine-learning model listens to the sound, giving you a way to keep an eye on your breathing over time.",
+  spec: [
+    ["Input", "A few seconds of audio"],
+    ["Output", "Machine-learning read of the cough"],
+    ["For", "Keeping track of a lingering cough"],
+  ],
+  appStore: "https://apps.apple.com/us/app/ai-cough-checker/id6748887358",
+  googlePlay: "https://play.google.com/store/apps/details?id=com.twintipsolutions.cough",
+};
+
+const allApps = [cough, acl, heart, derma, gut, shoulder];
+
+const shots: Record<string, Shot[]> = {
+  shoulder: [
+    { src: "/art/shoulder-home.webp", w: 1000, h: 1758, alt: "Shoulder Rehab home screen showing right shoulder flexion of 161 degrees and abduction of 105 degrees", framed: true },
+    { src: "/art/shoulder-detail.webp", w: 1000, h: 1632, alt: "Shoulder Rehab measurement of a raised arm with joints marked, reading 161 degrees of flexion", framed: true },
+    { src: "/art/shoulder-progress.webp", w: 700, h: 1231, alt: "Shoulder Rehab progress chart of flexion climbing from 64 to 161 degrees", framed: true },
+  ],
+  acl: [
+    { src: "/art/acl-measure.webp", w: 640, h: 1387, alt: "ACL Rehab Tracker measuring knee extension from a photo" },
+    { src: "/art/acl-progress.webp", w: 640, h: 1387, alt: "ACL Rehab Tracker progress screen with extension at 35 degrees and flexion at 90 degrees" },
+  ],
+  gut: [
+    { src: "/art/gut-scanner.webp", w: 640, h: 1387, alt: "AI Gut Health meal log listing foods with high, moderate and low FODMAP tags" },
+    { src: "/art/gut-dashboard.webp", w: 640, h: 1387, alt: "AI Gut Health dashboard with logging streak and daily checklist" },
+  ],
+  derma: [
+    { src: "/art/derma-analysis.webp", w: 914, h: 1900, alt: "DermaWhiz analysis results with a description and severity estimate", framed: true },
+    { src: "/art/derma-history.webp", w: 883, h: 1835, alt: "DermaWhiz history list of past analyses", framed: true },
+  ],
+};
+
+/* ------------------------------------------------------------- components */
+
+function StoreButtons({ app }: { app: App }) {
+  return (
+    <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+      {app.appStore ? (
+        <a
+          href={app.appStore}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="store-btn"
+          aria-label={`${app.name} on the App Store`}
+        >
+          <FaApple className="text-2xl" aria-hidden="true" />
+          <span>
+            <small>Download on the</small>
+            <b>App Store</b>
+          </span>
+        </a>
+      ) : (
+        <span className="store-btn store-pending" aria-label={`${app.name} for iPhone is in Apple review`}>
+          <FaApple className="text-2xl" aria-hidden="true" />
+          <span>
+            <small>iPhone</small>
+            <b>In Apple review</b>
+          </span>
+        </span>
+      )}
+      <a
+        href={app.googlePlay}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="store-btn"
+        aria-label={`${app.name} on Google Play`}
+      >
+        <FaGooglePlay className="text-xl" aria-hidden="true" />
+        <span>
+          <small>Get it on</small>
+          <b>Google Play</b>
+        </span>
+      </a>
+      {app.website && (
+        <a
+          href={app.website}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="link-draw font-mono text-xs uppercase tracking-[0.14em] text-ink-2 hover:text-ink"
+        >
+          Website &#8599;
+        </a>
+      )}
+    </div>
+  );
+}
+
+function Info({ app }: { app: App }) {
+  return (
+    <div className="flex h-full flex-col p-5 sm:p-7">
+      <div className="flex items-start gap-4">
+        <Image
+          src={app.icon}
+          alt=""
+          width={64}
+          height={64}
+          className="h-16 w-16 shrink-0 rounded-[14px] border border-line object-cover"
+        />
+        <div className="min-w-0">
+          <p className="label plate-accent">{app.kind}</p>
+          <h3 className="mt-1 font-display text-2xl font-semibold leading-[1.05] tracking-tight sm:text-3xl">
+            {app.name}
+          </h3>
+        </div>
+      </div>
+      <p className="mt-5 max-w-[46ch] text-[1.02rem] leading-relaxed text-ink-2">{app.pitch}</p>
+      <dl className="mt-6 border-t border-line-soft text-sm">
+        {app.spec.map(([k, v]) => (
+          <div key={k} className="grid grid-cols-[4.5rem_1fr] gap-3 border-b border-line-soft py-2">
+            <dt className="label pt-[3px]">{k}</dt>
+            <dd>{v}</dd>
+          </div>
+        ))}
+      </dl>
+      <div className="mt-auto pt-6">
+        <StoreButtons app={app} />
+      </div>
+    </div>
+  );
+}
+
+function Plate({
+  app,
+  className = "",
+  children,
+  wide = false,
+}: {
+  app: App;
+  className?: string;
+  children: ReactNode;
+  wide?: boolean;
+}) {
+  return (
+    <article
+      id={app.id}
+      className={`plate reg-marks reveal flex scroll-mt-24 flex-col border border-line bg-sheet ${className}`}
+      style={{ "--a": app.accent } as CSSProperties}
+    >
+      <div className="plate-glow" aria-hidden="true" />
+      <header className="flex items-center justify-between border-b border-line px-5 py-2 sm:px-7">
+        <span className="label whitespace-nowrap">
+          <span className="plate-accent">Fig. {app.fig}</span> / 06
+        </span>
+        <span className="label flex items-center gap-2 whitespace-nowrap">
+          <span className="plate-rule inline-block h-1.5 w-1.5 rounded-full" />
+          {app.appStore ? "iPhone + Android" : "Android / iOS in review"}
+        </span>
+      </header>
+      <div className={`grid flex-1 ${wide ? "lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]" : ""}`}>
+        <Info app={app} />
+        <div
+          className={`relative overflow-hidden border-t border-line ${wide ? "lg:border-l lg:border-t-0" : ""}`}
+        >
+          {children}
+        </div>
+      </div>
+    </article>
+  );
+}
+
+function Shots({ items, tall = false }: { items: Shot[]; tall?: boolean }) {
+  const h = tall ? "h-[340px] sm:h-[380px]" : "h-[320px] sm:h-[360px]";
+  return (
+    <div className="grid-bg h-full">
+      <div className="strip flex h-full items-end justify-start gap-4 overflow-x-auto px-5 pb-0 pt-8 sm:justify-center sm:gap-6">
+        {items.map((s, i) =>
+          s.framed ? (
+            <Image
+              key={s.src}
+              src={s.src}
+              alt={s.alt}
+              width={s.w}
+              height={s.h}
+              sizes="(max-width: 640px) 60vw, 300px"
+              className={`shot ${h} w-auto max-w-none shrink-0 translate-y-6 ${i % 2 ? "sm:translate-y-12" : ""}`}
+            />
+          ) : (
+            <div key={s.src} className={`shot bezel shrink-0 translate-y-6 ${i % 2 ? "sm:translate-y-12" : ""}`}>
+              <Image
+                src={s.src}
+                alt={s.alt}
+                width={s.w}
+                height={s.h}
+                sizes="(max-width: 640px) 50vw, 240px"
+                className={`${h} w-auto max-w-none`}
+              />
+            </div>
+          ),
+        )}
+      </div>
+    </div>
+  );
+}
+
+/* Schematic: a plate of food with leader lines out to readouts. No real values. */
+function PlateDrawing() {
+  const rows: [string, number][] = [
+    ["Calories", 0.72],
+    ["Protein", 0.55],
+    ["Sat. fat", 0.28],
+    ["Sodium", 0.4],
+    ["Fiber", 0.63],
+  ];
+  return (
+    <div className="grid-bg flex h-full min-h-[320px] items-center justify-center p-5">
+      <svg viewBox="0 0 420 300" className="w-full max-w-[460px]" role="img" aria-label="Schematic of a plate of food with leader lines to nutrition readouts">
+        <circle cx="120" cy="150" r="96" className="fill-sheet stroke-ink" strokeWidth="1.5" />
+        <circle cx="120" cy="150" r="70" fill="none" className="stroke-ink-3" strokeWidth="1" strokeDasharray="2 4" />
+        <g className="pie">
+        <path d="M120 150 L120 80 A70 70 0 0 1 186 172 Z" fill="var(--a)" opacity="0.9" />
+        <path d="M120 150 L186 172 A70 70 0 0 1 72 201 Z" fill="var(--a)" opacity="0.45" />
+        <path d="M120 150 L72 201 A70 70 0 0 1 120 80 Z" fill="var(--a)" opacity="0.18" />
+        </g>
+        <circle cx="120" cy="150" r="5" className="fill-sheet stroke-ink" strokeWidth="1.5" />
+        {rows.map(([label, v], i) => {
+          const y = 52 + i * 49;
+          return (
+            <g key={label}>
+              <path d={`M${150 + (i % 2) * 22} ${110 + i * 20} L236 ${y} L250 ${y}`} fill="none" className="stroke-ink-3" strokeWidth="1" />
+              <circle cx={150 + (i % 2) * 22} cy={110 + i * 20} r="2.5" className="fill-ink" />
+              <text x="256" y={y - 6} className="fill-ink-2 font-mono" fontSize="10" letterSpacing="1.4">
+                {label.toUpperCase()}
+              </text>
+              <rect x="256" y={y + 1} width="150" height="6" className="fill-line-soft" />
+              <rect x="256" y={y + 1} width={150 * v} height="6" fill="var(--a)" className="gauge" style={{ "--i": i } as CSSProperties} />
+            </g>
+          );
+        })}
+      </svg>
+    </div>
+  );
+}
+
+/* Schematic: three cough bursts as an amplitude trace. */
+function Waveform() {
+  const n = 132;
+  const bars = Array.from({ length: n }, (_, i) => {
+    const x = i / n;
+    const burst = (c: number, w: number, a: number) => a * Math.exp(-Math.pow((x - c) / w, 2));
+    const env = burst(0.16, 0.035, 1) + burst(0.26, 0.05, 0.55) + burst(0.52, 0.03, 0.85) + burst(0.6, 0.06, 0.4) + burst(0.84, 0.04, 0.7);
+    const jitter = 0.55 + 0.45 * Math.abs(Math.sin(i * 12.9898) * Math.cos(i * 4.1414));
+    return Math.round((0.03 + env * jitter) * 1000) / 1000;
+  });
+  return (
+    <div className="grid-bg flex h-full min-h-[240px] flex-col justify-center px-5 py-8 sm:px-8">
+      <svg viewBox={`0 0 ${n * 6} 160`} className="w-full" preserveAspectRatio="none" role="img" aria-label="Schematic audio waveform of three coughs">
+        <line x1="0" y1="80" x2={n * 6} y2="80" className="stroke-line" strokeWidth="1" />
+        {bars.map((b, i) => (
+          <rect
+            key={i}
+            x={i * 6 + 1}
+            y={80 - Math.min(b, 1) * 74}
+            width="3"
+            height={Math.max(2, Math.min(b, 1) * 148)}
+            fill="var(--a)"
+            opacity={b > 0.12 ? 1 : 0.4}
+            className="wave-bar"
+            style={{ "--i": i } as CSSProperties}
+          />
+        ))}
+      </svg>
+      <div className="mt-4 flex items-center justify-between">
+        <span className="label flex items-center gap-2">
+          <span className="pulse-dot inline-block h-2 w-2 rounded-full bg-coral" />
+          Rec
+        </span>
+        <span className="label max-sm:hidden">Cough 1</span>
+        <span className="label">Cough 2</span>
+        <span className="label max-sm:hidden">Cough 3</span>
+        <span className="label">00:06</span>
+      </div>
+    </div>
+  );
+}
+
+/* ------------------------------------------------------------------ page */
 
 export default function Home() {
   return (
     <div className="w-full">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-gray-850 dark:to-gray-800 py-24 px-4">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-blue-400/20 to-indigo-400/20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-72 h-72 bg-gradient-to-br from-cyan-400/20 to-blue-400/20 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="max-w-5xl mx-auto relative z-10 text-center">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-4 bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 text-transparent bg-clip-text leading-tight">
-            Reid Glaze
-          </h1>
-          <p className="text-2xl md:text-3xl text-gray-700 dark:text-gray-300 mb-6 font-semibold">
-            Twin Tip Solutions
-          </p>
-          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto">
-            AI/ML Engineer building intelligent applications
-          </p>
-          <p className="text-lg text-gray-500 dark:text-gray-500 mb-8">
-            MS Mechanical Engineering (AI/ML Focus) - CU Boulder
-          </p>
-        </div>
-      </section>
-
-      {/* Current Project - OVScribe */}
-      <section className="py-20 px-4 bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 text-white">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Current Project</h2>
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 md:p-12">
-            <h3 className="text-4xl md:text-5xl font-black mb-6">OVScribe</h3>
-            <p className="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
-              AI-powered medical documentation and transcription platform
+      <Interactions />
+      {/* Hero */}
+      <section className="relative border-b border-line">
+        <div className="grid-bg grid-fade pointer-events-none absolute inset-0" aria-hidden="true" />
+        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 pb-14 pt-12 sm:px-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:gap-14 lg:pb-20 lg:pt-20">
+          <div className="hero-in">
+            <p className="label flex items-center gap-3">
+              <span className="inline-block h-px w-8 bg-accent" />
+              Sheet 01 / Health and recovery apps
             </p>
-            <a
-              href="https://ovscribe.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold text-lg hover:bg-gray-100 transition shadow-lg"
-            >
-              Visit OVScribe.com
-              <FaExternalLinkAlt className="text-sm" />
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Past Projects */}
-      <section className="py-20 px-4 bg-white dark:bg-gray-900">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Past Projects</h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* DermaWhiz */}
-            <div className="bg-gradient-to-br from-teal-50 to-cyan-50 dark:from-teal-900/20 dark:to-cyan-900/20 p-8 rounded-xl shadow-lg hover:shadow-xl transition">
-              <div className="flex justify-center mb-6">
-                <Image
-                  src="/derma-icon.png"
-                  alt="DermaWhiz Logo"
-                  width={120}
-                  height={120}
-                  className="rounded-xl"
-                />
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-center">DermaWhiz</h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6 text-center">
-                AI-powered skin health analysis app with computer vision and RAG architecture
-              </p>
-              <div className="flex flex-col gap-3">
-                <a
-                  href="https://apps.apple.com/us/app/dermawhiz-ai-skin-analyzer/id6746768900"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition text-sm font-semibold"
-                >
-                  App Store
-                </a>
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.twintipsolutions.DermaBuddy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition text-sm font-semibold"
-                >
-                  Google Play
-                </a>
-              </div>
-            </div>
-
-            {/* HeartHealthAI */}
-            <div className="bg-gradient-to-br from-rose-50 to-orange-50 dark:from-rose-900/20 dark:to-orange-900/20 p-8 rounded-xl shadow-lg hover:shadow-xl transition">
-              <div className="flex justify-center mb-6">
-                <Image
-                  src="/heart-logo.png"
-                  alt="HeartHealthAI Logo"
-                  width={120}
-                  height={120}
-                  className="rounded-xl"
-                />
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-center">HeartHealthAI</h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6 text-center">
-                AI nutrition tracking with food photo analysis and heart health optimization
-              </p>
-              <div className="flex flex-col gap-3">
-                <a
-                  href="https://apps.apple.com/us/app/hearthealthai-meal-analyzer/id6743356123"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition text-sm font-semibold"
-                >
-                  App Store
-                </a>
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.reidglaze.hearthealthai"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition text-sm font-semibold"
-                >
-                  Google Play
-                </a>
-              </div>
-            </div>
-
-            {/* ACL Rehab Tracker */}
-            <div className="bg-gradient-to-br from-emerald-50 to-green-50 dark:from-emerald-900/20 dark:to-green-900/20 p-8 rounded-xl shadow-lg hover:shadow-xl transition">
-              <div className="flex justify-center mb-6">
-                <Image
-                  src="/AppIcon.png"
-                  alt="ACL Rehab Tracker Logo"
-                  width={120}
-                  height={120}
-                  className="rounded-xl"
-                />
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-center">ACL Rehab Tracker</h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6 text-center">
-                AI-powered knee extension and flexion tracking for ACL rehabilitation recovery
-              </p>
-              <div className="flex flex-col gap-3">
-                <a
-                  href="https://apps.apple.com/us/app/acl-rehab-tracker/id6758809797"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition text-sm font-semibold"
-                >
-                  App Store
-                </a>
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.twintipsolutions.aclrehabtracker"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition text-sm font-semibold"
-                >
-                  Google Play
-                </a>
-              </div>
-            </div>
-
-            {/* AI Cough Checker */}
-            <div className="bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 p-8 rounded-xl shadow-lg hover:shadow-xl transition">
-              <div className="flex justify-center mb-6">
-                <Image
-                  src="/CoughAppIcon.png"
-                  alt="AI Cough Checker Logo"
-                  width={120}
-                  height={120}
-                  className="rounded-xl"
-                />
-              </div>
-              <h3 className="text-2xl font-bold mb-4 text-center">AI Cough Checker</h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6 text-center">
-                Machine learning-powered respiratory health monitoring through cough analysis
-              </p>
-              <div className="flex flex-col gap-3">
-                <a
-                  href="https://apps.apple.com/us/app/ai-cough-checker/id6748887358"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition text-sm font-semibold"
-                >
-                  App Store
-                </a>
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.twintipsolutions.cough"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition text-sm font-semibold"
-                >
-                  Google Play
-                </a>
-              </div>
+            <h1 className="mt-5 font-display text-[clamp(3.1rem,10.5vw,5.5rem)] font-semibold leading-[0.9] tracking-[-0.035em]">
+              Point a phone.
+              <br />
+              Get a <span className="relative whitespace-nowrap text-accent">number
+                <svg viewBox="0 0 300 14" preserveAspectRatio="none" className="absolute -bottom-2 left-0 h-3 w-full" aria-hidden="true">
+                  <path d="M2 9 C 60 2, 120 12, 180 6 S 270 4, 298 8" fill="none" stroke="var(--coral)" strokeWidth="3" strokeLinecap="round" pathLength={1} className="squiggle" />
+                </svg>
+              </span>
+              .
+            </h1>
+            <p className="mt-8 max-w-[52ch] text-lg leading-relaxed text-ink-2 sm:text-xl">
+              Twin Tip Solutions makes apps that turn a photo, a meal or a cough into something you
+              can track. How far the knee bends this week. What was actually on the plate. Six apps
+              so far, all designed and built by one engineer.
+            </p>
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+              <a href="#apps" className="store-btn">
+                <b>See the six apps</b>
+                <span aria-hidden="true">&darr;</span>
+              </a>
+              <Link href="/about" className="link-draw font-mono text-xs uppercase tracking-[0.14em] text-ink-2 hover:text-ink">
+                Who draws these &rarr;
+              </Link>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section className="py-20 px-4 bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">About</h2>
-          <div className="bg-white dark:bg-gray-900 p-8 md:p-12 rounded-xl shadow-lg">
-            <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-              AI/ML engineer with an MS in Mechanical Engineering from CU Boulder, specializing in
-              developing intelligent applications that leverage machine learning and computer vision.
-              Experienced in building production mobile applications with advanced AI capabilities,
-              HIPAA-aligned architectures, and scalable cloud infrastructure.
-            </p>
-            <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
-              Currently focused on <strong>OVScribe</strong>, an AI-powered medical documentation platform,
-              while maintaining several deployed healthcare AI applications.
+          <div className="hero-in [animation-delay:150ms]">
+            <Goniometer />
+            <p className="mt-3 text-sm text-ink-3">
+              This is how ACL Rehab Tracker works: the phone camera reads your knee angle from a
+              photo, so you can watch it change.
             </p>
           </div>
         </div>
+
+        {/* Index strip */}
+        <div className="relative border-t border-line bg-paper">
+          <ul className="mx-auto grid max-w-7xl grid-cols-2 px-4 sm:grid-cols-3 sm:px-6 lg:grid-cols-6">
+            {allApps.map((a, i) => (
+              <li key={a.id} style={{ "--i": i } as CSSProperties} className="index-item border-line-soft max-lg:border-b lg:border-r lg:first:border-l">
+                <a
+                  href={`#${a.id}`}
+                  className="group flex items-center gap-3 px-1 py-3 sm:px-3"
+                  style={{ "--a": a.accent } as CSSProperties}
+                >
+                  <Image src={a.icon} alt="" width={36} height={36} className="h-9 w-9 shrink-0 rounded-[9px] border border-line object-cover transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:rotate-[-4deg]" />
+                  <span className="min-w-0">
+                    <span className="label block">Fig. {a.fig}</span>
+                    <span className="block truncate text-sm font-medium">{a.name.split(":")[0].replace("AI Gut Health and IBS Tracker", "AI Gut Health")}</span>
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">Get In Touch</h2>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <a
-              href="mailto:reid@twintipsolutions.com"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold text-lg hover:bg-gray-100 transition shadow-lg"
-            >
-              <FaEnvelope />
-              reid@twintipsolutions.com
-            </a>
-            <a
-              href="https://www.linkedin.com/in/reidhglaze/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold text-lg hover:bg-blue-700 transition shadow-lg"
-            >
-              <FaLinkedin />
-              LinkedIn
-            </a>
+      {/* Apps */}
+      <section id="apps" className="scroll-mt-16 px-4 py-16 sm:px-6 lg:py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 grid items-end gap-4 md:grid-cols-[1fr_auto]">
+            <div>
+              <p className="label">Sheet 02 / The apps</p>
+              <h2 className="mt-3 font-display text-4xl font-semibold leading-none tracking-tight sm:text-6xl">
+                Six figures.
+              </h2>
+            </div>
+            <p className="max-w-[40ch] text-ink-2 md:text-right">
+              Each one takes something your phone can capture and gives back something you can
+              follow from week to week.
+            </p>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-12 lg:gap-8">
+            <Plate app={cough} wide className="lg:col-span-12">
+              <Waveform />
+            </Plate>
+            <Plate app={acl} className="lg:col-span-7">
+              <Shots items={shots.acl} />
+            </Plate>
+            <Plate app={heart} className="lg:col-span-5">
+              <PlateDrawing />
+            </Plate>
+            <Plate app={derma} className="lg:col-span-7">
+              <Shots items={shots.derma} />
+            </Plate>
+            <Plate app={gut} className="lg:col-span-5">
+              <Shots items={shots.gut} />
+            </Plate>
+            <Plate app={shoulder} wide className="lg:col-span-12">
+              <Shots items={shots.shoulder} tall />
+            </Plate>
+          </div>
+
+          <p className="mt-6 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-ink-3">
+            Figs. 01 and 03 are schematics, not screenshots. All apps are tracking and education
+            tools, not medical devices.
+          </p>
+        </div>
+      </section>
+
+      {/* Drawn by + revisions */}
+      <section className="border-t border-line bg-paper-2 px-4 py-16 sm:px-6 lg:py-20">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-16">
+          <div className="reveal">
+            <p className="label">Sheet 03 / Drawn by</p>
+            <p className="mt-4 font-display text-3xl font-medium leading-[1.12] tracking-tight sm:text-[2.6rem]">
+              Reid Glaze is an AI/ML engineer with a mechanical engineer&rsquo;s habit of{" "}
+              <span className="text-accent">measuring things</span>. Twin Tip Solutions is where
+              that habit turns into apps.
+            </p>
+            <p className="mt-6 max-w-[58ch] text-ink-2">
+              MS in Mechanical Engineering from CU Boulder with an AI/ML focus. Every app here is
+              built natively for iPhone and Android, with computer vision and language models doing
+              the reading.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-x-8 gap-y-3 font-mono text-xs uppercase tracking-[0.14em]">
+              <a href="mailto:reid@twintipsolutions.com" className="link-draw text-ink hover:text-accent">
+                reid@twintipsolutions.com
+              </a>
+              <a href="https://www.linkedin.com/in/reidhglaze/" target="_blank" rel="noopener noreferrer" className="link-draw text-ink hover:text-accent">
+                LinkedIn &#8599;
+              </a>
+              <Link href="/contact" className="link-draw text-ink hover:text-accent">
+                Contact &rarr;
+              </Link>
+            </div>
+          </div>
+
+          <div className="reveal self-end">
+            <table className="w-full border border-line bg-sheet text-left text-sm">
+              <caption className="label border border-b-0 border-line bg-sheet px-4 py-2 text-left">
+                Revisions
+              </caption>
+              <thead>
+                <tr className="border-b border-line">
+                  <th className="label w-14 px-4 py-2 font-normal">Rev</th>
+                  <th className="label px-4 py-2 font-normal">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-line-soft">
+                  <td className="px-4 py-3 font-mono text-xs text-accent">B</td>
+                  <td className="px-4 py-3">Six consumer apps on the App Store and Google Play.</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-3 align-top font-mono text-xs text-ink-3">A</td>
+                  <td className="px-4 py-3 text-ink-2">
+                    Earlier project:{" "}
+                    <a href="https://ovscribe.com" target="_blank" rel="noopener noreferrer" className="link-draw font-medium text-ink hover:text-accent">
+                      OVScribe
+                    </a>
+                    , an AI medical scribe for clinicians.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
