@@ -81,6 +81,7 @@ const gut: App = {
   ],
   appStore: "https://apps.apple.com/us/app/ai-gut-health-and-ibs-tracker/id6759844665",
   googlePlay: "https://play.google.com/store/apps/details?id=com.twintipsolutions.guthealth",
+  website: "https://aiguthealth.vercel.app/support",
 };
 
 const derma: App = {
@@ -99,6 +100,7 @@ const derma: App = {
   ],
   appStore: "https://apps.apple.com/us/app/dermawhiz-ai-skin-analyzer/id6746768900",
   googlePlay: "https://play.google.com/store/apps/details?id=com.twintipsolutions.DermaBuddy",
+  website: "https://www.dermawhiz.com/",
 };
 
 const heart: App = {
@@ -117,6 +119,7 @@ const heart: App = {
   ],
   appStore: "https://apps.apple.com/us/app/hearthealthai-meal-analyzer/id6743356123",
   googlePlay: "https://play.google.com/store/apps/details?id=com.reidglaze.hearthealthai",
+  website: "https://hearthealthai.app",
 };
 
 const cough: App = {
@@ -135,6 +138,7 @@ const cough: App = {
   ],
   appStore: "https://apps.apple.com/us/app/ai-cough-checker/id6748887358",
   googlePlay: "https://play.google.com/store/apps/details?id=com.twintipsolutions.cough",
+  website: "https://cough.twintipsolutions.com",
 };
 
 const allApps = [cough, acl, heart, derma, gut, shoulder];
