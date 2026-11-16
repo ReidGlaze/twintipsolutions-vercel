@@ -81,7 +81,7 @@ const gut: App = {
   ],
   appStore: "https://apps.apple.com/us/app/ai-gut-health-and-ibs-tracker/id6759844665",
   googlePlay: "https://play.google.com/store/apps/details?id=com.twintipsolutions.guthealth",
-  website: "https://aiguthealth.vercel.app/support",
+  website: "https://aiguthealth.vercel.app",
 };
 
 const derma: App = {
