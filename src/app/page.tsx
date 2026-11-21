@@ -100,7 +100,7 @@ const derma: App = {
   ],
   appStore: "https://apps.apple.com/us/app/dermawhiz-ai-skin-analyzer/id6746768900",
   googlePlay: "https://play.google.com/store/apps/details?id=com.twintipsolutions.DermaBuddy",
-  website: "https://www.dermawhiz.com/",
+  website: "https://dermawhiz.twintipsolutions.com/",
 };
 
 const heart: App = {
