@@ -62,7 +62,7 @@ const acl: App = {
   ],
   appStore: "https://apps.apple.com/us/app/acl-rehab-tracker/id6758809797",
   googlePlay: "https://play.google.com/store/apps/details?id=com.twintipsolutions.aclrehabtracker",
-  website: "https://aclrehabtracker.vercel.app",
+  website: "https://aclrehab.twintipsolutions.com",
 };
 
 const gut: App = {
