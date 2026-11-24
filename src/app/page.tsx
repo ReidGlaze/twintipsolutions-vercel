@@ -158,8 +158,8 @@ const shots: Record<string, Shot[]> = {
     { src: "/art/gut-dashboard.webp", w: 640, h: 1387, alt: "AI Gut Health dashboard with logging streak and daily checklist" },
   ],
   derma: [
-    { src: "/art/derma-analysis.webp", w: 914, h: 1900, alt: "DermaWhiz analysis results with a description and severity estimate", framed: true },
-    { src: "/art/derma-history.webp", w: 883, h: 1835, alt: "DermaWhiz history list of past analyses", framed: true },
+    { src: "/art/derma-scan.webp", w: 1000, h: 1877, alt: "DermaWhiz scan screen with a photo of a forearm ready to analyze", framed: true },
+    { src: "/art/derma-result.webp", w: 1000, h: 1877, alt: "DermaWhiz results with a plain-language description, a severity estimate and when to see a doctor", framed: true },
   ],
 };
 
